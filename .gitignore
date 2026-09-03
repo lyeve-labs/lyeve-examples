@@ -1,0 +1,32 @@
+node_modules/
+.pnpm-store/
+dist/
+build/
+.svelte-kit/
+.output/
+.vercel/
+*.tsbuildinfo
+
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# The local stack: engine binary, logs, and the development license that is
+# minted per machine. Nothing here is shared and nothing here is committed.
+.stack/
+*.license
+*.license
+license-signing-key.hex*
+
+coverage/
+test-results/
+playwright-report/
+.DS_Store
+*.log
+
+# Measured results are per machine. RESULTS.md is the log that is kept. The raw
+# k6 output and host snapshots beside it are not.
+perf/results/*.summary.json
+perf/results/*.host.json
+perf/results/*.log

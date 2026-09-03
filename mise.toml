@@ -1,0 +1,7 @@
+# Pinned to the toolchain the engine builds on. Exact patches,
+# never ranges: a range resolves to whatever is newest at install time, which
+# puts two machines on different toolchains from the same file.
+[tools]
+node = "26.8.1"
+pnpm = "11.25.0"
+go = "1.27.1"

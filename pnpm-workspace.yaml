@@ -1,0 +1,12 @@
+packages:
+  - packages/*
+  - apps/*
+allowBuilds:
+  esbuild: true
+# pnpm 11 refuses a package published more recently than minimumReleaseAge, so
+# a freshly published LyEve release has to be named here to be installable.
+# 0.13.0 stays so an older lockfile still resolves.
+minimumReleaseAgeExclude:
+  - '@lyeve-labs/ui-kit@0.13.0'
+  - '@lyeve-labs/ui-kit@0.16.0'
+  - '@lyeve-labs/ui-kit@0.32.1'

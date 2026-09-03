@@ -1,0 +1,18 @@
+{
+  "name": "lyeve-examples",
+  "version": "0.1.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "pnpm -r --if-present check",
+    "build": "pnpm -r --if-present build"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "dependencies": {
+    "@lyeve-labs/client": "^0.3.3",
+    "@lyeve-labs/client-rest": "^0.2.0"
+  }
+}
