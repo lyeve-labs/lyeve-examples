@@ -1,0 +1,13 @@
+{
+  "name": "@lyeve-examples/lyeve",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@lyeve-labs/client": "^0.3.3",
+    "@lyeve-labs/client-rest": "^0.2.0"
+  }
+}
