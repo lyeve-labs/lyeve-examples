@@ -1,0 +1,51 @@
+{
+  "id": "events",
+  "name": "Events and Registration",
+  "prefix": "events_",
+  "tagline": "An events site: reads against a counter the application maintains.",
+  "realWorld": "Remaining places are capacity minus a registered count the application keeps, because the engine has no inventory concept. Reads dominate, and each one reads a number a write path is contending for.",
+  "seed": {
+    "events_events": 300,
+    "events_registrations": 6000
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 140,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "event-read",
+      "weight": 38,
+      "method": "GET",
+      "path": "/api/v1/content/events_events/{id:events_events}",
+      "needs": null,
+      "desc": "read one event"
+    },
+    {
+      "id": "upcoming",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/v1/content/events_events?limit=25",
+      "needs": null,
+      "desc": "the upcoming list, sorted by the app because the engine cannot"
+    },
+    {
+      "id": "registrations",
+      "weight": 22,
+      "method": "GET",
+      "path": "/api/v1/content/events_registrations?filters[event_id]={id:events_events}&limit=25",
+      "needs": null,
+      "desc": "the door list for an event"
+    },
+    {
+      "id": "event-by-slug",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/v1/content/events_events?filters[slug]={slug:events_events}&limit=25",
+      "needs": null,
+      "desc": "resolve an event URL"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
