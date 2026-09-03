@@ -1,0 +1,60 @@
+{
+  "id": "courses",
+  "name": "Course Platform",
+  "prefix": "lms_",
+  "tagline": "A course platform: three levels of nesting per page load.",
+  "realWorld": "A course page needs its modules, and each module its lessons. The engine populates downward from a record and cannot fetch children by foreign key, so the app walks the levels itself. This profile measures that walk.",
+  "seed": {
+    "lms_courses": 120,
+    "lms_modules": 600,
+    "lms_lessons": 4000
+  },
+  "rate": 180,
+  "thresholds": {
+    "p95_ms": 160,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "lesson-read",
+      "weight": 32,
+      "method": "GET",
+      "path": "/api/v1/content/lms_lessons/{id:lms_lessons}",
+      "needs": null,
+      "desc": "read one lesson"
+    },
+    {
+      "id": "course-modules",
+      "weight": 24,
+      "method": "GET",
+      "path": "/api/v1/content/lms_modules?filters[course_id]={id:lms_courses}&limit=25",
+      "needs": null,
+      "desc": "the first level of the walk"
+    },
+    {
+      "id": "module-lessons",
+      "weight": 22,
+      "method": "GET",
+      "path": "/api/v1/content/lms_lessons?filters[module_id]={id:lms_modules}&limit=25",
+      "needs": null,
+      "desc": "the second level"
+    },
+    {
+      "id": "course-read",
+      "weight": 14,
+      "method": "GET",
+      "path": "/api/v1/content/lms_courses/{id:lms_courses}",
+      "needs": null,
+      "desc": "the course itself"
+    },
+    {
+      "id": "catalog",
+      "weight": 8,
+      "method": "GET",
+      "path": "/api/v1/content/lms_courses?limit=25",
+      "needs": null,
+      "desc": "the catalog"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
