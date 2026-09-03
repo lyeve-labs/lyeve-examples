@@ -1,0 +1,59 @@
+{
+  "id": "jobs",
+  "name": "Job Board",
+  "prefix": "jobs_",
+  "tagline": "A job board: search-led browsing over a mid-sized listing set.",
+  "realWorld": "Candidates arrive through search and filters far more often than through an index, which makes this the profile where search carries real weight.",
+  "seed": {
+    "jobs_companies": 200,
+    "jobs_listings": 3000
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 150,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "listing-read",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/v1/content/jobs_listings/{id:jobs_listings}",
+      "needs": null,
+      "desc": "read one listing"
+    },
+    {
+      "id": "search",
+      "weight": 26,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=jobs_listings",
+      "needs": "search",
+      "desc": "the way most candidates arrive"
+    },
+    {
+      "id": "listing-populated",
+      "weight": 16,
+      "method": "GET",
+      "path": "/api/v1/content/jobs_listings/{id:jobs_listings}?populate=company",
+      "needs": null,
+      "desc": "a listing with its company"
+    },
+    {
+      "id": "company-filter",
+      "weight": 16,
+      "method": "GET",
+      "path": "/api/v1/content/jobs_listings?filters[company_id]={id:jobs_companies}&limit=25",
+      "needs": null,
+      "desc": "every role at one company"
+    },
+    {
+      "id": "listing-index",
+      "weight": 12,
+      "method": "GET",
+      "path": "/api/v1/content/jobs_listings?limit=25",
+      "needs": null,
+      "desc": "the index"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
