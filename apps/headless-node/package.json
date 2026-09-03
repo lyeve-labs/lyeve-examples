@@ -1,0 +1,25 @@
+{
+  "name": "@lyeve-examples/headless-node",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "authenticate": "node --experimental-strip-types --env-file-if-exists=.env src/01-authenticate.ts",
+    "define-schema": "node --experimental-strip-types --env-file-if-exists=.env src/02-define-schema.ts",
+    "write-content": "node --experimental-strip-types --env-file-if-exists=.env src/03-write-content.ts",
+    "read-content": "node --experimental-strip-types --env-file-if-exists=.env src/04-read-content.ts",
+    "search": "node --experimental-strip-types --env-file-if-exists=.env src/05-search.ts",
+    "media": "node --experimental-strip-types --env-file-if-exists=.env src/06-media.ts",
+    "tour": "pnpm authenticate && pnpm define-schema && pnpm write-content && pnpm read-content && pnpm search && pnpm media",
+    "setup": "node --experimental-strip-types --env-file-if-exists=.env setup/provision.ts",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@lyeve-labs/client": "^0.3.3",
+    "@lyeve-labs/client-rest": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3"
+  }
+}
