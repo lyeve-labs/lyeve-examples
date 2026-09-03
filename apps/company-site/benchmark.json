@@ -1,0 +1,60 @@
+{
+  "id": "company",
+  "name": "Company Profile",
+  "prefix": "site_",
+  "tagline": "A corporate site: a small, stable content set read constantly.",
+  "realWorld": "A handful of pages, the team and open roles. Almost entirely reads of content that rarely changes.",
+  "seed": {
+    "site_pages": 30,
+    "site_team": 15,
+    "site_openings": 10
+  },
+  "rate": 150,
+  "thresholds": {
+    "p95_ms": 100,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "page-read",
+      "weight": 40,
+      "method": "GET",
+      "path": "/api/v1/content/site_pages/{id:site_pages}",
+      "needs": null,
+      "desc": "read one page"
+    },
+    {
+      "id": "page-by-slug",
+      "weight": 20,
+      "method": "GET",
+      "path": "/api/v1/content/site_pages?filters[slug]={slug:site_pages}&limit=25",
+      "needs": null,
+      "desc": "look a page up by slug, which is a filtered list because there is no get-by-slug route"
+    },
+    {
+      "id": "openings-list",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/site_openings?limit=25",
+      "needs": null,
+      "desc": "open roles"
+    },
+    {
+      "id": "team-list",
+      "weight": 15,
+      "method": "GET",
+      "path": "/api/v1/content/site_team?limit=25",
+      "needs": null,
+      "desc": "the team"
+    },
+    {
+      "id": "page-list",
+      "weight": 7,
+      "method": "GET",
+      "path": "/api/v1/content/site_pages?limit=25",
+      "needs": null,
+      "desc": "page index"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
