@@ -1,0 +1,69 @@
+{
+  "id": "marketplace",
+  "name": "Small Marketplace",
+  "prefix": "shop_",
+  "tagline": "A multi-seller catalog: browse-heavy, with search and reviews.",
+  "realWorld": "Sellers listing products with prices and stock, buyers browsing, searching and reading reviews.",
+  "seed": {
+    "shop_sellers": 100,
+    "shop_categories": 50,
+    "shop_products": 2000,
+    "shop_reviews": 5000
+  },
+  "rate": 250,
+  "thresholds": {
+    "p95_ms": 150,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "product-read",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/v1/content/shop_products/{id:shop_products}",
+      "needs": null,
+      "desc": "read one product"
+    },
+    {
+      "id": "product-browse",
+      "weight": 24,
+      "method": "GET",
+      "path": "/api/v1/content/shop_products?limit=25",
+      "needs": null,
+      "desc": "browse a page, and ranking is left to the application"
+    },
+    {
+      "id": "product-populated",
+      "weight": 14,
+      "method": "GET",
+      "path": "/api/v1/content/shop_products/{id:shop_products}?populate=*",
+      "needs": null,
+      "desc": "product with seller and category inflated"
+    },
+    {
+      "id": "category-filter",
+      "weight": 14,
+      "method": "GET",
+      "path": "/api/v1/content/shop_products?filters[category_id]={id:shop_categories}&limit=25",
+      "needs": null,
+      "desc": "products in a category"
+    },
+    {
+      "id": "review-list",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/v1/content/shop_reviews?filters[product_id]={id:shop_products}&limit=25",
+      "needs": null,
+      "desc": "reviews for a product"
+    },
+    {
+      "id": "search",
+      "weight": 8,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=shop_products",
+      "needs": "search",
+      "desc": "product search"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
