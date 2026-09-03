@@ -1,0 +1,60 @@
+{
+  "id": "blog",
+  "name": "Small Blog",
+  "prefix": "blog_",
+  "tagline": "A content blog: mostly readers, an occasional search.",
+  "realWorld": "A team blog: articles with categories, authors and cover images, read far more often than written.",
+  "seed": {
+    "blog_authors": 10,
+    "blog_categories": 20,
+    "blog_posts": 500
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 120,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "post-read",
+      "weight": 45,
+      "method": "GET",
+      "path": "/api/v1/content/blog_posts/{id:blog_posts}",
+      "needs": null,
+      "desc": "read one post"
+    },
+    {
+      "id": "post-list",
+      "weight": 25,
+      "method": "GET",
+      "path": "/api/v1/content/blog_posts?limit=25",
+      "needs": null,
+      "desc": "recent posts, newest first"
+    },
+    {
+      "id": "post-populated",
+      "weight": 12,
+      "method": "GET",
+      "path": "/api/v1/content/blog_posts/{id:blog_posts}?populate=author,category",
+      "needs": null,
+      "desc": "a post with its author and category inflated, which is what the page renders"
+    },
+    {
+      "id": "category-filter",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/v1/content/blog_posts?filters[category_id]={id:blog_categories}&limit=25",
+      "needs": null,
+      "desc": "posts in a category, filtered on the foreign key"
+    },
+    {
+      "id": "search",
+      "weight": 8,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=blog_posts",
+      "needs": "search",
+      "desc": "full-text post search, on the admin router"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
