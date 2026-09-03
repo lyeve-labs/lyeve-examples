@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@import '@lyeve-labs/ui-kit/styles.css';
+
+/*
+ * Tailwind v4 only generates classes for files it is told to scan, and it does
+ * not follow into node_modules on its own. Without this the kit's components
+ * render with their class names intact and no styles attached.
+ */
+@source '../node_modules/@lyeve-labs/ui-kit/dist';
