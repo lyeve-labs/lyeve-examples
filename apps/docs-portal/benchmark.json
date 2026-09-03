@@ -1,0 +1,51 @@
+{
+  "id": "docs",
+  "name": "Documentation Portal",
+  "prefix": "docs_",
+  "tagline": "A docs site: a deep page tree, assembled by the application.",
+  "realWorld": "Nested documentation pages under a few spaces, navigated by tree and by search. The engine has no tree query, so every page load reads a flat list and the hierarchy is built in the app: this profile measures that read.",
+  "seed": {
+    "docs_spaces": 10,
+    "docs_pages": 2000
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 140,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "page-read",
+      "weight": 35,
+      "method": "GET",
+      "path": "/api/v1/content/docs_pages/{id:docs_pages}",
+      "needs": null,
+      "desc": "read one page"
+    },
+    {
+      "id": "space-tree",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/v1/content/docs_pages?filters[space_id]={id:docs_spaces}&limit=200",
+      "needs": null,
+      "desc": "every page in a space, which is what building the navigation tree costs"
+    },
+    {
+      "id": "page-by-slug",
+      "weight": 20,
+      "method": "GET",
+      "path": "/api/v1/content/docs_pages?filters[slug]={slug:docs_pages}&limit=25",
+      "needs": null,
+      "desc": "resolve a documentation URL"
+    },
+    {
+      "id": "search",
+      "weight": 15,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=docs_pages",
+      "needs": "search",
+      "desc": "documentation search"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
