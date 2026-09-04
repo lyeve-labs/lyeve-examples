@@ -1,0 +1,60 @@
+{
+  "id": "newsroom",
+  "name": "Editorial Newsroom",
+  "prefix": "news_",
+  "tagline": "An editorial desk: a public front page over a draft-heavy store.",
+  "realWorld": "Reporters draft, editors publish, and the public reads only what is published. Most of the store is not publicly visible, which is the point: the public reads are filtered and the desk reads are not.",
+  "seed": {
+    "news_desks": 8,
+    "news_reporters": 25,
+    "news_stories": 1500
+  },
+  "rate": 180,
+  "thresholds": {
+    "p95_ms": 140,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "story-read",
+      "weight": 34,
+      "method": "GET",
+      "path": "/api/v1/content/news_stories/{id:news_stories}",
+      "needs": null,
+      "desc": "read one story"
+    },
+    {
+      "id": "front-page",
+      "weight": 26,
+      "method": "GET",
+      "path": "/api/v1/content/news_stories?limit=25",
+      "needs": null,
+      "desc": "the front page"
+    },
+    {
+      "id": "story-populated",
+      "weight": 16,
+      "method": "GET",
+      "path": "/api/v1/content/news_stories/{id:news_stories}?populate=reporter,desk",
+      "needs": null,
+      "desc": "a story with its byline and desk"
+    },
+    {
+      "id": "desk-filter",
+      "weight": 14,
+      "method": "GET",
+      "path": "/api/v1/content/news_stories?filters[desk_id]={id:news_desks}&limit=25",
+      "needs": null,
+      "desc": "one desk output"
+    },
+    {
+      "id": "revisions",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/v1/content/news_stories/{id:news_stories}/revisions",
+      "needs": null,
+      "desc": "the revision history of a story"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
