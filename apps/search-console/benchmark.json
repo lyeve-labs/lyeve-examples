@@ -1,0 +1,91 @@
+{
+  "id": "search-console",
+  "name": "Search-Heavy Knowledge Base",
+  "prefix": "kb_",
+  "tagline": "A support knowledge base where almost every request is a search.",
+  "realWorld": "An operations knowledge base fronted by a search box: readers arrive with a query rather than a URL, type into an autocomplete on the way, and open one or two articles. Reads of a single record are the minority.",
+  "seed": {
+    "kb_categories": 20,
+    "kb_articles": 5000
+  },
+  "rate": 120,
+  "thresholds": {
+    "p95_ms": 220,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "search-term",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10",
+      "needs": "search",
+      "desc": "the ordinary query: full text over title and body, ranked, first page"
+    },
+    {
+      "id": "search-highlight",
+      "weight": 15,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10&highlight=true",
+      "needs": "search",
+      "desc": "the same query with snippets, which adds two ts_headline calls per row"
+    },
+    {
+      "id": "instant",
+      "weight": 12,
+      "method": "GET",
+      "path": "/api/admin/search/instant?q={term}&schema=kb_articles&limit=8",
+      "needs": "search",
+      "desc": "autocomplete as the reader types: a prefix LIKE on the title, several per query typed"
+    },
+    {
+      "id": "search-facets",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10&facets=schema,status",
+      "needs": "search",
+      "desc": "faceted counts, which run one extra grouped query per facet field"
+    },
+    {
+      "id": "search-paged",
+      "weight": 8,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10&offset=20",
+      "needs": "search",
+      "desc": "the third page of results, where the count is repeated and the offset is skipped"
+    },
+    {
+      "id": "search-browse",
+      "weight": 5,
+      "method": "GET",
+      "path": "/api/admin/search?schema=kb_articles&limit=25",
+      "needs": "search",
+      "desc": "a search with no query text, which is a browse ordered by last update and takes no ranking"
+    },
+    {
+      "id": "article-read",
+      "weight": 8,
+      "method": "GET",
+      "path": "/api/v1/content/kb_articles/{id:kb_articles}",
+      "needs": null,
+      "desc": "opening one article, which is the content router rather than search"
+    },
+    {
+      "id": "article-by-slug",
+      "weight": 7,
+      "method": "GET",
+      "path": "/api/v1/content/kb_articles?filters[slug]={slug:kb_articles}&limit=25",
+      "needs": null,
+      "desc": "the slug lookup a result link turns into, because there is no get-by-slug route"
+    },
+    {
+      "id": "category-filter",
+      "weight": 5,
+      "method": "GET",
+      "path": "/api/v1/content/kb_articles?filters[category_id]={id:kb_categories}&limit=25",
+      "needs": null,
+      "desc": "browsing a category, filtered on the foreign key because search cannot filter a relation"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix. The mix is search-heavy on purpose, because every other profile exercises the content router and treats search as a rounding error. Two absences are deliberate. Every search entry is on the admin router, because there is no public search route and no arrangement in which a browser calls one. And no entry posts to /api/admin/search/analytics/log, even though a real deployment writes one per search, because the engine records nothing itself and the manifest has no vocabulary for a request body. A driver that gains one should add that write at roughly the weight of search-term."
+}
