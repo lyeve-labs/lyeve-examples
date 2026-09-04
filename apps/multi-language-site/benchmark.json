@@ -1,0 +1,51 @@
+{
+  "id": "i18n",
+  "name": "Multi-language Site",
+  "prefix": "i18n_",
+  "tagline": "A translated site: every page load resolves a locale.",
+  "realWorld": "Content exists once and its translations hang off it, so a localized page is a content read plus a translation resolve. A locale with no translation falls back, which is a decision the application makes and this profile exercises.",
+  "seed": {
+    "i18n_sections": 12,
+    "i18n_pages": 800
+  },
+  "rate": 180,
+  "thresholds": {
+    "p95_ms": 140,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "page-read",
+      "weight": 34,
+      "method": "GET",
+      "path": "/api/v1/content/i18n_pages/{id:i18n_pages}",
+      "needs": null,
+      "desc": "the default-locale entry"
+    },
+    {
+      "id": "resolve",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/v1/localization/resolve?entry_id={id:i18n_pages}&locale=fr",
+      "needs": "localization",
+      "desc": "the translation for a locale"
+    },
+    {
+      "id": "page-by-slug",
+      "weight": 20,
+      "method": "GET",
+      "path": "/api/v1/content/i18n_pages?filters[slug]={slug:i18n_pages}&limit=25",
+      "needs": null,
+      "desc": "resolve a localized URL"
+    },
+    {
+      "id": "section-pages",
+      "weight": 16,
+      "method": "GET",
+      "path": "/api/v1/content/i18n_pages?filters[section_id]={id:i18n_sections}&limit=25",
+      "needs": null,
+      "desc": "the pages in a section"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
