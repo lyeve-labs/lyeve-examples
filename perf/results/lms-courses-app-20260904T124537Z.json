@@ -1,0 +1,36 @@
+{
+  "name": "lms-courses",
+  "layer": "app",
+  "at": "20260904T124537Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 302,
+  "rate_achieved": 20.05171099895468,
+  "p50_ms": 45.451596,
+  "p95_ms": 79.741751,
+  "p99_ms": 91.592398,
+  "max_ms": 103.580351,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_root": {
+      "p95_ms": 72.8336255,
+      "med_ms": 34.159135000000006
+    },
+    "page_link": {
+      "p95_ms": 80.8607312,
+      "med_ms": 70.202711
+    }
+  }
+}

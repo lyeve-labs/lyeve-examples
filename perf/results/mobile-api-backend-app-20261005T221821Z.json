@@ -1,0 +1,47 @@
+{
+  "name": "mobile-api-backend",
+  "layer": "app",
+  "at": "20261005T221821Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 601,
+  "rate_achieved": 20.020968419942285,
+  "p50_ms": 12.350172,
+  "p95_ms": 16.006607499999998,
+  "p99_ms": 17.70099599,
+  "max_ms": 25.5441,
+  "ok_rate": 1,
+  "checks_passed": 600,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_metering": {
+      "p95_ms": 16.0382004,
+      "med_ms": 13.373553
+    },
+    "page_link": {
+      "p95_ms": 16.12082955,
+      "med_ms": 12.643131
+    },
+    "page_root": {
+      "p95_ms": 15.990568,
+      "med_ms": 12.300986
+    },
+    "page_feed": {
+      "p95_ms": 11.58342225,
+      "med_ms": 9.225773
+    }
+  }
+}

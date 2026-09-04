@@ -1,0 +1,48 @@
+{
+  "name": "company-site",
+  "layer": "app",
+  "at": "20260904T124254Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 302,
+  "rate_achieved": 19.684061648972058,
+  "p50_ms": 25.6212735,
+  "p95_ms": 64.0250484,
+  "p99_ms": 65.67417064,
+  "max_ms": 68.577947,
+  "ok_rate": 1,
+  "checks_passed": 300,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_about": {
+      "p95_ms": 62.887013450000005,
+      "med_ms": 42.7237165
+    },
+    "page_contact": {
+      "p95_ms": 66.50764539999999,
+      "med_ms": 19.851653
+    },
+    "page_root": {
+      "p95_ms": 64.1559846,
+      "med_ms": 57.8765925
+    },
+    "page_careers": {
+      "p95_ms": 64.80107775,
+      "med_ms": 16.839968
+    },
+    "page_link": {
+      "p95_ms": 62.9678362,
+      "med_ms": 19.339421
+    }
+  }
+}

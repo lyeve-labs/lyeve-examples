@@ -1,0 +1,48 @@
+{
+  "name": "docs-portal",
+  "layer": "engine",
+  "at": "20260904T124342Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 302,
+  "rate_achieved": 19.949190155154614,
+  "p50_ms": 3.9180330000000003,
+  "p95_ms": 10.004043900000005,
+  "p99_ms": 12.75319986,
+  "max_ms": 16.912406,
+  "ok_rate": 1,
+  "checks_passed": 300,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_list_25": {
+      "p95_ms": 9.269600799999997,
+      "med_ms": 4.200098
+    },
+    "engine_search": {
+      "p95_ms": 10.033523850000002,
+      "med_ms": 5.303912
+    },
+    "engine_populate_all": {
+      "p95_ms": 7.408556649999997,
+      "med_ms": 3.718842
+    },
+    "engine_read_by_id": {
+      "p95_ms": 10.202730199999992,
+      "med_ms": 3.707164
+    },
+    "engine_filter_slug": {
+      "p95_ms": 10.535243549999999,
+      "med_ms": 3.7121415
+    }
+  }
+}

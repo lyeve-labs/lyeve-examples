@@ -1,0 +1,43 @@
+{
+  "name": "jobs-board",
+  "layer": "app",
+  "at": "20261005T221412Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 602,
+  "rate_achieved": 20.043302157272652,
+  "p50_ms": 10.085924,
+  "p95_ms": 19.510896,
+  "p99_ms": 22.162043,
+  "max_ms": 23.935062,
+  "ok_rate": 1,
+  "checks_passed": 601,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_link": {
+      "p95_ms": 9.9304649,
+      "med_ms": 7.122786
+    },
+    "page_root": {
+      "p95_ms": 17.329637,
+      "med_ms": 13.399467
+    },
+    "page_q_engineer": {
+      "p95_ms": 22.162043,
+      "med_ms": 17.299955
+    }
+  }
+}

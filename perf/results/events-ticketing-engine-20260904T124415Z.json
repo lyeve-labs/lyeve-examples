@@ -1,0 +1,48 @@
+{
+  "name": "events-ticketing",
+  "layer": "engine",
+  "at": "20260904T124415Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 303,
+  "rate_achieved": 20.08301228687335,
+  "p50_ms": 7.28552,
+  "p95_ms": 11.978855,
+  "p99_ms": 15.751185,
+  "max_ms": 20.737442,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_populate_all": {
+      "p95_ms": 11.913483249999999,
+      "med_ms": 6.500754000000001
+    },
+    "engine_search": {
+      "p95_ms": 13.663423400000001,
+      "med_ms": 8.7143745
+    },
+    "engine_list_25": {
+      "p95_ms": 11.98597165,
+      "med_ms": 7.795767
+    },
+    "engine_read_by_id": {
+      "p95_ms": 12.440597999999996,
+      "med_ms": 7.28552
+    },
+    "engine_filter_slug": {
+      "p95_ms": 8.28927375,
+      "med_ms": 5.9238599999999995
+    }
+  }
+}

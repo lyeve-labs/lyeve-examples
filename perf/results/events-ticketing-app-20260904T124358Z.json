@@ -1,0 +1,40 @@
+{
+  "name": "events-ticketing",
+  "layer": "app",
+  "at": "20260904T124358Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 303,
+  "rate_achieved": 19.29062490678128,
+  "p50_ms": 44.966371,
+  "p95_ms": 77.798531,
+  "p99_ms": 86.716592,
+  "max_ms": 93.390895,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_root": {
+      "p95_ms": 67.87389045,
+      "med_ms": 24.704175499999998
+    },
+    "page_registrations": {
+      "p95_ms": 77.12253169999998,
+      "med_ms": 58.961267
+    },
+    "page_link": {
+      "p95_ms": 82.2647204,
+      "med_ms": 59.6164475
+    }
+  }
+}

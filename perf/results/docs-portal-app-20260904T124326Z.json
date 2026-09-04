@@ -1,0 +1,44 @@
+{
+  "name": "docs-portal",
+  "layer": "app",
+  "at": "20260904T124326Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 302,
+  "rate_achieved": 19.741585431442612,
+  "p50_ms": 34.82668,
+  "p95_ms": 69.725483,
+  "p99_ms": 86.375715,
+  "max_ms": 128.004613,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_link": {
+      "p95_ms": 70.75303550000001,
+      "med_ms": 49.188464
+    },
+    "page_root": {
+      "p95_ms": 66.24807820000001,
+      "med_ms": 29.5366255
+    },
+    "page_search": {
+      "p95_ms": 65.75609459999998,
+      "med_ms": 28.450629
+    },
+    "page_search_q_schema": {
+      "p95_ms": 69.8616665,
+      "med_ms": 27.616512
+    }
+  }
+}

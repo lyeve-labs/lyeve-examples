@@ -1,0 +1,51 @@
+{
+  "name": "booking",
+  "layer": "engine",
+  "at": "20261005T220624Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 1502,
+  "rate_achieved": 49.94827272244138,
+  "p50_ms": 2.4980114999999996,
+  "p95_ms": 5.91633265,
+  "p99_ms": 7.49379088,
+  "max_ms": 9.294181,
+  "ok_rate": 1,
+  "checks_passed": 1500,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_search": {
+      "p95_ms": 7.11387075,
+      "med_ms": 4.3072225
+    },
+    "engine_filter_slug": {
+      "p95_ms": 3.718061949999998,
+      "med_ms": 2.0357339999999997
+    },
+    "engine_list_25": {
+      "p95_ms": 7.205643799999996,
+      "med_ms": 4.633005
+    },
+    "engine_read_by_id": {
+      "p95_ms": 3.3363324000000003,
+      "med_ms": 1.850963
+    },
+    "engine_populate_all": {
+      "p95_ms": 3.8941453,
+      "med_ms": 2.2371790000000003
+    }
+  }
+}
