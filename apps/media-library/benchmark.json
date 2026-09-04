@@ -1,0 +1,51 @@
+{
+  "id": "media-library",
+  "name": "Photo Library",
+  "prefix": "gallery_",
+  "tagline": "A photo archive: deep albums, read constantly, written in bursts.",
+  "realWorld": "A photographer's archive: a few dozen albums holding a few thousand frames, browsed far more often than added to, where every page load is a list filtered to one album followed by a read of one frame.",
+  "seed": {
+    "gallery_albums": 40,
+    "gallery_photos": 4000
+  },
+  "rate": 180,
+  "thresholds": {
+    "p95_ms": 120,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "photo-read",
+      "weight": 34,
+      "method": "GET",
+      "path": "/api/v1/content/gallery_photos/{id:gallery_photos}",
+      "needs": null,
+      "desc": "one photograph, which is what a photo page loads before it asks for the bytes"
+    },
+    {
+      "id": "album-photos",
+      "weight": 28,
+      "method": "GET",
+      "path": "/api/v1/content/gallery_photos?filters[album_id]={id:gallery_albums}&limit=200",
+      "needs": null,
+      "desc": "a whole album, filtered on the foreign key because the engine cannot filter by the album's slug"
+    },
+    {
+      "id": "photo-populated",
+      "weight": 20,
+      "method": "GET",
+      "path": "/api/v1/content/gallery_photos/{id:gallery_photos}?populate=album",
+      "needs": null,
+      "desc": "a photograph with its album inflated, which is the page load in one request instead of two"
+    },
+    {
+      "id": "album-list",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/gallery_albums?limit=25",
+      "needs": null,
+      "desc": "the album index"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds and the weighted request mix. The media routes are deliberately absent from the mix. The seeder fills content types, so sys_media would hold whatever a development run left behind, and a media list or a download templated against thirty rows would publish a figure that describes nothing. Measuring the media pipeline needs a seeded media store, which no profile builds."
+}
