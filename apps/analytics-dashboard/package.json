@@ -1,0 +1,30 @@
+{
+  "name": "@lyeve-examples/analytics-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --port 5195",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "setup": "node --experimental-strip-types --env-file-if-exists=.env setup/provision.ts"
+  },
+  "devDependencies": {
+    "@lucide/svelte": "^0.577.0",
+    "@lyeve-labs/ui-kit": "^0.32.1",
+    "@sveltejs/adapter-node": "^5.5.7",
+    "@sveltejs/kit": "^2.69.3",
+    "@sveltejs/vite-plugin-svelte": "^4.0.4",
+    "@tailwindcss/vite": "^4.3.2",
+    "svelte": "^5.56.5",
+    "svelte-check": "^4.7.3",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
+  },
+  "dependencies": {
+    "@lyeve-labs/client": "^0.3.3",
+    "@lyeve-labs/client-rest": "^0.2.0"
+  }
+}
