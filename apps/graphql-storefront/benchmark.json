@@ -1,0 +1,53 @@
+{
+  "id": "graphql",
+  "name": "GraphQL Storefront",
+  "prefix": "gql_",
+  "tagline": "The same catalog over GraphQL, where a page is one request.",
+  "realWorld": "A storefront served entirely through GraphQL. The transport's one real advantage over the REST content API is that several root fields travel in one document, so a page that needs three collections of records costs one request instead of three. This profile measures that against the equivalent single-field read. It cannot traverse a relation, because the GraphQL surface exposes the orphan relation column and not the foreign key, so the types carry a denormalized slug instead.",
+  "seed": {
+    "gql_collections": 20,
+    "gql_products": 1500,
+    "gql_reviews": 3000
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 150,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "list-25",
+      "weight": 40,
+      "method": "POST",
+      "path": "/api/v1/graphql",
+      "needs": "graphql",
+      "postBody": {
+        "query": "{ gql_products(limit: 25) { id title slug price_cents stock } }"
+      },
+      "desc": "one root field, the GraphQL equivalent of a REST list"
+    },
+    {
+      "id": "multi-root",
+      "weight": 35,
+      "method": "POST",
+      "path": "/api/v1/graphql",
+      "needs": "graphql",
+      "postBody": {
+        "query": "{ products: gql_products(limit: 25) { id title slug price_cents } collections: gql_collections(limit: 20) { id title slug } reviews: gql_reviews(limit: 25) { id title rating } }"
+      },
+      "desc": "three root fields in one document, which is the only thing this transport does that REST cannot"
+    },
+    {
+      "id": "wide-selection",
+      "weight": 25,
+      "method": "POST",
+      "path": "/api/v1/graphql",
+      "needs": "graphql",
+      "postBody": {
+        "query": "{ gql_products(limit: 50) { id title slug description price_cents stock collection_slug } }"
+      },
+      "desc": "a wide selection over 50 records, well inside the measured cost ceiling of 1000"
+    }
+  ],
+  "_note": "Load-test manifest for this example. Content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift. Every entry is a POST carrying its own postBody, because each GraphQL request is a document rather than a path: the driver posts it verbatim instead of building a content write. There is no by-id or by-slug entry, because a fixed document cannot take a sampled value and hardcoding a seeded slug would break the moment the seed changes."
+}
