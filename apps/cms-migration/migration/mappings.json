@@ -1,0 +1,35 @@
+[
+  {
+    "schema": "legacy_authors",
+    "mappings": [
+      { "source_field": "person_id",    "target_field": "legacy_id", "field_type": "text", "required": true },
+      { "source_field": "display_name", "target_field": "title",     "field_type": "text", "required": true },
+      { "source_field": "url_key",      "target_field": "slug",      "field_type": "text", "required": true },
+      { "source_field": "job_title",    "target_field": "role",      "field_type": "text", "default_value": "Contributor" },
+      { "source_field": "about",        "target_field": "bio",       "field_type": "text" }
+    ]
+  },
+  {
+    "schema": "legacy_pages",
+    "mappings": [
+      { "source_field": "node_id",         "target_field": "legacy_id",    "field_type": "text", "required": true },
+      { "source_field": "headline",        "target_field": "title",        "field_type": "text", "required": true },
+      { "source_field": "url_key",         "target_field": "slug",         "field_type": "text", "required": true },
+      { "source_field": "body_html",       "target_field": "body_html",    "field_type": "text" },
+      { "source_field": "first_published", "target_field": "published_at", "field_type": "datetime" }
+    ]
+  },
+  {
+    "schema": "legacy_posts",
+    "mappings": [
+      { "source_field": "node_id",           "target_field": "legacy_id",    "field_type": "text", "required": true },
+      { "source_field": "headline",          "target_field": "title",        "field_type": "text", "required": true },
+      { "source_field": "url_key",           "target_field": "slug",         "field_type": "text", "required": true },
+      { "source_field": "standfirst",        "target_field": "standfirst",   "field_type": "text" },
+      { "source_field": "body_html",         "target_field": "body_html",    "field_type": "text" },
+      { "source_field": "section",           "target_field": "section",      "field_type": "text" },
+      { "source_field": "first_published",   "target_field": "published_at", "field_type": "datetime" },
+      { "source_field": "byline_person_id",  "target_field": "author",       "field_type": "relation", "required": true }
+    ]
+  }
+]

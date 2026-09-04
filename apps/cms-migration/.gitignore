@@ -1,0 +1,6 @@
+# Everything the migration produces. The reports are per run and per machine,
+# the resolved export holds ids this engine minted, and the CLI is built on
+# demand from the sibling checkout.
+migration/reports/
+migration/.bin/
+migration/posts.resolved.csv
