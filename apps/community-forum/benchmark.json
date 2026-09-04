@@ -1,0 +1,50 @@
+{
+  "id": "forum",
+  "name": "Community Forum",
+  "prefix": "forum_",
+  "tagline": "A forum: topics read constantly, and the thread under each one.",
+  "realWorld": "Topics are content, and so are the replies under them, in the comments type the schema plugin's preset creates. A topic page costs one topic read plus one filtered read of its thread. This profile drives both.",
+  "seed": {
+    "forum_topics": 1200
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 150,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "topic-read",
+      "weight": 38,
+      "method": "GET",
+      "path": "/api/v1/content/forum_topics/{id:forum_topics}",
+      "needs": null,
+      "desc": "read one topic"
+    },
+    {
+      "id": "topic-list",
+      "weight": 30,
+      "method": "GET",
+      "path": "/api/v1/content/forum_topics?limit=25",
+      "needs": null,
+      "desc": "the topic index"
+    },
+    {
+      "id": "thread",
+      "weight": 22,
+      "method": "GET",
+      "path": "/api/v1/content/comments?filters[target_schema]=forum_topics&filters[target_id]={id:forum_topics}&filters[status]=approved&limit=25",
+      "needs": "comments",
+      "desc": "the thread under a topic"
+    },
+    {
+      "id": "search",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/admin/search?q={term}&schema=forum_topics",
+      "needs": "search",
+      "desc": "topic search"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+}
