@@ -1,0 +1,51 @@
+{
+  "name": "webhook-integrations",
+  "layer": "app",
+  "at": "20261005T222610Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 601,
+  "rate_achieved": 20.02379193573712,
+  "p50_ms": 9.1821275,
+  "p95_ms": 15.025781649999999,
+  "p99_ms": 16.96315665,
+  "max_ms": 24.862051,
+  "ok_rate": 1,
+  "checks_passed": 600,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_root": {
+      "p95_ms": 10.63128375,
+      "med_ms": 8.5137605
+    },
+    "page_receipts": {
+      "p95_ms": 9.9511505,
+      "med_ms": 7.429183
+    },
+    "page_deliveries": {
+      "p95_ms": 14.9433852,
+      "med_ms": 10.3489665
+    },
+    "page_orders": {
+      "p95_ms": 11.60753325,
+      "med_ms": 8.3554435
+    },
+    "page_inbound": {
+      "p95_ms": 16.8156216,
+      "med_ms": 13.095504
+    }
+  }
+}

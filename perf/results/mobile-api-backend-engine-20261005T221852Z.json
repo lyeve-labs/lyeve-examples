@@ -1,0 +1,51 @@
+{
+  "name": "mobile-api-backend",
+  "layer": "engine",
+  "at": "20261005T221852Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 1503,
+  "rate_achieved": 49.98737975640813,
+  "p50_ms": 2.200697,
+  "p95_ms": 4.567175,
+  "p99_ms": 6.400884,
+  "max_ms": 9.749255,
+  "ok_rate": 1,
+  "checks_passed": 1501,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_search": {
+      "p95_ms": 7.437207,
+      "med_ms": 4.1899455
+    },
+    "engine_populate_all": {
+      "p95_ms": 3.6902547999999995,
+      "med_ms": 2.099044
+    },
+    "engine_read_by_id": {
+      "p95_ms": 3.3704212,
+      "med_ms": 1.8294730000000001
+    },
+    "engine_list_25": {
+      "p95_ms": 4.47059575,
+      "med_ms": 2.542223
+    },
+    "engine_filter_slug": {
+      "p95_ms": 3.372213499999998,
+      "med_ms": 1.9517125
+    }
+  }
+}

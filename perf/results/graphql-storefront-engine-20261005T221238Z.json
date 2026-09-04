@@ -1,0 +1,51 @@
+{
+  "name": "graphql-storefront",
+  "layer": "engine",
+  "at": "20261005T221238Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 1503,
+  "rate_achieved": 49.97451634824672,
+  "p50_ms": 2.443238,
+  "p95_ms": 5.268386,
+  "p99_ms": 6.798038,
+  "max_ms": 9.678,
+  "ok_rate": 1,
+  "checks_passed": 1501,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_search": {
+      "p95_ms": 7.1439679,
+      "med_ms": 4.096275
+    },
+    "engine_populate_all": {
+      "p95_ms": 4.101532899999999,
+      "med_ms": 2.174057
+    },
+    "engine_list_25": {
+      "p95_ms": 5.920603300000002,
+      "med_ms": 3.850562
+    },
+    "engine_filter_slug": {
+      "p95_ms": 3.322179,
+      "med_ms": 1.996829
+    },
+    "engine_read_by_id": {
+      "p95_ms": 3.145709149999999,
+      "med_ms": 1.8719775
+    }
+  }
+}

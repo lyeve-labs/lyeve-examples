@@ -1,0 +1,40 @@
+{
+  "name": "jobs-board",
+  "layer": "app",
+  "at": "20260904T124504Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 302,
+  "rate_achieved": 19.451365825448978,
+  "p50_ms": 45.709233,
+  "p95_ms": 71.272704,
+  "p99_ms": 83.639112,
+  "max_ms": 368.032922,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_root": {
+      "p95_ms": 72.4524681,
+      "med_ms": 32.648158
+    },
+    "page_q_engineer": {
+      "p95_ms": 79.99357739999999,
+      "med_ms": 41.902812
+    },
+    "page_link": {
+      "p95_ms": 61.59737599999998,
+      "med_ms": 56.084284
+    }
+  }
+}

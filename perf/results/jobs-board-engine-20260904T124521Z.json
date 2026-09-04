@@ -1,0 +1,48 @@
+{
+  "name": "jobs-board",
+  "layer": "engine",
+  "at": "20260904T124521Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 303,
+  "rate_achieved": 20.006625487856983,
+  "p50_ms": 5.015236,
+  "p95_ms": 15.381894,
+  "p99_ms": 25.52743,
+  "max_ms": 37.995441,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_search": {
+      "p95_ms": 6.350286,
+      "med_ms": 5.457715
+    },
+    "engine_populate_all": {
+      "p95_ms": 8.94247375,
+      "med_ms": 4.382333
+    },
+    "engine_read_by_id": {
+      "p95_ms": 9.5529639,
+      "med_ms": 4.1514074999999995
+    },
+    "engine_filter_slug": {
+      "p95_ms": 7.090091999999991,
+      "med_ms": 4.035303
+    },
+    "engine_list_25": {
+      "p95_ms": 24.759172799999995,
+      "med_ms": 9.2596545
+    }
+  }
+}

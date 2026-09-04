@@ -1,0 +1,51 @@
+{
+  "name": "helpdesk",
+  "layer": "engine",
+  "at": "20261005T221341Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.8.1",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "ed346a5eea36",
+    "engine_binary_built": "2026-10-05T19:13:52Z",
+    "source_checkout_commit": "36c445f",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 1503,
+  "rate_achieved": 49.97421542118253,
+  "p50_ms": 3.524168,
+  "p95_ms": 6.585191,
+  "p99_ms": 8.146464,
+  "max_ms": 11.938769,
+  "ok_rate": 1,
+  "checks_passed": 1501,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_list_25": {
+      "p95_ms": 7.74796225,
+      "med_ms": 5.0711625
+    },
+    "engine_search": {
+      "p95_ms": 8.595556749999998,
+      "med_ms": 5.3371154999999995
+    },
+    "engine_populate_all": {
+      "p95_ms": 4.8373098,
+      "med_ms": 2.936094
+    },
+    "engine_filter_slug": {
+      "p95_ms": 5.027722099999999,
+      "med_ms": 3.0872785
+    },
+    "engine_read_by_id": {
+      "p95_ms": 4.6859205,
+      "med_ms": 2.9710895
+    }
+  }
+}

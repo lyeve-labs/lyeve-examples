@@ -1,0 +1,48 @@
+{
+  "name": "blog",
+  "layer": "engine",
+  "at": "20260904T124206Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 302,
+  "rate_achieved": 20.03135411948608,
+  "p50_ms": 5.084350499999999,
+  "p95_ms": 7.9520044,
+  "p99_ms": 8.808898399999999,
+  "max_ms": 9.344703,
+  "ok_rate": 1,
+  "checks_passed": 300,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_search": {
+      "p95_ms": 8.7727452,
+      "med_ms": 5.593645
+    },
+    "engine_populate_all": {
+      "p95_ms": 7.205896449999999,
+      "med_ms": 4.188853
+    },
+    "engine_filter_slug": {
+      "p95_ms": 7.174384549999999,
+      "med_ms": 4.9118414999999995
+    },
+    "engine_read_by_id": {
+      "p95_ms": 7.2365824,
+      "med_ms": 4.608229
+    },
+    "engine_list_25": {
+      "p95_ms": 8.726640199999999,
+      "med_ms": 5.586850500000001
+    }
+  }
+}

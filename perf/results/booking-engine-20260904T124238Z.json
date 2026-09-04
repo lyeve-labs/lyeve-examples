@@ -1,0 +1,48 @@
+{
+  "name": "booking",
+  "layer": "engine",
+  "at": "20260904T124238Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-30-generic",
+    "docker": "Docker version 29.7.2",
+    "k6_image": "grafana/k6:latest",
+    "engine_commit": "449beae",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here"
+  },
+  "requests": 303,
+  "rate_achieved": 20.090187306729273,
+  "p50_ms": 5.460784,
+  "p95_ms": 10.893949,
+  "p99_ms": 17.317369,
+  "max_ms": 19.342222,
+  "ok_rate": 1,
+  "checks_passed": 301,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_filter_slug": {
+      "p95_ms": 10.135194649999999,
+      "med_ms": 4.802609
+    },
+    "engine_populate_all": {
+      "p95_ms": 8.167825249999998,
+      "med_ms": 4.4463585000000005
+    },
+    "engine_search": {
+      "p95_ms": 10.604529399999999,
+      "med_ms": 6.448386
+    },
+    "engine_list_25": {
+      "p95_ms": 12.239832099999997,
+      "med_ms": 8.032965
+    },
+    "engine_read_by_id": {
+      "p95_ms": 8.252981499999999,
+      "med_ms": 4.521812
+    }
+  }
+}
