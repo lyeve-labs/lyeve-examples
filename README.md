@@ -29,8 +29,9 @@ its 51 plugins. After that it is a cache hit.
 Requirements: Docker, Go 1.27, Node 26, pnpm 11 (the versions `mise.toml` pins),
 and a checkout of `lyeve-core` beside this repo (or set `LYEVE_CORE_SRC`). The
 paid examples also need a development license: set `LYEVE_LICENSE_KEY` and
-`LICENSE_PUBLIC_KEY_HEX` to a license and its public key. `LICENSE_FEATURES` in
-`platform/scripts/lib.sh` lists the features it should carry.
+`LICENSE_PUBLIC_KEY_HEX` to a license and its public key. A feature the license
+lacks does not stop the stack: its plugin starts without it, and only that
+example's paid routes refuse.
 `make up` checks for Docker, Go and curl, for the engine checkout and for the
 license, and says which is missing.
 
