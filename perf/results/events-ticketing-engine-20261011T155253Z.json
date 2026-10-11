@@ -1,0 +1,51 @@
+{
+  "name": "events-ticketing",
+  "layer": "engine",
+  "at": "20261011T155253Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "d675fc0dbcb4",
+    "engine_binary_built": "2026-10-11T15:42:40Z",
+    "source_checkout_commit": "d5f05b0",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 1502,
+  "rate_achieved": 49.95768521365841,
+  "p50_ms": 3.458777,
+  "p95_ms": 5.443955299999999,
+  "p99_ms": 6.99508997,
+  "max_ms": 8.978031,
+  "ok_rate": 1,
+  "checks_passed": 1500,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_filter_slug": {
+      "p95_ms": 4.544245849999999,
+      "med_ms": 3.1370255
+    },
+    "engine_populate_all": {
+      "p95_ms": 5.142788250000001,
+      "med_ms": 3.601725
+    },
+    "engine_search": {
+      "p95_ms": 7.9345647999999995,
+      "med_ms": 5.199373
+    },
+    "engine_read_by_id": {
+      "p95_ms": 4.4598375,
+      "med_ms": 3.0443290000000003
+    },
+    "engine_list_25": {
+      "p95_ms": 5.690584399999998,
+      "med_ms": 3.813557
+    }
+  }
+}

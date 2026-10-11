@@ -1,0 +1,47 @@
+{
+  "app": "events-ticketing",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Northgate Sessions",
+      "viewport": "desktop"
+    },
+    {
+      "file": "events-slug.webp",
+      "route": "/events/[slug]",
+      "url": "/events/postgres-performance-clinic",
+      "title": "The Postgres Performance Clinic",
+      "viewport": "desktop"
+    },
+    {
+      "file": "registrations.webp",
+      "route": "/registrations",
+      "url": "/registrations",
+      "title": "Door list",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Northgate Sessions",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

@@ -6,6 +6,26 @@ instant search, reindexing and analytics. Six other examples call
 `GET /api/admin/search?q=` and render the hits. This one uses everything else,
 and most of what it found is a limit rather than a feature.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="search-console: Operations knowledge base"></a><br><b>Operations knowledge base</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/articles-slug.webp"><img src="screenshots/articles-slug.webp" width="420" alt="search-console: Understanding the cost of a durable write"></a><br><b>Understanding the cost of a durable write</b><br><code>/articles/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/console.webp"><img src="screenshots/console.webp" width="420" alt="search-console: Search console"></a><br><b>Search console</b><br><code>/console</code></td>
+    <td width="50%" valign="top"><a href="screenshots/instant.webp"><img src="screenshots/instant.webp" width="420" alt="search-console: Instant search"></a><br><b>Instant search</b><br><code>/instant</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="search-console: On a phone"></a><br><b>On a phone</b><br><code>/?q=checkpoint</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=search-console` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this first
 
 **Search has no public route.** `/api/admin/search` is on the admin router

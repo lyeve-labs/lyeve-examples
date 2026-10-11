@@ -4,6 +4,27 @@ The content lifecycle: drafts, publishing, numbered revisions with restore, an
 embargo, and a three-stage review on the review plugin. A public front page that shows only
 published stories, and a desk that shows every story at every status.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="newsroom: The Meridian"></a><br><b>The Meridian</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/desk.webp"><img src="screenshots/desk.webp" width="420" alt="newsroom: The desk"></a><br><b>The desk</b><br><code>/desk</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/desk-id.webp"><img src="screenshots/desk-id.webp" width="420" alt="newsroom: The fish market that moved and came back · desk"></a><br><b>The fish market that moved and came back · desk</b><br><code>/desk/[id]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/desk-id-preview.webp"><img src="screenshots/desk-id-preview.webp" width="420" alt="newsroom: Preview: The fish market that moved and came back"></a><br><b>Preview: The fish market that moved and came back</b><br><code>/desk/[id]/preview</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/stories-slug.webp"><img src="screenshots/stories-slug.webp" width="420" alt="newsroom: The tide gauge that outlived its harbour"></a><br><b>The tide gauge that outlived its harbour</b><br><code>/stories/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="newsroom: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=newsroom` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this first
 
 **A story's status is two columns in two tables, and no engine route writes

@@ -1,0 +1,61 @@
+{
+  "app": "webhook-integrations",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Webhook endpoints",
+      "viewport": "desktop"
+    },
+    {
+      "file": "deliveries.webp",
+      "route": "/deliveries",
+      "url": "/deliveries",
+      "title": "Deliveries",
+      "viewport": "desktop"
+    },
+    {
+      "file": "inbound.webp",
+      "route": "/inbound",
+      "url": "/inbound",
+      "title": "Inbound events",
+      "viewport": "desktop"
+    },
+    {
+      "file": "orders.webp",
+      "route": "/orders",
+      "url": "/orders",
+      "title": "Orders",
+      "viewport": "desktop"
+    },
+    {
+      "file": "receipts.webp",
+      "route": "/receipts",
+      "url": "/receipts",
+      "title": "Receipts",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Webhook endpoints",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

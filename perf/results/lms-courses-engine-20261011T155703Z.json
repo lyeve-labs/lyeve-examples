@@ -1,0 +1,51 @@
+{
+  "name": "lms-courses",
+  "layer": "engine",
+  "at": "20261011T155703Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "d675fc0dbcb4",
+    "engine_binary_built": "2026-10-11T15:42:40Z",
+    "source_checkout_commit": "d5f05b0",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 1503,
+  "rate_achieved": 49.969990477335614,
+  "p50_ms": 2.558807,
+  "p95_ms": 4.845718,
+  "p99_ms": 6.118403,
+  "max_ms": 8.641379,
+  "ok_rate": 1,
+  "checks_passed": 1501,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "engine_filter_slug": {
+      "p95_ms": 3.5105132,
+      "med_ms": 2.106243
+    },
+    "engine_populate_all": {
+      "p95_ms": 3.9552472,
+      "med_ms": 2.390797
+    },
+    "engine_read_by_id": {
+      "p95_ms": 3.311078,
+      "med_ms": 2.073762
+    },
+    "engine_search": {
+      "p95_ms": 6.634036849999999,
+      "med_ms": 4.215697499999999
+    },
+    "engine_list_25": {
+      "p95_ms": 5.126083800000001,
+      "med_ms": 3.164113
+    }
+  }
+}

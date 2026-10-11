@@ -4,10 +4,20 @@ All notable changes to this project are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0] - 2026-10-11
+
+### Added
+
+- A picture of every page of every example, on a desktop and on a phone, in
+  `apps/<example>/screenshots/`. Each README shows its own, and
+  `docs/PREVIEWS.md` gathers them with guidance on using them.
+  `make screenshots` takes them again from the running apps.
 
 ### Changed
 
+- Every example is measured again at the page and at the engine on the
+  v0.54.1 release, and `perf/results/RESULTS.md` records the run. Every
+  threshold is met.
 - `make up` takes the development license from `LYEVE_LICENSE_KEY` and
   `LICENSE_PUBLIC_KEY_HEX` in the environment and stops with a clear message
   when either is missing. It reads the license key variable from the engine's
@@ -23,6 +33,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 
+- cms-migration imports again after `make fresh`. Its checkpoints outlived the
+  database, so a resumed stage skipped every row of the new, empty one and
+  only the byline step failed. A checkpoint is now set aside when the engine
+  holds none of the migrated entries it lists.
+- `make preview-stop` stops the preview servers. It used to stop only the
+  shells that launched them, so every server kept running and kept its port,
+  and `make preview` piped into another command never finished.
+- cms-migration imported its pages as `about`, `corrections` and `contact`.
+  Every example shares one tenant and a slug is unique per tenant across every
+  content type, so on the 0.54.1 engine company-site could not seed its own
+  `about` page after the migration and its setup failed with a 409. The
+  imported pages now keep slugs of their own: `about-the-paper`,
+  `corrections-policy` and `contact-the-desk`.
 - saas-multitenant's setup imported the client through the `$lib` alias, which
   plain node cannot resolve, so provisioning stopped before creating a tenant.
 - `make preview` skips a port another process holds instead of stopping that

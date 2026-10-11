@@ -16,8 +16,24 @@
 PIDS="$STACK/preview.pids"
 mkdir -p "$STACK/logs"
 
+# A port held by a server of ours that the pid file lost is freed. A port held
+# by anything else is skipped, never stopped: another stack on this machine can
+# hold a port in the block, and a server that fails to bind beside it leaves the
+# other one answering for this app.
+port_owner() { ss -ltnp 2>/dev/null | grep -E "[:.]$1 " | grep -oP '(?<=pid=)\d+' | head -1; }
+ours() { case "$(readlink -f "/proc/$1/cwd" 2>/dev/null)" in "$REPO"/apps/*) return 0 ;; *) return 1 ;; esac; }
+free_ours() {
+  for port in $(seq 4700 4799); do
+    held="$(port_owner "$port")"
+    [ -n "$held" ] && ours "$held" && kill "$held" 2>/dev/null
+  done
+}
+
 if [ "${1:-}" = "--stop" ]; then
   [ -f "$PIDS" ] && while read -r pid _; do kill "$pid" 2>/dev/null; done < "$PIDS"
+  # A pid file from an older copy of this script names wrapper shells rather
+  # than the servers, so the ports are freed as well.
+  free_ours
   rm -f "$PIDS"; ok "preview servers stopped"; exit 0
 fi
 
@@ -35,17 +51,7 @@ if [ -s "$PIDS" ]; then
   while read -r pid _ _; do [ -n "$pid" ] && kill "$pid" 2>/dev/null; done < "$PIDS"
   sleep 1
 fi
-#
-# A port held by a server of ours that the pid file lost is freed. A port held
-# by anything else is skipped, never stopped: another stack on this machine can
-# hold a port in the block, and a server that fails to bind beside it leaves the
-# other one answering for this app.
-port_owner() { ss -ltnp 2>/dev/null | grep -E "[:.]$1 " | grep -oP '(?<=pid=)\d+' | head -1; }
-ours() { case "$(readlink -f "/proc/$1/cwd" 2>/dev/null)" in "$REPO"/apps/*) return 0 ;; *) return 1 ;; esac; }
-for port in $(seq 4700 4799); do
-  held="$(port_owner "$port")"
-  [ -n "$held" ] && ours "$held" && kill "$held" 2>/dev/null
-done
+free_ours
 sleep 1
 
 : > "$PIDS"
@@ -54,7 +60,12 @@ for dir in "$REPO"/apps/*/; do
   name="$(basename "$dir")"
   [ -f "$dir/build/index.js" ] || continue
   while [ -n "$(port_owner "$port")" ]; do port=$((port + 1)); done
-  ( cd "$dir" && PORT=$port setsid node build/index.js > "$STACK/logs/preview-$name.log" 2>&1 < /dev/null & echo "$! $name $port" >> "$PIDS" )
+  # The cd comes first so that & backgrounds setsid alone and $! is the pid
+  # that becomes the server. Backgrounding the cd with it made $! a wrapper
+  # shell, which a stop killed while the server ran on in its own session.
+  ( cd "$dir" || exit 1
+    PORT=$port setsid node build/index.js > "$STACK/logs/preview-$name.log" 2>&1 < /dev/null &
+    echo "$! $name $port" >> "$PIDS" )
   printf '  %-22s http://localhost:%s\n' "$name" "$port"
   port=$((port + 1))
 done

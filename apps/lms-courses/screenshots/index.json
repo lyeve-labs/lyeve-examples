@@ -1,0 +1,47 @@
+{
+  "app": "lms-courses",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Meridian Learning",
+      "viewport": "desktop"
+    },
+    {
+      "file": "courses-slug.webp",
+      "route": "/courses/[slug]",
+      "url": "/courses/release-engineering",
+      "title": "Release Engineering for Small Teams",
+      "viewport": "desktop"
+    },
+    {
+      "file": "courses-slug-lesson.webp",
+      "route": "/courses/[slug]/[lesson]",
+      "url": "/courses/release-engineering/two-permanent-branches",
+      "title": "Two Permanent Branches",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Meridian Learning",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

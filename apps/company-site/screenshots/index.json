@@ -1,0 +1,68 @@
+{
+  "app": "company-site",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Basalt Networks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "slug.webp",
+      "route": "/[slug]",
+      "url": "/security-and-compliance",
+      "title": "Security and compliance | Basalt Networks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "about.webp",
+      "route": "/about",
+      "url": "/about",
+      "title": "About Basalt Networks | Basalt Networks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "careers.webp",
+      "route": "/careers",
+      "url": "/careers",
+      "title": "Careers | Basalt Networks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "careers-slug.webp",
+      "route": "/careers/[slug]",
+      "url": "/careers/senior-site-reliability-engineer",
+      "title": "Senior Site Reliability Engineer | Basalt Networks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "contact.webp",
+      "route": "/contact",
+      "url": "/contact",
+      "title": "Contact | Basalt Networks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Basalt Networks",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,54 @@
+{
+  "app": "search-console",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/?q=checkpoint",
+      "title": "Operations knowledge base",
+      "viewport": "desktop"
+    },
+    {
+      "file": "articles-slug.webp",
+      "route": "/articles/[slug]",
+      "url": "/articles/kb-rank-fsync-cost-review",
+      "title": "Understanding the cost of a durable write",
+      "viewport": "desktop"
+    },
+    {
+      "file": "console.webp",
+      "route": "/console",
+      "url": "/console",
+      "title": "Search console",
+      "viewport": "desktop"
+    },
+    {
+      "file": "instant.webp",
+      "route": "/instant",
+      "url": "/instant",
+      "title": "Instant search",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/?q=checkpoint",
+      "title": "Operations knowledge base",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

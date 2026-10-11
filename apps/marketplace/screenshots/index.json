@@ -1,0 +1,47 @@
+{
+  "app": "marketplace",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Longshore Market",
+      "viewport": "desktop"
+    },
+    {
+      "file": "products-slug.webp",
+      "route": "/products/[slug]",
+      "url": "/products/archival-fineliner",
+      "title": "Archival Fineliner, 0.3mm",
+      "viewport": "desktop"
+    },
+    {
+      "file": "sellers-slug.webp",
+      "route": "/sellers/[slug]",
+      "url": "/sellers/verdigris-roasters",
+      "title": "Verdigris Roasters",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Longshore Market",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

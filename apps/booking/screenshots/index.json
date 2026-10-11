@@ -1,0 +1,52 @@
+{
+  "app": "booking",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Book a consultation",
+      "viewport": "desktop"
+    },
+    {
+      "file": "book-slug.webp",
+      "route": "/book/[slug]",
+      "url": "/book/booking-slot-callum-wright-20261012T1630",
+      "title": "Confirm your appointment",
+      "viewport": "desktop"
+    },
+    {
+      "file": "practitioners-slug.webp",
+      "route": "/practitioners/[slug]",
+      "url": "/practitioners/booking-callum-wright",
+      "title": "Callum Wright",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Book a consultation",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": [
+    {
+      "route": "/appointments/[slug]",
+      "reason": "no page links to it"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "app": "privacy-compliance",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Privacy desk",
+      "viewport": "desktop"
+    },
+    {
+      "file": "audit.webp",
+      "route": "/audit",
+      "url": "/audit",
+      "title": "DSAR audit trail",
+      "viewport": "desktop"
+    },
+    {
+      "file": "masking.webp",
+      "route": "/masking",
+      "url": "/masking",
+      "title": "Masking rules",
+      "viewport": "desktop"
+    },
+    {
+      "file": "request.webp",
+      "route": "/request",
+      "url": "/request",
+      "title": "Make a privacy request",
+      "viewport": "desktop"
+    },
+    {
+      "file": "request-filed.webp",
+      "route": "/request/filed",
+      "url": "/request/filed",
+      "title": "Request filed",
+      "viewport": "desktop"
+    },
+    {
+      "file": "requests.webp",
+      "route": "/requests",
+      "url": "/requests",
+      "title": "Request register",
+      "viewport": "desktop"
+    },
+    {
+      "file": "requests-slug.webp",
+      "route": "/requests/[slug]",
+      "url": "/requests/privacy-request-rectification-brandt",
+      "title": "Rectification request from Lene Brandt",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Privacy desk",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

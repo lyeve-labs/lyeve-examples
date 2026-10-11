@@ -1,0 +1,54 @@
+{
+  "app": "docs-portal",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Engine Guide",
+      "viewport": "desktop"
+    },
+    {
+      "file": "docs-space.webp",
+      "route": "/docs/[space]",
+      "url": "/docs/getting-started",
+      "title": "Getting Started",
+      "viewport": "desktop"
+    },
+    {
+      "file": "docs-space-page.webp",
+      "route": "/docs/[space]/[page]",
+      "url": "/docs/api-reference/search-api",
+      "title": "Search API · API Reference",
+      "viewport": "desktop"
+    },
+    {
+      "file": "search.webp",
+      "route": "/search",
+      "url": "/search?q=schema",
+      "title": "Search",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Engine Guide",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

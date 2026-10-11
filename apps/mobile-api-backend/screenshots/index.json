@@ -1,0 +1,54 @@
+{
+  "app": "mobile-api-backend",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "API keys",
+      "viewport": "desktop"
+    },
+    {
+      "file": "feed.webp",
+      "route": "/feed",
+      "url": "/feed",
+      "title": "Notice feed",
+      "viewport": "desktop"
+    },
+    {
+      "file": "keys-id.webp",
+      "route": "/keys/[id]",
+      "url": "/keys/11030b21-3796-440d-9bdb-20defdec87b7",
+      "title": "transit-app-quota-probe",
+      "viewport": "desktop"
+    },
+    {
+      "file": "metering.webp",
+      "route": "/metering",
+      "url": "/metering",
+      "title": "Metering",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "API keys",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

@@ -1,0 +1,61 @@
+{
+  "app": "newsroom",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "The Meridian",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desk.webp",
+      "route": "/desk",
+      "url": "/desk",
+      "title": "The desk",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desk-id.webp",
+      "route": "/desk/[id]",
+      "url": "/desk/22927cf4-f305-4b8c-a553-25cd4b5570eb",
+      "title": "The fish market that moved and came back · desk",
+      "viewport": "desktop"
+    },
+    {
+      "file": "desk-id-preview.webp",
+      "route": "/desk/[id]/preview",
+      "url": "/desk/22927cf4-f305-4b8c-a553-25cd4b5570eb/preview",
+      "title": "Preview: The fish market that moved and came back",
+      "viewport": "desktop"
+    },
+    {
+      "file": "stories-slug.webp",
+      "route": "/stories/[slug]",
+      "url": "/stories/the-tide-gauge-that-outlived-its-harbour",
+      "title": "The tide gauge that outlived its harbour",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "The Meridian",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

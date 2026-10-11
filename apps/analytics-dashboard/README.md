@@ -4,6 +4,27 @@ An operations console that reads the engine's own telemetry instead of content.
 The other examples in this repository are things you build **with** LyEve. This
 one is a view **of** LyEve.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="analytics-dashboard: Engine telemetry"></a><br><b>Engine telemetry</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/health.webp"><img src="screenshots/health.webp" width="420" alt="analytics-dashboard: Health"></a><br><b>Health</b><br><code>/health</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/notes.webp"><img src="screenshots/notes.webp" width="420" alt="analytics-dashboard: Notes"></a><br><b>Notes</b><br><code>/notes</code></td>
+    <td width="50%" valign="top"><a href="screenshots/quota.webp"><img src="screenshots/quota.webp" width="420" alt="analytics-dashboard: Quota"></a><br><b>Quota</b><br><code>/quota</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/requests.webp"><img src="screenshots/requests.webp" width="420" alt="analytics-dashboard: Requests"></a><br><b>Requests</b><br><code>/requests</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="analytics-dashboard: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=analytics-dashboard` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this before you trust a number
 
 Three plugins and the engine itself expose telemetry, and they fill their

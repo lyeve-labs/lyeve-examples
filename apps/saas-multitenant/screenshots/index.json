@@ -1,0 +1,47 @@
+{
+  "app": "saas-multitenant",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Tenants",
+      "viewport": "desktop"
+    },
+    {
+      "file": "tenants-slug.webp",
+      "route": "/tenants/[slug]",
+      "url": "/tenants/saas_calder_labs",
+      "title": "Calder Labs",
+      "viewport": "desktop"
+    },
+    {
+      "file": "usage.webp",
+      "route": "/usage",
+      "url": "/usage",
+      "title": "Usage",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Tenants",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

@@ -4,6 +4,26 @@ A four-locale site on the localization plugin: per-entry translations, locale
 fallback with a visible notice, and a translation-status view that edits the
 rows behind it.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/locale.webp"><img src="screenshots/locale.webp" width="420" alt="multi-language-site: Kestrel Press Museum"></a><br><b>Kestrel Press Museum</b><br><code>/[locale=locale]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/locale-slug.webp"><img src="screenshots/locale-slug.webp" width="420" alt="multi-language-site: Opening hours"></a><br><b>Opening hours</b><br><code>/[locale=locale]/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/translations.webp"><img src="screenshots/translations.webp" width="420" alt="multi-language-site: Translations"></a><br><b>Translations</b><br><code>/translations</code></td>
+    <td width="50%" valign="top"><a href="screenshots/translations-slug.webp"><img src="screenshots/translations-slug.webp" width="420" alt="multi-language-site: Translations: Visit"></a><br><b>Translations: Visit</b><br><code>/translations/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/locale-phone.webp"><img src="screenshots/locale-phone.webp" width="200" alt="multi-language-site: On a phone"></a><br><b>On a phone</b><br><code>/en</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=multi-language-site` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What it does not do, before anything else
 
 - **It does not translate anything.** The plugin stores a title, a body and a

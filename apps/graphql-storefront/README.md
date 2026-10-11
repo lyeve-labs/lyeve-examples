@@ -7,6 +7,26 @@ rather than what a GraphQL endpoint is usually assumed to offer.
 
 Read the next section before the rest. The gaps are not small.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="graphql-storefront: Sparrow Cycle Works"></a><br><b>Sparrow Cycle Works</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/c-slug.webp"><img src="screenshots/c-slug.webp" width="420" alt="graphql-storefront: Bags and Racks"></a><br><b>Bags and Racks</b><br><code>/c/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/graphql.webp"><img src="screenshots/graphql.webp" width="420" alt="graphql-storefront: The transport"></a><br><b>The transport</b><br><code>/graphql</code></td>
+    <td width="50%" valign="top"><a href="screenshots/p-slug.webp"><img src="screenshots/p-slug.webp" width="420" alt="graphql-storefront: Waxed Canvas Saddle Bag"></a><br><b>Waxed Canvas Saddle Bag</b><br><code>/p/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="graphql-storefront: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=graphql-storefront` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What REST does here that GraphQL cannot
 
 **Relations are unreachable.** This is the one that decides the architecture of
