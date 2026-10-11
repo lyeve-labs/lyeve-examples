@@ -6,7 +6,7 @@
  * is calling, and how a bare path becomes a URL.
  */
 import { ApiError, createClient, type HttpClient, type SchemaField } from '@lyeve-labs/client';
-import { isMFAChallenge, login } from '@lyeve-labs/client-rest';
+import { getMe, isMFAChallenge, login } from '@lyeve-labs/client-rest';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -133,7 +133,7 @@ const TOKEN_CACHE = fileURLToPath(new URL('../.lyeve-token.json', import.meta.ur
  */
 export async function signIn(): Promise<string> {
 	const cached = cachedToken();
-	if (cached) return cached;
+	if (cached && (await stillAccepted(cached))) return cached;
 
 	const { email, password } = credentials();
 	const result = await login(email, password, publicClient());
@@ -154,6 +154,25 @@ function cachedToken(): string | null {
 	} catch {
 		// No cache, an unreadable one, or a token that is not a JWT. Log in.
 		return null;
+	}
+}
+
+/**
+ * Asks the engine whether it still accepts a cached token.
+ *
+ * Expiry is not the only way a token ends. One issued before the database was
+ * replaced names an account that no longer exists, and every call answers
+ * 401 "session invalidated" while the token still has most of a day to run.
+ * Reading the signed-in account costs no login, so the rate limit the cache
+ * exists for is untouched.
+ */
+async function stillAccepted(token: string): Promise<boolean> {
+	try {
+		await getMe(signedInClient(token));
+		return true;
+	} catch (err) {
+		if (err instanceof ApiError && err.status === 401) return false;
+		throw err;
 	}
 }
 
