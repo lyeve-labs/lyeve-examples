@@ -199,9 +199,9 @@ fi
 # PUBLIC_RATE_LIMITS setting: that governs a different limiter and has no effect
 # on this one.
 #
-# A protection is changed by name through its own route, which needs the
-# rate-limit-pro capability the development license carries. The rule's own
-# update route refuses a protection with a 409.
+# A protection is changed by name through its own route, which needs the paid
+# rate limit tier in the development license. The rule's own update route
+# refuses a protection with a 409.
 TOKEN="$(curl -s -X POST "http://localhost:$ADMIN_PORT/api/admin/auth/login" \
   -H 'Content-Type: application/json' \
   -d "{\"email\":\"$ADMIN_EMAIL\",\"password\":\"$ADMIN_PASSWORD\"}" \

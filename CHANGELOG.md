@@ -4,6 +4,14 @@ All notable changes to this project are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- The README and `platform/scripts/lib.sh` describe the development license
+  without listing its features. Nothing read the list, and it had fallen
+  behind the engine.
+
 ## [0.2.0] - 2026-10-11
 
 ### Added

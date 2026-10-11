@@ -18,15 +18,6 @@ PG_DB="lyeve_examples"
 ADMIN_EMAIL="${LYEVE_EMAIL:-admin@lyeve.example}"
 ADMIN_PASSWORD="${LYEVE_PASSWORD:-Admin12345678}"
 
-# Every paid plugin and paid capability the engine gates. A license carrying
-# these features meets no lock in any example, and up.sh does not read the
-# list: it is the reference for what the license should carry. The baseline plugins and the free capabilities are granted to every
-# install and need no entry. A paid name missing here does not error: the plugin
-# starts without its license and its paid routes refuse. A free plugin's paid
-# tier is a separate name ending in -pro, such as rate-limit-pro, which is what
-# lets this stack raise the sign-in limit.
-LICENSE_FEATURES="ab-testing,ai,apianalytics,apikey-pro,audit,audit-pro,audit-retention,cluster,config-sync,content-pro,cron-pro,data-export,data-residency,device-fingerprint,email-pro,events,flow-pro,graphql,grpc,localization-pro,media-pro,messagebroker,mfa-pro,migration-toolkit,multitenant-customization,multitenant-provisioning,oauth-pro,pii-mask,query-monitor,rate-limit-pro,rbac-pro,realtime,recommendations,saml,schema-pro,scim,search,support,synthetic-monitoring-pro,tenant-backup,usage-pro,waf,webhook-pro"
-
 # The engine's three secrets, generated once into the gitignored stack
 # directory rather than committed here.
 #
