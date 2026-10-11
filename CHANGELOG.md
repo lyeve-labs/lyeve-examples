@@ -55,54 +55,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - The newsroom desk page said nothing enforces a stage's required role. The
   review plugin enforces it.
 
-## [Unreleased]
-
-### Added
-
-- A picture of every page of every example, on a desktop and on a phone, in
-  `apps/<example>/screenshots/`. Each README shows its own, and
-  `docs/PREVIEWS.md` gathers them with guidance on using them.
-  `make screenshots` takes them again from the running apps.
-
-### Changed
-
-- `make up` takes the development license from `LYEVE_LICENSE_KEY` and
-  `LICENSE_PUBLIC_KEY_HEX` in the environment and stops with a clear message
-  when either is missing. It reads the license key variable from the engine's
-  build graph instead of naming its package, and refuses to continue when the
-  engine logs that no license verifies.
-- `LICENSE_FEATURES` in `platform/scripts/lib.sh` lists the paid names the
-  engine gates today, including `rate-limit-pro`, which raises the sign-in
-  limit for local seeding.
-- The helpdesk, privacy-compliance, mobile-api-backend, community-forum and
-  company-site documentation describes the engine's current plugins: the
-  support assistant in the AI plugin, the schema plugin's comments preset, the
-  five export sources, and both meters in the usage plugin.
-
-### Fixed
-
-- cms-migration imports again after `make fresh`. Its checkpoints outlived the
-  database, so a resumed stage skipped every row of the new, empty one and
-  only the byline step failed. A checkpoint is now set aside when the engine
-  holds none of the migrated entries it lists.
-- `make preview-stop` stops the preview servers. It used to stop only the
-  shells that launched them, so every server kept running and kept its port,
-  and `make preview` piped into another command never finished.
-- cms-migration imported its pages as `about`, `corrections` and `contact`.
-  Every example shares one tenant and a slug is unique per tenant across every
-  content type, so on the 0.54.1 engine company-site could not seed its own
-  `about` page after the migration and its setup failed with a 409. The
-  imported pages now keep slugs of their own: `about-the-paper`,
-  `corrections-policy` and `contact-the-desk`.
-- saas-multitenant's setup imported the client through the `$lib` alias, which
-  plain node cannot resolve, so provisioning stopped before creating a tenant.
-- `make preview` skips a port another process holds instead of stopping that
-  process, and `make check-pages` fails an app whose server is not running.
-- The perf runner discards a run that measured no request, keeps a link's query
-  string when it crawls, and drives the last content type that holds rows.
-- The newsroom desk page said nothing enforces a stage's required role. The
-  review plugin enforces it.
-
 ## [0.1.3] - 2026-10-03
 
 ### Fixed
