@@ -152,6 +152,15 @@ id column, even when the export has one. So:
   upsert and no dedupe, and nothing here declares `slug` unique, so you get
   duplicates rather than an error. If you want that guard, declare the slug
   unique in the target schema and let the insert fail.
+- **a checkpoint belongs to one database, and does not say which.** Replace
+  the database (a fresh stack, a restore, another machine) and a resume skips
+  every row, imports nothing and reports success. `run.sh` runs
+  `migration/check-checkpoints.ts` before the resumed stages: when the engine
+  holds no migrated entry, one with a `legacy_id`, of any content type a
+  checkpoint lists, the checkpoint is renamed with a `.stale` suffix and the
+  stage starts over. A database that
+  still holds some of them is left alone, because starting over would insert
+  the rest twice.
 - a resumed run with nothing left to do prints `Total entries: 0` and
   `Migrated: 0`, because the filtering happens before the count. That is success,
   not a fault.

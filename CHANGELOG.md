@@ -30,6 +30,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 
+- cms-migration imports again after `make fresh`. Its checkpoints outlived the
+  database, so a resumed stage skipped every row of the new, empty one and
+  only the byline step failed. A checkpoint is now set aside when the engine
+  holds none of the migrated entries it lists.
 - `make preview-stop` stops the preview servers. It used to stop only the
   shells that launched them, so every server kept running and kept its port,
   and `make preview` piped into another command never finished.

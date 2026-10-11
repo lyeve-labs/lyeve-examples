@@ -15,7 +15,9 @@
 # routes it authenticates against and the content route it writes to.
 #
 # Re-running is safe. Each stage keeps its own checkpoint and is invoked with
-# --resume, so a row already migrated is filtered out before the write.
+# --resume, so a row already migrated is filtered out before the write. A
+# checkpoint from a database that has since been replaced is set aside first,
+# see check-checkpoints.ts.
 set -euo pipefail
 
 APP="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -118,6 +120,9 @@ ALL_PATHS="legacy_authors=$MIG/authors.csv,legacy_posts=$MIG/posts.csv,legacy_pa
 
 run_stage dry-run "dry run over all three exports" \
   dry-run.txt dry-run.log "$ALL_PATHS" --dry-run
+
+step "checking the checkpoints against this engine"
+( cd "$APP" && node --experimental-strip-types migration/check-checkpoints.ts authors-and-pages posts )
 
 run_stage authors-and-pages "migrating the authors and the pages" \
   migrate-authors-and-pages.txt migrate-authors-and-pages.log \
