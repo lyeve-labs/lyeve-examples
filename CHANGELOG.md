@@ -11,6 +11,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - headless-node signs in again when the engine refuses its cached token. After
   `make fresh` it reused a token for an account that no longer existed, so
   `make setup` failed with 401 "session invalidated".
+- The community-forum benchmark manifest names the comments preset and seeds
+  replies under the topics, and `perf/export-profiles.mjs` carries both into the
+  profile. The exported forum profile left the preset's type out, so every
+  thread read of the benchmark answered 404.
 
 ### Changed
 
