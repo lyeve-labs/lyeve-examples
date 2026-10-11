@@ -1,0 +1,39 @@
+{
+  "name": "realtime-feed",
+  "layer": "app",
+  "at": "20261011T160349Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "d675fc0dbcb4",
+    "engine_binary_built": "2026-10-11T15:42:40Z",
+    "source_checkout_commit": "d5f05b0",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 602,
+  "rate_achieved": 20.05005267172151,
+  "p50_ms": 9.267416,
+  "p95_ms": 11.510509,
+  "p99_ms": 12.553561,
+  "max_ms": 14.374289,
+  "ok_rate": 1,
+  "checks_passed": 601,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_ops": {
+      "p95_ms": 11.25099765,
+      "med_ms": 9.135054499999999
+    },
+    "page_root": {
+      "p95_ms": 11.798754899999999,
+      "med_ms": 9.743475
+    }
+  }
+}
