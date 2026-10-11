@@ -7,6 +7,23 @@ A small publication: a post list, a post page with its author and category
 inflated from relations, and a search box. Roughly two hundred lines of
 application code.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="blog: The Analytical Review"></a><br><b>The Analytical Review</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/posts-slug.webp"><img src="screenshots/posts-slug.webp" width="420" alt="blog: Why Indexes Are a Modeling Decision"></a><br><b>Why Indexes Are a Modeling Decision</b><br><code>/posts/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/search.webp"><img src="screenshots/search.webp" width="420" alt="blog: Search"></a><br><b>Search</b><br><code>/search</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="blog: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=blog` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Run it
 
 From the repository root, with the stack already up:

@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- A picture of every page of every example, on a desktop and on a phone, in
+  `apps/<example>/screenshots/`. Each README shows its own, and
+  `docs/PREVIEWS.md` gathers them with guidance on using them.
+  `make screenshots` takes them again from the running apps.
+
 ### Changed
 
 - `make up` takes the development license from `LYEVE_LICENSE_KEY` and

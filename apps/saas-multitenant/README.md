@@ -12,6 +12,23 @@ Three pages:
 | `/tenants/<slug>` | One tenant: its keys, a mint form, a revoke action, and a one-shot request that spends the key |
 | `/usage` | Live usage per tenant for a billing period, and the action that freezes it into a snapshot |
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="saas-multitenant: Tenants"></a><br><b>Tenants</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/tenants-slug.webp"><img src="screenshots/tenants-slug.webp" width="420" alt="saas-multitenant: Calder Labs"></a><br><b>Calder Labs</b><br><code>/tenants/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/usage.webp"><img src="screenshots/usage.webp" width="420" alt="saas-multitenant: Usage"></a><br><b>Usage</b><br><code>/usage</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="saas-multitenant: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=saas-multitenant` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What this example proves
 
 **A tenant is three rows in three plugins with nothing joining them but a slug.**

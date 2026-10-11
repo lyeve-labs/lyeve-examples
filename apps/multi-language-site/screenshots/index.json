@@ -1,0 +1,54 @@
+{
+  "app": "multi-language-site",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "locale.webp",
+      "route": "/[locale=locale]",
+      "url": "/en",
+      "title": "Kestrel Press Museum",
+      "viewport": "desktop"
+    },
+    {
+      "file": "locale-slug.webp",
+      "route": "/[locale=locale]/[slug]",
+      "url": "/en/opening-hours",
+      "title": "Opening hours",
+      "viewport": "desktop"
+    },
+    {
+      "file": "translations.webp",
+      "route": "/translations",
+      "url": "/translations",
+      "title": "Translations",
+      "viewport": "desktop"
+    },
+    {
+      "file": "translations-slug.webp",
+      "route": "/translations/[slug]",
+      "url": "/translations/visit",
+      "title": "Translations: Visit",
+      "viewport": "desktop"
+    },
+    {
+      "file": "locale-phone.webp",
+      "route": "/[locale=locale]",
+      "url": "/en",
+      "title": "Kestrel Press Museum",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

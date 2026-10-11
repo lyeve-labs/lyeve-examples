@@ -4,6 +4,31 @@ A privacy desk: data-subject requests come in on a public form, an officer
 verifies who sent them, and export, erasure and the masking rules run from the
 officer view against the engine's own DSAR routes.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="privacy-compliance: Privacy desk"></a><br><b>Privacy desk</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/audit.webp"><img src="screenshots/audit.webp" width="420" alt="privacy-compliance: DSAR audit trail"></a><br><b>DSAR audit trail</b><br><code>/audit</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/masking.webp"><img src="screenshots/masking.webp" width="420" alt="privacy-compliance: Masking rules"></a><br><b>Masking rules</b><br><code>/masking</code></td>
+    <td width="50%" valign="top"><a href="screenshots/request.webp"><img src="screenshots/request.webp" width="420" alt="privacy-compliance: Make a privacy request"></a><br><b>Make a privacy request</b><br><code>/request</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/request-filed.webp"><img src="screenshots/request-filed.webp" width="420" alt="privacy-compliance: Request filed"></a><br><b>Request filed</b><br><code>/request/filed</code></td>
+    <td width="50%" valign="top"><a href="screenshots/requests.webp"><img src="screenshots/requests.webp" width="420" alt="privacy-compliance: Request register"></a><br><b>Request register</b><br><code>/requests</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/requests-slug.webp"><img src="screenshots/requests-slug.webp" width="420" alt="privacy-compliance: Rectification request from Lene Brandt"></a><br><b>Rectification request from Lene Brandt</b><br><code>/requests/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="privacy-compliance: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=privacy-compliance` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this first
 
 **An erasure is not reversible and the route is easier to fire than it looks.**

@@ -8,6 +8,22 @@ This is a runbook. The findings below were established by reading the tool's
 source and running it against a live engine, and they are the reason the
 migration here takes three invocations rather than one.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="cms-migration: Migration report"></a><br><b>Migration report</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/posts-slug.webp"><img src="screenshots/posts-slug.webp" width="420" alt="cms-migration: The night shift at Pier Nine"></a><br><b>The night shift at Pier Nine</b><br><code>/posts/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="cms-migration: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=cms-migration` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this before you migrate anything
 
 **Everything the tool imports is invisible to search and to the admin UI, and

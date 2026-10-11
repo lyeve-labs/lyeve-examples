@@ -1,0 +1,54 @@
+{
+  "app": "community-forum",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Lanternfish Community",
+      "viewport": "desktop"
+    },
+    {
+      "file": "moderation.webp",
+      "route": "/moderation",
+      "url": "/moderation",
+      "title": "Moderation queue",
+      "viewport": "desktop"
+    },
+    {
+      "file": "new.webp",
+      "route": "/new",
+      "url": "/new",
+      "title": "Start a topic",
+      "viewport": "desktop"
+    },
+    {
+      "file": "topics-slug.webp",
+      "route": "/topics/[slug]",
+      "url": "/topics/forum-lanternfish-3-2-thumbnails",
+      "title": "Lanternfish 3.2 puts thumbnail work on a queue",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Lanternfish Community",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

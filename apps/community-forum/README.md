@@ -9,6 +9,26 @@ starting point, not a feature: it creates two content types and nothing else,
 so moderation, voting and the rule that a visitor's reply waits for a human
 are this app's code. Seeing exactly where that line falls is the point.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="community-forum: Lanternfish Community"></a><br><b>Lanternfish Community</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/moderation.webp"><img src="screenshots/moderation.webp" width="420" alt="community-forum: Moderation queue"></a><br><b>Moderation queue</b><br><code>/moderation</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/new.webp"><img src="screenshots/new.webp" width="420" alt="community-forum: Start a topic"></a><br><b>Start a topic</b><br><code>/new</code></td>
+    <td width="50%" valign="top"><a href="screenshots/topics-slug.webp"><img src="screenshots/topics-slug.webp" width="420" alt="community-forum: Lanternfish 3.2 puts thumbnail work on a queue"></a><br><b>Lanternfish 3.2 puts thumbnail work on a queue</b><br><code>/topics/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="community-forum: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=community-forum` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this before you trust it
 
 - **There are no forum accounts.** Every reply is anonymous. The vote identity

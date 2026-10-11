@@ -10,6 +10,26 @@ the shipped engine, charges a card, creates a customer, opens a checkout
 session or issues a refund. The example is a subscription-state receiver, and
 the section below says exactly how far the product goes.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="subscription-gating: Cold Path"></a><br><b>Cold Path</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/articles-slug.webp"><img src="screenshots/articles-slug.webp" width="420" alt="subscription-gating: Draining a Node Without Dropping a Request"></a><br><b>Draining a Node Without Dropping a Request</b><br><code>/articles/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="subscription-gating: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+Not shown:
+
+- `/account`, because it prints the license of the stack it was captured on.
+
+`make screenshots APPS=subscription-gating` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What the product actually ships for payments
 
 - Nothing. The engine has no payment-provider route, no plan API, no invoice

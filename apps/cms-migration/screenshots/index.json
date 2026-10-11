@@ -1,0 +1,40 @@
+{
+  "app": "cms-migration",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Migration report",
+      "viewport": "desktop"
+    },
+    {
+      "file": "posts-slug.webp",
+      "route": "/posts/[slug]",
+      "url": "/posts/night-shift-pier-nine",
+      "title": "The night shift at Pier Nine",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Migration report",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

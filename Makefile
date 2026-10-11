@@ -63,6 +63,9 @@ preview-stop: ## Stop the preview servers
 check-pages: ## Fetch every served app's home and first inner page
 	@bash platform/scripts/check-pages.sh
 
+screenshots: ## Capture every page of every served app: make screenshots APPS=blog,helpdesk
+	@cd platform/screenshots && pnpm install --frozen-lockfile --reporter=silent && APPS="$(APPS)" node capture.mjs
+
 vendor: ## Copy the shared client into every app
 	@bash platform/scripts/vendor-client.sh
 
@@ -88,4 +91,4 @@ bench-apps-json: ## Regenerate perf/apps.json from the apps and the engine
 export-profiles: ## Write the benchmark repo's profiles from the running engine
 	@node perf/export-profiles.mjs
 
-.PHONY: help up fresh down logs print-env install smoke setup build check verify preview preview-stop check-pages bench-apps-json bench-all bench bench-list export-profiles vendor check-vendor
+.PHONY: help up fresh down logs print-env install smoke setup build check verify preview preview-stop check-pages screenshots bench-apps-json bench-all bench bench-list export-profiles vendor check-vendor

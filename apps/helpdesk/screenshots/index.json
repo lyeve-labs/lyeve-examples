@@ -1,0 +1,47 @@
+{
+  "app": "helpdesk",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Inbox",
+      "viewport": "desktop"
+    },
+    {
+      "file": "new.webp",
+      "route": "/new",
+      "url": "/new",
+      "title": "Open a ticket",
+      "viewport": "desktop"
+    },
+    {
+      "file": "tickets-slug.webp",
+      "route": "/tickets/[slug]",
+      "url": "/tickets/desk-deleted-user-session-still-valid",
+      "title": "A deleted user can still use their existing session",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Inbox",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

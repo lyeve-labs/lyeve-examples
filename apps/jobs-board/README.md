@@ -4,6 +4,22 @@ A public job board with a working application form. Fifteen roles from five
 employers, a search box, a contract type filter, and an application that accepts
 a CV file and stores it in the engine's media library.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="jobs-board: Harbourside Jobs"></a><br><b>Harbourside Jobs</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/jobs-slug.webp"><img src="screenshots/jobs-slug.webp" width="420" alt="jobs-board: Customer Success Analyst"></a><br><b>Customer Success Analyst</b><br><code>/jobs/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="jobs-board: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=jobs-board` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What this example proves
 
 Two things the other examples do not cover together:

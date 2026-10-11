@@ -63,6 +63,10 @@ license, and says which is missing.
 | [media-library](apps/media-library/) | The media pipeline itself: uploads, folders, variants and storage keys. |
 | [analytics-dashboard](apps/analytics-dashboard/) | A console over the engine's own telemetry, each panel naming its route. |
 
+Every example shows a picture of each of its pages in its README. The
+[gallery](docs/PREVIEWS.md) gathers them and says how they are taken and how to
+use them.
+
 ## Every example is its own package
 
 An example you cannot take away is not much of an example. Each app depends on
@@ -126,9 +130,9 @@ says, including several behaviors that will silently cost you an afternoon:
 
     apps/           one directory per example
     packages/lyeve  the shared server-side client
-    platform/       scripts that boot, seed, serve and check the local stack
+    platform/       scripts that boot, seed, serve, check and capture the local stack
     perf/           measure any example at the page and the engine
-    docs/           the verified recipe and the template guide
+    docs/           the verified recipe, the template guide and the previews
     .stack/         local engine binary, logs and license (never committed)
 
 ## Honesty

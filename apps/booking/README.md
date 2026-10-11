@@ -3,6 +3,27 @@
 A consultation booking site for a small clinic. Four practitioners, a week of
 appointment times, and a form that turns one of those times into an appointment.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="booking: Book a consultation"></a><br><b>Book a consultation</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/book-slug.webp"><img src="screenshots/book-slug.webp" width="420" alt="booking: Confirm your appointment"></a><br><b>Confirm your appointment</b><br><code>/book/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/practitioners-slug.webp"><img src="screenshots/practitioners-slug.webp" width="420" alt="booking: Callum Wright"></a><br><b>Callum Wright</b><br><code>/practitioners/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="booking: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+Not shown:
+
+- `/appointments/[slug]`, because no page links to it.
+
+`make screenshots APPS=booking` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this first: the engine has no booking primitives
 
 There is no booking, availability, reservation, inventory or hold concept

@@ -25,6 +25,23 @@ set -a; . ./.env; set +a
 cd apps/events-ticketing && node --experimental-strip-types setup/provision.ts
 ```
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="events-ticketing: Northgate Sessions"></a><br><b>Northgate Sessions</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/events-slug.webp"><img src="screenshots/events-slug.webp" width="420" alt="events-ticketing: The Postgres Performance Clinic"></a><br><b>The Postgres Performance Clinic</b><br><code>/events/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/registrations.webp"><img src="screenshots/registrations.webp" width="420" alt="events-ticketing: Door list"></a><br><b>Door list</b><br><code>/registrations</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="events-ticketing: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=events-ticketing` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What this example proves
 
 **Capacity is a modeling exercise, not a product feature.** LyEve stores
