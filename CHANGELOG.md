@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed
+
+- headless-node signs in again when the engine refuses its cached token. After
+  `make fresh` it reused a token for an account that no longer existed, so
+  `make setup` failed with 401 "session invalidated".
+
 ### Changed
 
 - The README and `platform/scripts/lib.sh` describe the development license
