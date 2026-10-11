@@ -104,16 +104,26 @@ function pageRoutes(appDir) {
     }
   };
   if (existsSync(root)) walk(root, '');
-  return out.sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)));
+  // Code-point order, so every machine lists the routes, and so the README
+  // grid, the same way whatever its locale.
+  return out.sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a < b ? -1 : a > b ? 1 : 0));
 }
 
 const segments = (path) => path.split('/').filter(Boolean);
 const isParam = (seg) => seg.startsWith('[') && seg.endsWith(']');
 
+function decoded(seg) {
+  try {
+    return decodeURIComponent(seg);
+  } catch {
+    return seg;
+  }
+}
+
 function fits(route, path) {
   const r = segments(route);
   const p = segments(path);
-  return r.length === p.length && r.every((seg, i) => isParam(seg) || seg === decodeURIComponent(p[i]));
+  return r.length === p.length && r.every((seg, i) => isParam(seg) || seg === decoded(p[i]));
 }
 
 // The route the app itself would answer a path with: of the routes that fit,
@@ -269,6 +279,8 @@ function newContext(browser, size, phone = false) {
 }
 
 const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// GitHub renders no Markdown inside an HTML table, so a code span becomes code.
+const inlineCode = (s) => escapeHtml(s).replace(/`([^`]+)`/g, '<code>$1</code>');
 
 function label(shot) {
   if (shot.viewport === 'phone') return 'On a phone';
@@ -360,12 +372,12 @@ function writeGallery() {
     const src = `../apps/${app}/screenshots/${first.file}`;
     const pages = index.shots.filter((s) => s.viewport === 'desktop').length;
     cells.push(
-      `<a href="../apps/${app}/#preview"><img src="${src}" width="${DESKTOP_WIDTH}" alt="${escapeHtml(`${app}: ${label(first)}`)}"></a><br><b><a href="../apps/${app}/">${app}</a></b>, ${pages} ${pages === 1 ? 'page' : 'pages'}<br>${escapeHtml(said[app] ?? '')}`,
+      `<a href="../apps/${app}/#preview"><img src="${src}" width="${DESKTOP_WIDTH}" alt="${escapeHtml(`${app}: ${label(first)}`)}"></a><br><b><a href="../apps/${app}/">${app}</a></b>, ${pages} ${pages === 1 ? 'page' : 'pages'}<br>${inlineCode(said[app] ?? '')}`,
     );
   }
   const lines = ['## Gallery', '', 'The first page of every example. Each one links to all of its pages.', '', grid(cells), ''];
   if (without.length) {
-    lines.push(`${without.map((a) => `[${a}](../apps/${a}/)`).join(', ')} ${without.length === 1 ? 'has' : 'have'} no pages to show: it runs in a terminal.`, '');
+    lines.push(`${without.map((a) => `[${a}](../apps/${a}/)`).join(', ')} ${without.length === 1 ? 'has no pages to show: it runs' : 'have no pages to show: they run'} in a terminal.`, '');
   }
   writeSection(GUIDE, '## Gallery', lines.join('\n'), { atEnd: true });
 }

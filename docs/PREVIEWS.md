@@ -55,7 +55,7 @@ The first page of every example. Each one links to all of its pages.
 <table>
   <tr>
     <td width="50%" valign="top"><a href="../apps/analytics-dashboard/#preview"><img src="../apps/analytics-dashboard/screenshots/home.webp" width="420" alt="analytics-dashboard: Engine telemetry"></a><br><b><a href="../apps/analytics-dashboard/">analytics-dashboard</a></b>, 5 pages<br>A console over the engine's own telemetry, each panel naming its route.</td>
-    <td width="50%" valign="top"><a href="../apps/blog/#preview"><img src="../apps/blog/screenshots/home.webp" width="420" alt="blog: The Analytical Review"></a><br><b><a href="../apps/blog/">blog</a></b>, 3 pages<br>Relations, `populate`, full-text search, media. The reference implementation.</td>
+    <td width="50%" valign="top"><a href="../apps/blog/#preview"><img src="../apps/blog/screenshots/home.webp" width="420" alt="blog: The Analytical Review"></a><br><b><a href="../apps/blog/">blog</a></b>, 3 pages<br>Relations, <code>populate</code>, full-text search, media. The reference implementation.</td>
   </tr>
   <tr>
     <td width="50%" valign="top"><a href="../apps/booking/#preview"><img src="../apps/booking/screenshots/home.webp" width="420" alt="booking: Book a consultation"></a><br><b><a href="../apps/booking/">booking</a></b>, 3 pages<br>Scheduling modeled entirely in the application, and why it is not race-free.</td>
