@@ -23,6 +23,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 
+- cms-migration imported its pages as `about`, `corrections` and `contact`.
+  Every example shares one tenant and a slug is unique per tenant across every
+  content type, so on the 0.54.1 engine company-site could not seed its own
+  `about` page after the migration and its setup failed with a 409. The
+  imported pages now keep slugs of their own: `about-the-paper`,
+  `corrections-policy` and `contact-the-desk`.
 - saas-multitenant's setup imported the client through the `$lib` alias, which
   plain node cannot resolve, so provisioning stopped before creating a tenant.
 - `make preview` skips a port another process holds instead of stopping that
