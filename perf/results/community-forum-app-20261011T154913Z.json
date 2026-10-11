@@ -1,0 +1,47 @@
+{
+  "name": "community-forum",
+  "layer": "app",
+  "at": "20261011T154913Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "d675fc0dbcb4",
+    "engine_binary_built": "2026-10-11T15:42:40Z",
+    "source_checkout_commit": "d5f05b0",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 602,
+  "rate_achieved": 20.048238383416248,
+  "p50_ms": 12.896901,
+  "p95_ms": 17.732492,
+  "p99_ms": 258.92386,
+  "max_ms": 379.910751,
+  "ok_rate": 1,
+  "checks_passed": 601,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_link": {
+      "p95_ms": 19.2456114,
+      "med_ms": 14.107052
+    },
+    "page_new": {
+      "p95_ms": 2.1248059999999995,
+      "med_ms": 1.435292
+    },
+    "page_root": {
+      "p95_ms": 15.723872499999999,
+      "med_ms": 12.090077
+    },
+    "page_moderation": {
+      "p95_ms": 12.14185615,
+      "med_ms": 9.2706435
+    }
+  }
+}

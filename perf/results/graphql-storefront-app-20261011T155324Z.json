@@ -1,0 +1,43 @@
+{
+  "name": "graphql-storefront",
+  "layer": "app",
+  "at": "20261011T155324Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "d675fc0dbcb4",
+    "engine_binary_built": "2026-10-11T15:42:40Z",
+    "source_checkout_commit": "d5f05b0",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 602,
+  "rate_achieved": 20.05268044275911,
+  "p50_ms": 10.003427,
+  "p95_ms": 36.518513,
+  "p99_ms": 41.805632,
+  "max_ms": 46.891939,
+  "ok_rate": 1,
+  "checks_passed": 601,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_link": {
+      "p95_ms": 12.6484855,
+      "med_ms": 8.961303
+    },
+    "page_graphql": {
+      "p95_ms": 41.775199650000005,
+      "med_ms": 33.3359825
+    },
+    "page_root": {
+      "p95_ms": 12.822554149999995,
+      "med_ms": 9.2121175
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "subscription-gating",
+  "layer": "app",
+  "at": "20261011T160656Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-34-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "d675fc0dbcb4",
+    "engine_binary_built": "2026-10-11T15:42:40Z",
+    "source_checkout_commit": "d5f05b0",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 601,
+  "rate_achieved": 20.021629679693255,
+  "p50_ms": 8.1890875,
+  "p95_ms": 13.569710749999993,
+  "p99_ms": 14.934229619999995,
+  "max_ms": 16.854144,
+  "ok_rate": 1,
+  "checks_passed": 600,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_link": {
+      "p95_ms": 10.22819775,
+      "med_ms": 7.097325
+    },
+    "page_root": {
+      "p95_ms": 14.7320144,
+      "med_ms": 11.595543
+    },
+    "page_account": {
+      "p95_ms": 10.799133999999999,
+      "med_ms": 7.551739
+    }
+  }
+}
