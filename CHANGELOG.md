@@ -30,6 +30,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Fixed
 
+- `make preview-stop` stops the preview servers. It used to stop only the
+  shells that launched them, so every server kept running and kept its port,
+  and `make preview` piped into another command never finished.
 - cms-migration imported its pages as `about`, `corrections` and `contact`.
   Every example shares one tenant and a slug is unique per tenant across every
   content type, so on the 0.54.1 engine company-site could not seed its own
