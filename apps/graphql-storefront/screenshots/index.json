@@ -1,0 +1,54 @@
+{
+  "app": "graphql-storefront",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Sparrow Cycle Works",
+      "viewport": "desktop"
+    },
+    {
+      "file": "c-slug.webp",
+      "route": "/c/[slug]",
+      "url": "/c/bags-and-racks",
+      "title": "Bags and Racks",
+      "viewport": "desktop"
+    },
+    {
+      "file": "graphql.webp",
+      "route": "/graphql",
+      "url": "/graphql",
+      "title": "The transport",
+      "viewport": "desktop"
+    },
+    {
+      "file": "p-slug.webp",
+      "route": "/p/[slug]",
+      "url": "/p/waxed-saddle-bag",
+      "title": "Waxed Canvas Saddle Bag",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Sparrow Cycle Works",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

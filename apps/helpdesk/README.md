@@ -9,6 +9,23 @@ by several people, and moved through a workflow, and every one of those is a
 write. This app is where the engine's write paths, its relation model and the
 narrow edge of its query language all show up at once.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="helpdesk: Inbox"></a><br><b>Inbox</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/new.webp"><img src="screenshots/new.webp" width="420" alt="helpdesk: Open a ticket"></a><br><b>Open a ticket</b><br><code>/new</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/tickets-slug.webp"><img src="screenshots/tickets-slug.webp" width="420" alt="helpdesk: A deleted user can still use their existing session"></a><br><b>A deleted user can still use their existing session</b><br><code>/tickets/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="helpdesk: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=helpdesk` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Why tickets are content types
 
 The engine's support assistant, part of the AI plugin, is not a ticket system.

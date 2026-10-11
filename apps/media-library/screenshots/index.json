@@ -1,0 +1,61 @@
+{
+  "app": "media-library",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Plate and Grain",
+      "viewport": "desktop"
+    },
+    {
+      "file": "albums-slug.webp",
+      "route": "/albums/[slug]",
+      "url": "/albums/calibration-frames",
+      "title": "Calibration Frames · Plate and Grain",
+      "viewport": "desktop"
+    },
+    {
+      "file": "photos-slug.webp",
+      "route": "/photos/[slug]",
+      "url": "/photos/gray-card-reference",
+      "title": "Gray Card Reference · Plate and Grain",
+      "viewport": "desktop"
+    },
+    {
+      "file": "photos-slug-variants.webp",
+      "route": "/photos/[slug]/variants",
+      "url": "/photos/gray-card-reference/variants",
+      "title": "Variants of Gray Card Reference · Plate and Grain",
+      "viewport": "desktop"
+    },
+    {
+      "file": "upload.webp",
+      "route": "/upload",
+      "url": "/upload",
+      "title": "Upload · Plate and Grain",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Plate and Grain",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

@@ -9,6 +9,26 @@ engine. Every other app here is a backend-for-frontend because a browser cannot
 be given a credential. A native client can be given a key, and a key is the
 credential the engine designs for that.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="mobile-api-backend: API keys"></a><br><b>API keys</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/feed.webp"><img src="screenshots/feed.webp" width="420" alt="mobile-api-backend: Notice feed"></a><br><b>Notice feed</b><br><code>/feed</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/keys-id.webp"><img src="screenshots/keys-id.webp" width="420" alt="mobile-api-backend: transit-app-quota-probe"></a><br><b>transit-app-quota-probe</b><br><code>/keys/[id]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/metering.webp"><img src="screenshots/metering.webp" width="420" alt="mobile-api-backend: Metering"></a><br><b>Metering</b><br><code>/metering</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="mobile-api-backend: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=mobile-api-backend` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this before you copy it
 
 **A key in a shipped app binary is a published key.** Anything on a device can

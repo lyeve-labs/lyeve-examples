@@ -1,0 +1,61 @@
+{
+  "app": "analytics-dashboard",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Engine telemetry",
+      "viewport": "desktop"
+    },
+    {
+      "file": "health.webp",
+      "route": "/health",
+      "url": "/health",
+      "title": "Health",
+      "viewport": "desktop"
+    },
+    {
+      "file": "notes.webp",
+      "route": "/notes",
+      "url": "/notes",
+      "title": "Notes",
+      "viewport": "desktop"
+    },
+    {
+      "file": "quota.webp",
+      "route": "/quota",
+      "url": "/quota",
+      "title": "Quota",
+      "viewport": "desktop"
+    },
+    {
+      "file": "requests.webp",
+      "route": "/requests",
+      "url": "/requests",
+      "title": "Requests",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Engine telemetry",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

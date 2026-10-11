@@ -5,6 +5,27 @@ requests in. The point of the example is the verification: a webhook receiver
 that does not check the signature is an unauthenticated write endpoint with
 extra steps.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="webhook-integrations: Webhook endpoints"></a><br><b>Webhook endpoints</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/deliveries.webp"><img src="screenshots/deliveries.webp" width="420" alt="webhook-integrations: Deliveries"></a><br><b>Deliveries</b><br><code>/deliveries</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/inbound.webp"><img src="screenshots/inbound.webp" width="420" alt="webhook-integrations: Inbound events"></a><br><b>Inbound events</b><br><code>/inbound</code></td>
+    <td width="50%" valign="top"><a href="screenshots/orders.webp"><img src="screenshots/orders.webp" width="420" alt="webhook-integrations: Orders"></a><br><b>Orders</b><br><code>/orders</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/receipts.webp"><img src="screenshots/receipts.webp" width="420" alt="webhook-integrations: Receipts"></a><br><b>Receipts</b><br><code>/receipts</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="webhook-integrations: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=webhook-integrations` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this first
 
 **The engine's delivery carries no webhook id.** A receiver cannot tell which

@@ -8,6 +8,23 @@ awkward shape: products point at two different content types, reviews point back
 at products, and the browse page needs a filter the engine can do and an order
 it cannot.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="marketplace: Longshore Market"></a><br><b>Longshore Market</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/products-slug.webp"><img src="screenshots/products-slug.webp" width="420" alt="marketplace: Archival Fineliner, 0.3mm"></a><br><b>Archival Fineliner, 0.3mm</b><br><code>/products/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/sellers-slug.webp"><img src="screenshots/sellers-slug.webp" width="420" alt="marketplace: Verdigris Roasters"></a><br><b>Verdigris Roasters</b><br><code>/sellers/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="marketplace: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=marketplace` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What it proves
 
 - Four content types, three `belongs_to` relations, and a page that reads all of

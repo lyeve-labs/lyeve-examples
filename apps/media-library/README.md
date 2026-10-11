@@ -5,6 +5,27 @@ variants, storage keys, and the record the engine keeps about every file. Where
 the other examples store a media id on an entry and proxy the bytes, this one
 works the pipeline itself.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="media-library: Plate and Grain"></a><br><b>Plate and Grain</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/albums-slug.webp"><img src="screenshots/albums-slug.webp" width="420" alt="media-library: Calibration Frames · Plate and Grain"></a><br><b>Calibration Frames · Plate and Grain</b><br><code>/albums/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/photos-slug.webp"><img src="screenshots/photos-slug.webp" width="420" alt="media-library: Gray Card Reference · Plate and Grain"></a><br><b>Gray Card Reference · Plate and Grain</b><br><code>/photos/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/photos-slug-variants.webp"><img src="screenshots/photos-slug-variants.webp" width="420" alt="media-library: Variants of Gray Card Reference · Plate and Grain"></a><br><b>Variants of Gray Card Reference · Plate and Grain</b><br><code>/photos/[slug]/variants</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/upload.webp"><img src="screenshots/upload.webp" width="420" alt="media-library: Upload · Plate and Grain"></a><br><b>Upload · Plate and Grain</b><br><code>/upload</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="media-library: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=media-library` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this before you build on it
 
 Four things cost an afternoon each if you find them by experiment.

@@ -3,6 +3,26 @@
 A two space documentation site: nested pages, a navigation tree, previous and
 next links in reading order, and a search box.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="docs-portal: Engine Guide"></a><br><b>Engine Guide</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/docs-space.webp"><img src="screenshots/docs-space.webp" width="420" alt="docs-portal: Getting Started"></a><br><b>Getting Started</b><br><code>/docs/[space]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/docs-space-page.webp"><img src="screenshots/docs-space-page.webp" width="420" alt="docs-portal: Search API · API Reference"></a><br><b>Search API · API Reference</b><br><code>/docs/[space]/[page]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/search.webp"><img src="screenshots/search.webp" width="420" alt="docs-portal: Search"></a><br><b>Search</b><br><code>/search</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="docs-portal: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=docs-portal` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What this example proves
 
 Hierarchical content works on an engine that has no concept of a hierarchy.

@@ -8,6 +8,23 @@ content tree on an engine whose relation support only walks one way?**
 
 Runs on port 5182.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="lms-courses: Meridian Learning"></a><br><b>Meridian Learning</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/courses-slug.webp"><img src="screenshots/courses-slug.webp" width="420" alt="lms-courses: Release Engineering for Small Teams"></a><br><b>Release Engineering for Small Teams</b><br><code>/courses/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/courses-slug-lesson.webp"><img src="screenshots/courses-slug-lesson.webp" width="420" alt="lms-courses: Two Permanent Branches"></a><br><b>Two Permanent Branches</b><br><code>/courses/[slug]/[lesson]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="lms-courses: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=lms-courses` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What this example proves
 
 Content is nested three deep. A lesson belongs to a module, a module belongs to

@@ -1,0 +1,40 @@
+{
+  "app": "jobs-board",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Harbourside Jobs",
+      "viewport": "desktop"
+    },
+    {
+      "file": "jobs-slug.webp",
+      "route": "/jobs/[slug]",
+      "url": "/jobs/customer-success-analyst-basalt",
+      "title": "Customer Success Analyst",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Harbourside Jobs",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

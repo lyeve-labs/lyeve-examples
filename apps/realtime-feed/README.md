@@ -4,6 +4,22 @@ A live incident board. The page is server-rendered in full, then kept current by
 one `EventSource` pointed at this app, which holds one upstream connection per
 watched content type to the engine's server-sent events stream.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="realtime-feed: Meridian Platform Status"></a><br><b>Meridian Platform Status</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/ops.webp"><img src="screenshots/ops.webp" width="420" alt="realtime-feed: Operations"></a><br><b>Operations</b><br><code>/ops</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="realtime-feed: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=realtime-feed` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## Read this first
 
 **The stream is a hint, never the record.** The engine buffers sixteen events

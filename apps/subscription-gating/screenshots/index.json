@@ -1,0 +1,45 @@
+{
+  "app": "subscription-gating",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Cold Path",
+      "viewport": "desktop"
+    },
+    {
+      "file": "articles-slug.webp",
+      "route": "/articles/[slug]",
+      "url": "/articles/draining-a-node-without-dropping-a-request",
+      "title": "Draining a Node Without Dropping a Request",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "Cold Path",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": [
+    {
+      "route": "/account",
+      "reason": "it prints the license of the stack it was captured on"
+    }
+  ]
+}

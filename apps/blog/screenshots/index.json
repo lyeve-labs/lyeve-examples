@@ -1,0 +1,47 @@
+{
+  "app": "blog",
+  "captured": "2026-10-11",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scale": 2
+    },
+    "phone": {
+      "width": 390,
+      "height": 844,
+      "scale": 3
+    }
+  },
+  "shots": [
+    {
+      "file": "home.webp",
+      "route": "/",
+      "url": "/",
+      "title": "The Analytical Review",
+      "viewport": "desktop"
+    },
+    {
+      "file": "posts-slug.webp",
+      "route": "/posts/[slug]",
+      "url": "/posts/why-indexes-are-a-modeling-decision",
+      "title": "Why Indexes Are a Modeling Decision",
+      "viewport": "desktop"
+    },
+    {
+      "file": "search.webp",
+      "route": "/search",
+      "url": "/search?q=engine",
+      "title": "Search",
+      "viewport": "desktop"
+    },
+    {
+      "file": "home-phone.webp",
+      "route": "/",
+      "url": "/",
+      "title": "The Analytical Review",
+      "viewport": "phone"
+    }
+  ],
+  "skipped": []
+}

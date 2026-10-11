@@ -8,6 +8,30 @@ headless CMS is usually bought for: editorial pages an author changes without a
 deploy, and a form a stranger can post to. Both go through the engine. Neither
 lets the browser near it.
 
+## Preview
+
+Every page of this example, captured from a running stack with its seeded content.
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home.webp"><img src="screenshots/home.webp" width="420" alt="company-site: Basalt Networks"></a><br><b>Basalt Networks</b><br><code>/</code></td>
+    <td width="50%" valign="top"><a href="screenshots/slug.webp"><img src="screenshots/slug.webp" width="420" alt="company-site: Security and compliance | Basalt Networks"></a><br><b>Security and compliance | Basalt Networks</b><br><code>/[slug]</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/about.webp"><img src="screenshots/about.webp" width="420" alt="company-site: About Basalt Networks | Basalt Networks"></a><br><b>About Basalt Networks | Basalt Networks</b><br><code>/about</code></td>
+    <td width="50%" valign="top"><a href="screenshots/careers.webp"><img src="screenshots/careers.webp" width="420" alt="company-site: Careers | Basalt Networks"></a><br><b>Careers | Basalt Networks</b><br><code>/careers</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/careers-slug.webp"><img src="screenshots/careers-slug.webp" width="420" alt="company-site: Senior Site Reliability Engineer | Basalt Networks"></a><br><b>Senior Site Reliability Engineer | Basalt Networks</b><br><code>/careers/[slug]</code></td>
+    <td width="50%" valign="top"><a href="screenshots/contact.webp"><img src="screenshots/contact.webp" width="420" alt="company-site: Contact | Basalt Networks"></a><br><b>Contact | Basalt Networks</b><br><code>/contact</code></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="screenshots/home-phone.webp"><img src="screenshots/home-phone.webp" width="200" alt="company-site: On a phone"></a><br><b>On a phone</b><br><code>/</code></td>
+  </tr>
+</table>
+
+`make screenshots APPS=company-site` at the repository root captures them again. [docs/PREVIEWS.md](../../docs/PREVIEWS.md) says how they are made and how to use them.
+
 ## What it proves
 
 **A form stored in the engine, on the forms preset.** `pnpm run setup` applies
