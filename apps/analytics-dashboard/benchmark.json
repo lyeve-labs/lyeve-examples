@@ -1,0 +1,222 @@
+{
+  "id": "ops-dashboard",
+  "name": "Operations Dashboard",
+  "prefix": "metrics_",
+  "tagline": "An operations console that reads the engine's own telemetry, not content.",
+  "realWorld": "An operator console over the engine's request analytics, content activity, health probes, pool and latency figures, and usage and quotas. Each page fans out into five to eight telemetry reads at once, and the figures come from the traffic the engine has served, so the seed and the run fill them.",
+  "seed": {
+    "metrics_notes": 500
+  },
+  "seedValues": {
+    "metrics_notes": {
+      "kind": "observation"
+    }
+  },
+  "rate": 120,
+  "thresholds": {
+    "p95_ms": 220,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "request-summary",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/summary",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "the request summary on the overview and the requests page, over the default 24 hour window"
+    },
+    {
+      "id": "request-trend",
+      "weight": 10,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/trend",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "the hourly request trend, drawn on three of the five pages"
+    },
+    {
+      "id": "collector-config",
+      "weight": 9,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/config",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "the collector settings, which say how stale the request panels can be"
+    },
+    {
+      "id": "tenant-breakdown",
+      "weight": 5,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/tenants?limit=25",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "requests by tenant, on the requests page and the quota page"
+    },
+    {
+      "id": "endpoint-breakdown",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/endpoints?limit=15",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "the busiest endpoints"
+    },
+    {
+      "id": "method-breakdown",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/methods?limit=10",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "requests by HTTP method"
+    },
+    {
+      "id": "agent-breakdown",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/agents?limit=10",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "requests by user agent"
+    },
+    {
+      "id": "anomalies",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/admin/apianalytics/metrics/anomalies",
+      "needs": "apianalytics",
+      "paid": true,
+      "desc": "the anomaly report on the requests page"
+    },
+    {
+      "id": "content-activity",
+      "weight": 6,
+      "method": "GET",
+      "path": "/api/admin/analytics/events?limit=200",
+      "needs": "analytics",
+      "paid": false,
+      "desc": "the last 200 content events, which the engine's content hooks write on every create"
+    },
+    {
+      "id": "daily-rollup",
+      "weight": 6,
+      "method": "GET",
+      "path": "/api/admin/analytics/summary",
+      "needs": "analytics",
+      "paid": false,
+      "desc": "the daily rollup summary on the overview"
+    },
+    {
+      "id": "providers",
+      "weight": 6,
+      "method": "GET",
+      "path": "/api/admin/analytics/providers",
+      "needs": "analytics",
+      "paid": false,
+      "desc": "the configured analytics destinations, read on every overview"
+    },
+    {
+      "id": "notes",
+      "weight": 7,
+      "method": "GET",
+      "path": "/api/v1/content/metrics_notes?limit=25",
+      "needs": null,
+      "desc": "the operators' notes, the console's one content type"
+    },
+    {
+      "id": "healthz",
+      "weight": 3,
+      "method": "GET",
+      "path": "/healthz",
+      "needs": null,
+      "desc": "the liveness probe on the health page"
+    },
+    {
+      "id": "readyz",
+      "weight": 3,
+      "method": "GET",
+      "path": "/readyz",
+      "needs": null,
+      "desc": "the readiness probe, which runs its checks on every call"
+    },
+    {
+      "id": "startup",
+      "weight": 3,
+      "method": "GET",
+      "path": "/startup",
+      "needs": null,
+      "desc": "the startup probe, which caches its first pass"
+    },
+    {
+      "id": "ready",
+      "weight": 3,
+      "method": "GET",
+      "path": "/api/v1/ready",
+      "needs": null,
+      "desc": "the authenticated readiness report with the schema count"
+    },
+    {
+      "id": "pool-health",
+      "weight": 3,
+      "method": "GET",
+      "path": "/api/admin/pool/health",
+      "needs": null,
+      "desc": "the database pool's live statistics"
+    },
+    {
+      "id": "latency",
+      "weight": 3,
+      "method": "GET",
+      "path": "/api/admin/debug/latency?top=12",
+      "needs": null,
+      "desc": "the slowest endpoints from the engine's latency tracker"
+    },
+    {
+      "id": "runtime-metrics",
+      "weight": 3,
+      "method": "GET",
+      "path": "/api/admin/metrics",
+      "needs": null,
+      "desc": "the Prometheus exposition, parsed by the console for in-flight requests and status codes"
+    },
+    {
+      "id": "tenant-usage",
+      "weight": 1,
+      "method": "GET",
+      "path": "/api/admin/usage/tenants",
+      "needs": "usage",
+      "paid": false,
+      "desc": "content, media and API-key usage per tenant, counted at read time"
+    },
+    {
+      "id": "quotas",
+      "weight": 1,
+      "method": "GET",
+      "path": "/api/admin/quotas?limit=50",
+      "needs": "usage",
+      "paid": false,
+      "desc": "the stored quotas"
+    },
+    {
+      "id": "quota-status",
+      "weight": 1,
+      "method": "GET",
+      "path": "/api/v1/quotas/status",
+      "needs": "usage",
+      "paid": false,
+      "desc": "the calling tenant's own quota status"
+    },
+    {
+      "id": "quota-requests",
+      "weight": 1,
+      "method": "GET",
+      "path": "/api/admin/quota-requests",
+      "needs": "usage",
+      "paid": false,
+      "desc": "the quota increase requests awaiting review"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix. The weights assume overview 40, requests 25, health 20, quota 10 and notes 5 per hundred page views, with each page's calls counted once per view: 680 engine calls per hundred views, scaled to 100. The requests page sends the summary an explicit from and to for the same 24 hour default, and the driver has no template for a moving instant, so both pages drive the summary without a window. Entries with needs null are engine routes that no plugin serves, or plain content. apianalytics is a paid plugin and answers 402 on a free engine, so half of this mix runs only with FULL=1. analytics and usage are free, and every route here is one of their free reads: analytics-pro gates only creating or editing a pro provider, and usage-pro only setting a quota. The probes are public and go to the content router. The rollup, the providers, the quotas and the quota requests read empty on a fresh engine, because nothing the seeder or this mix sends writes them."
+}

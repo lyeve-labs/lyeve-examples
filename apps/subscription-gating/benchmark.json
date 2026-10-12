@@ -1,0 +1,69 @@
+{
+  "id": "paywall",
+  "name": "Subscription Publication",
+  "prefix": "sub_",
+  "tagline": "A paywalled publication: each signed-in page view also reads the reader.",
+  "realWorld": "Free and paid articles behind a server-side paywall. A signed-in reader's page costs one read of their member record on top of the article, because access is decided from the tier and status the payment provider last reported.",
+  "seed": {
+    "sub_articles": 1500,
+    "sub_members": 2000
+  },
+  "seedValues": {
+    "sub_articles": {
+      "tier": "member"
+    },
+    "sub_members": {
+      "email": "reader@example.com",
+      "tier": "member",
+      "status": "active"
+    }
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 120,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "article-by-slug",
+      "weight": 42,
+      "method": "GET",
+      "path": "/api/v1/content/sub_articles?filters[slug]={slug:sub_articles}&limit=25",
+      "needs": null,
+      "desc": "an article page resolves its slug, since there is no get-by-slug route"
+    },
+    {
+      "id": "reader",
+      "weight": 28,
+      "method": "GET",
+      "path": "/api/v1/content/sub_members/{id:sub_members}",
+      "needs": null,
+      "desc": "the layout reads the signed-in reader on every page to decide access"
+    },
+    {
+      "id": "article-list",
+      "weight": 24,
+      "method": "GET",
+      "path": "/api/v1/content/sub_articles?limit=25",
+      "needs": null,
+      "desc": "the front page, newest first"
+    },
+    {
+      "id": "entitlements",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/admin/entitlements",
+      "needs": null,
+      "desc": "the account page's license panel, an engine route that no plugin serves"
+    },
+    {
+      "id": "roster",
+      "weight": 2,
+      "method": "GET",
+      "path": "/api/v1/content/sub_members?limit=25",
+      "needs": null,
+      "desc": "the member list the signed-out account page shows, because the demo has no sign-up"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix. The weights assume article pages 60, front page 35 and account page 5 per hundred page views, with 40 of every hundred views from a signed-in reader. Every reader is seeded as an active member and every article as paid, so each reader read is the one that unlocks an article. Three calls are left out. Sign-in looks a member up with filters[email], and the driver can sample an id or a slug but not a field value, so the lookup would either miss or match every seeded reader. The payment provider's webhook reads the member on the admin router and writes it back with a PUT, which the driver cannot send. Media downloads need uploaded files, which the seeder does not create."
+}
