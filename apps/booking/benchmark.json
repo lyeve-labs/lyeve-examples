@@ -1,0 +1,88 @@
+{
+  "id": "booking",
+  "name": "Appointment Booking",
+  "prefix": "booking_",
+  "tagline": "A clinic's booking site: every page reads a practitioner's whole diary.",
+  "realWorld": "Patients pick a practitioner, scan the open times and book one. The engine has no availability query, so the front page and each practitioner page read up to 200 slots and decide what is open in the app.",
+  "seed": {
+    "booking_practitioners": 30,
+    "booking_slots": 4000,
+    "booking_appointments": 2500
+  },
+  "seedValues": {
+    "booking_practitioners": {
+      "photo_media_id": null
+    },
+    "booking_slots": {
+      "state": "open",
+      "duration_minutes": 30
+    },
+    "booking_appointments": {
+      "customer_email": "patient@example.com"
+    }
+  },
+  "rate": 200,
+  "thresholds": {
+    "p95_ms": 160,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "practitioner-list",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/booking_practitioners?limit=25",
+      "needs": null,
+      "desc": "the front page's practitioner cards"
+    },
+    {
+      "id": "diary",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/booking_slots?limit=200",
+      "needs": null,
+      "desc": "the front page reads 200 slots to count each practitioner's open hours, because the engine has no aggregate"
+    },
+    {
+      "id": "practitioner-by-slug",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/booking_practitioners?filters[slug]={slug:booking_practitioners}&limit=25",
+      "needs": null,
+      "desc": "a practitioner page resolves its slug, since there is no get-by-slug route"
+    },
+    {
+      "id": "practitioner-diary",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/booking_slots?filters[practitioner_id]={id:booking_practitioners}&limit=200",
+      "needs": null,
+      "desc": "one practitioner's diary, filtered on the foreign key and grouped by day in the app"
+    },
+    {
+      "id": "slot-by-slug",
+      "weight": 13,
+      "method": "GET",
+      "path": "/api/v1/content/booking_slots?filters[slug]={slug:booking_slots}&limit=25",
+      "needs": null,
+      "desc": "the booking form loads its slot, and reads it again on submit before claiming it"
+    },
+    {
+      "id": "practitioner-read",
+      "weight": 12,
+      "method": "GET",
+      "path": "/api/v1/content/booking_practitioners/{id:booking_practitioners}",
+      "needs": null,
+      "desc": "the slot's practitioner on the booking form and on the confirmation page, the second hop populate does not take"
+    },
+    {
+      "id": "confirmation",
+      "weight": 3,
+      "method": "GET",
+      "path": "/api/v1/content/booking_appointments?filters[slug]={slug:booking_appointments}&limit=25&populate=slot",
+      "needs": null,
+      "desc": "the confirmation page: an appointment by slug with its slot inflated"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix. The weights follow a visitor funnel of front page 35, practitioner page 35, booking form 18, submit 6 and confirmation 6 per hundred page views. Each submit also writes twice, a PUT that marks the slot booked and a POST that creates the appointment, and neither is driven: the driver has no PUT, and the create alone would grow the appointments without ever closing a slot. Practitioner photos are left out too, because they are media downloads and the seeder uploads no files. seedValues opens every slot, so the open-hours count the app derives covers the whole diary."
+}

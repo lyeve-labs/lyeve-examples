@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- Benchmark manifests for booking, helpdesk, subscription-gating and
+  analytics-dashboard, so the benchmark profiles cover 17 examples.
+
+### Changed
+
+- A benchmark traffic entry that depends on a plugin says whether that plugin
+  needs a paid license (`paid: true` or `false`), and `perf/export-profiles.mjs`
+  refuses an entry that does not. The forum's thread read names the schema
+  plugin, which owns the comments preset. The profile format moves to 0.5.0.
+- The README and `platform/scripts/lib.sh` describe the development license
+  without listing its features. Nothing read the list, and it had fallen
+  behind the engine.
+
 ### Fixed
 
 - headless-node signs in again when the engine refuses its cached token. After
@@ -15,12 +30,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   replies under the topics, and `perf/export-profiles.mjs` carries both into the
   profile. The exported forum profile left the preset's type out, so every
   thread read of the benchmark answered 404.
-
-### Changed
-
-- The README and `platform/scripts/lib.sh` describe the development license
-  without listing its features. Nothing read the list, and it had fallen
-  behind the engine.
 
 ## [0.2.0] - 2026-10-11
 

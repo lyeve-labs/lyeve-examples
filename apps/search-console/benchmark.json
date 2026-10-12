@@ -20,6 +20,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10",
       "needs": "search",
+      "paid": true,
       "desc": "the ordinary query: full text over title and body, ranked, first page"
     },
     {
@@ -28,6 +29,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10&highlight=true",
       "needs": "search",
+      "paid": true,
       "desc": "the same query with snippets, which adds two ts_headline calls per row"
     },
     {
@@ -36,6 +38,7 @@
       "method": "GET",
       "path": "/api/admin/search/instant?q={term}&schema=kb_articles&limit=8",
       "needs": "search",
+      "paid": true,
       "desc": "autocomplete as the reader types: a prefix LIKE on the title, several per query typed"
     },
     {
@@ -44,6 +47,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10&facets=schema,status",
       "needs": "search",
+      "paid": true,
       "desc": "faceted counts, which run one extra grouped query per facet field"
     },
     {
@@ -52,6 +56,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=kb_articles&limit=10&offset=20",
       "needs": "search",
+      "paid": true,
       "desc": "the third page of results, where the count is repeated and the offset is skipped"
     },
     {
@@ -60,6 +65,7 @@
       "method": "GET",
       "path": "/api/admin/search?schema=kb_articles&limit=25",
       "needs": "search",
+      "paid": true,
       "desc": "a search with no query text, which is a browse ordered by last update and takes no ranking"
     },
     {

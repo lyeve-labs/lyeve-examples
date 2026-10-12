@@ -53,6 +53,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=blog_posts",
       "needs": "search",
+      "paid": true,
       "desc": "full-text post search, on the admin router"
     }
   ],

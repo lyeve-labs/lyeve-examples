@@ -28,6 +28,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=jobs_listings",
       "needs": "search",
+      "paid": true,
       "desc": "the way most candidates arrive"
     },
     {
