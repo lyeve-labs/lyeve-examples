@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "setup": "node --experimental-strip-types --env-file-if-exists=.env setup/provision.ts"
+    "setup": "node --experimental-strip-types --env-file-if-exists=.env setup/provision.ts",
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts"
   },
   "devDependencies": {
     "@lucide/svelte": "^0.577.0",
