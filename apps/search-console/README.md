@@ -234,11 +234,11 @@ set. Three details are easy to get wrong:
   `category` is specific to search.
 - **`rank` is `ts_rank` on Postgres, `1.0` on MySQL and SQL Server for any match, and
   `0.0` everywhere for a search with no query text.**
-- **`snippets` is Postgres only, and the body snippet is cut from the body's raw
-  JSON**, so it contains field names and quotation marks. The markers are the
-  literal strings `<mark>` and `</mark>` inside otherwise unescaped document
-  text. `src/lib/highlight.ts` parses them rather than rendering the string as
-  HTML.
+- **The body snippet is cut from the body's raw JSON**, so it contains field
+  names and quotation marks. A snippet is HTML: the document text is escaped and
+  each match is wrapped in `<mark>` and `</mark>`. `src/lib/highlight.ts` splits
+  it on the mark tags and decodes the entities in each piece, so the page renders
+  text and real `<mark>` elements and never renders the string as HTML.
 
 ## GET and POST
 
