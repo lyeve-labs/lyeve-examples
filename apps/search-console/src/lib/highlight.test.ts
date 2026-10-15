@@ -36,3 +36,7 @@ test('an unclosed mark marks the rest', () => {
 		{ text: 'b <', mark: true }
 	]);
 });
+
+test('a name an object inherits is not an entity', () => {
+	assert.equal(decodeEntities('&constructor; &toString; &valueOf; &hasOwnProperty;'), '&constructor; &toString; &valueOf; &hasOwnProperty;');
+});
