@@ -28,8 +28,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -71,8 +71,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -114,8 +114,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -157,8 +157,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -200,8 +200,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -243,8 +243,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -286,8 +286,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -329,8 +329,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -372,8 +372,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -431,8 +431,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -474,8 +474,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -517,8 +517,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -560,8 +560,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -603,8 +603,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -646,8 +646,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -692,8 +692,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -735,8 +735,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -778,8 +778,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -821,8 +821,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -864,8 +864,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -907,8 +907,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -950,8 +950,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -996,8 +996,8 @@ importers:
         specifier: ^0.577.0
         version: 0.577.0(svelte@5.57.0)
       '@lyeve-labs/ui-kit':
-        specifier: ^0.32.1
-        version: 0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
+        specifier: ^0.38.4
+        version: 0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)
       '@sveltejs/adapter-node':
         specifier: ^5.5.7
         version: 5.5.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.57.0)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))(svelte@5.57.0)(typescript@5.9.3)(vite@5.4.21(@types/node@24.13.3)(lightningcss@1.32.0)))
@@ -1209,8 +1209,8 @@ packages:
     resolution: {integrity: sha512-kvxIviYErEpiEd6UDvM9NuL8ih/6b0uoYKuW/2eTF5SwnCfGLWQpfhBsSL7C0o6yvTs1W3HjkBYlxV+3uyBvRg==}
     engines: {node: '>=20'}
 
-  '@lyeve-labs/ui-kit@0.32.1':
-    resolution: {integrity: sha512-Vta8GPBZwne3HBf3NJIl38SvTLcbwyQK/G2cYODctXsTME0mNWMbVwsYMhh5cgza5UUEHpSHBq3aQauoFSSpTw==}
+  '@lyeve-labs/ui-kit@0.38.4':
+    resolution: {integrity: sha512-ZSP/l58mMv75n3V6xiMO4JHx86y0TYZnA4pulnNEFcs5ri+JJukr0X0FwOuiZU7lgWE7zVfPC2W248uDVn15TA==}
     engines: {node: '>=24'}
     peerDependencies:
       '@lucide/svelte': '>=0.511.0 <2'
@@ -2000,7 +2000,7 @@ snapshots:
 
   '@lyeve-labs/client@0.3.3': {}
 
-  '@lyeve-labs/ui-kit@0.32.1(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)':
+  '@lyeve-labs/ui-kit@0.38.4(@lucide/svelte@0.577.0(svelte@5.57.0))(svelte@5.57.0)(tailwindcss@4.3.3)':
     dependencies:
       '@lucide/svelte': 0.577.0(svelte@5.57.0)
       svelte: 5.57.0
