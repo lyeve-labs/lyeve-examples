@@ -13,6 +13,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- Every app declares `@lyeve-labs/ui-kit` ^0.38.4 instead of ^0.32.1, which a
+  caret range on 0.x never left. `make check-kit`, part of `pnpm check` and
+  `make verify`, fails when two apps declare different kit ranges. The
+  workspace file no longer exempts old kit versions from the release-age
+  policy, since nothing resolves them.
 - A benchmark traffic entry that depends on a plugin says whether that plugin
   needs a paid license (`paid: true` or `false`), and `perf/export-profiles.mjs`
   refuses an entry that does not. The forum's thread read names the schema
