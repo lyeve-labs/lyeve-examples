@@ -169,15 +169,29 @@ for (const app of readdirSync(APPS).sort()) {
 	}
 	const m = JSON.parse(readFileSync(manifestPath, 'utf8'));
 
-	const names = all.map((s) => s.name).filter((n) => n.startsWith(m.prefix)).sort();
+	// A type the app gets from a preset does not carry the app's prefix, so a
+	// type the manifest seeds is included by name as well. The forum's replies
+	// live in the comments preset's type, and leaving it out sent every thread
+	// read of the benchmark to a type the seeder never created.
+	const named = new Set([...Object.keys(m.seed), ...Object.keys(m.seedValues ?? {})]);
+	const names = all.map((s) => s.name).filter((n) => n.startsWith(m.prefix) || named.has(n)).sort();
 	if (names.length === 0) {
 		throw new Error(`${app}: no content types with prefix "${m.prefix}" on the engine. Run make setup.`);
 	}
 
 	// Every type the seed volumes name has to exist, or the profile would ask
 	// the seeder to fill something the engine does not have.
-	for (const type of Object.keys(m.seed)) {
+	for (const type of named) {
 		if (!byName.has(type)) throw new Error(`${app}: seed names ${type}, which the engine does not have`);
+	}
+
+	// An entry that depends on a plugin says whether that plugin needs a paid
+	// license. A free run drives every entry that is not paid and checks the
+	// mark against the free engine, so an entry without one is refused here.
+	for (const t of m.traffic) {
+		if (t.needs != null && typeof t.paid !== 'boolean') {
+			throw new Error(`${app}: traffic ${t.id} needs ${t.needs} but does not say paid: true or paid: false`);
+		}
 	}
 
 	const ordered = inDependencyOrder(names.map((n) => toProfileSchema(byName.get(n))));
@@ -190,6 +204,8 @@ for (const app of readdirSync(APPS).sort()) {
 		realWorld: m.realWorld,
 		schemas: ordered,
 		seed: m.seed,
+		...(m.presets ? { presets: m.presets } : {}),
+		...(m.seedValues ? { seedValues: m.seedValues } : {}),
 		rate: m.rate,
 		thresholds: m.thresholds,
 		traffic: m.traffic
@@ -206,16 +222,22 @@ const note =
 	'Path templates say what they sample: {id:type} and {slug:type} draw from that content type, {term} is a search word. ' +
 	'Queries use the syntax the engine really has: filters[column]=value for exact equality, filters[<relation>_id] for a ' +
 	'relation, no sort parameter (rows arrive created_at DESC), limit clamped to 25..200, and search on the admin router. ' +
-	'Field types: string|text|integer|decimal|boolean|json|timestamp|media|relation(->to).';
+	'Field types: string|text|integer|decimal|boolean|json|timestamp|media|relation(->to). ' +
+	'presets are schema plugin presets the seeder applies before it creates the types. seedValues fixes a field ' +
+	'for every seeded row of a type: a literal, null to leave it unset, or {id:type} for a seeded row of that type. ' +
+	'A traffic entry with needs names the plugin it depends on, and paid says whether that plugin needs a license: ' +
+	'a free run drives every entry that is not paid, and a licensed run (FULL=1) drives them all.';
 
-writeFileSync(OUT, JSON.stringify({ version: '0.3.0', note, profiles }, null, 2) + '\n');
+writeFileSync(OUT, JSON.stringify({ version: '0.5.0', note, profiles }, null, 2) + '\n');
 
 console.log(`${profiles.length} profiles -> ${OUT}`);
 for (const p of profiles) {
 	const rows = Object.values(p.seed).reduce((a, b) => a + b, 0);
+	const paid = [...new Set(p.traffic.filter((t) => t.paid).map((t) => t.needs))];
 	console.log(
-		`  ${p.id.padEnd(12)} ${String(p.schemas.length).padStart(2)} types  ` +
-		`${String(p.traffic.length).padStart(2)} entries  ${String(rows).padStart(5)} rows  ${p.rate}/s`
+		`  ${p.id.padEnd(14)} ${String(p.schemas.length).padStart(2)} types  ` +
+		`${String(p.traffic.length).padStart(2)} entries  ${String(rows).padStart(5)} rows  ${p.rate}/s  ` +
+		(paid.length ? `paid: ${paid.join(', ')}` : 'free')
 	);
 }
 if (skipped.length) console.log(`\nno manifest, not benchmarked: ${skipped.join(', ')}`);

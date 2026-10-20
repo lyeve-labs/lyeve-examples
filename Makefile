@@ -49,7 +49,7 @@ build: ## Build every app
 check: ## Type-check every app
 	@pnpm -r --if-present check
 
-verify: install check-vendor build check smoke ## Everything a change has to pass
+verify: install check-vendor check-kit build check smoke ## Everything a change has to pass
 
 dev-%: ## Run one app, for example `make dev-blog`
 	@cd apps/$* && pnpm dev
@@ -72,6 +72,9 @@ vendor: ## Copy the shared client into every app
 check-vendor: ## Fail if any app's copy of the client has drifted
 	@bash platform/scripts/vendor-client.sh --check
 
+check-kit: ## Fail if the apps declare different ui-kit ranges
+	@node platform/scripts/check-kit-range.mjs
+
 bench-list: ## What can be measured, and what each one means
 	@bash perf/bench.sh list
 
@@ -91,4 +94,4 @@ bench-apps-json: ## Regenerate perf/apps.json from the apps and the engine
 export-profiles: ## Write the benchmark repo's profiles from the running engine
 	@node perf/export-profiles.mjs
 
-.PHONY: help up fresh down logs print-env install smoke setup build check verify preview preview-stop check-pages screenshots bench-apps-json bench-all bench bench-list export-profiles vendor check-vendor
+.PHONY: help up fresh down logs print-env install smoke setup build check verify preview preview-stop check-pages screenshots bench-apps-json bench-all bench bench-list export-profiles vendor check-vendor check-kit

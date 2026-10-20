@@ -21,6 +21,7 @@
       "method": "POST",
       "path": "/api/v1/graphql",
       "needs": "graphql",
+      "paid": true,
       "postBody": {
         "query": "{ gql_products(limit: 25) { id title slug price_cents stock } }"
       },
@@ -32,6 +33,7 @@
       "method": "POST",
       "path": "/api/v1/graphql",
       "needs": "graphql",
+      "paid": true,
       "postBody": {
         "query": "{ products: gql_products(limit: 25) { id title slug price_cents } collections: gql_collections(limit: 20) { id title slug } reviews: gql_reviews(limit: 25) { id title rating } }"
       },
@@ -43,6 +45,7 @@
       "method": "POST",
       "path": "/api/v1/graphql",
       "needs": "graphql",
+      "paid": true,
       "postBody": {
         "query": "{ gql_products(limit: 50) { id title slug description price_cents stock collection_slug } }"
       },

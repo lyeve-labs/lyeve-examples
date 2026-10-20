@@ -1,10 +1,10 @@
 {
   "name": "lyeve-examples",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "pnpm -r --if-present check",
+    "check": "node platform/scripts/check-kit-range.mjs && pnpm -r --if-present check",
     "build": "pnpm -r --if-present build"
   },
   "engines": {

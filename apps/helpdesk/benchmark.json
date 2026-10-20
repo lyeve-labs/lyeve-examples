@@ -1,0 +1,78 @@
+{
+  "id": "helpdesk",
+  "name": "Support Helpdesk",
+  "prefix": "desk_",
+  "tagline": "A support desk whose inbox reads every ticket and every reply on each view.",
+  "realWorld": "Agents work a queue of tickets and the threads under them. The engine has no count and no negated filter, so the inbox pages through every ticket by status and every reply to show a reply count, and the cost of one inbox view grows with the whole desk.",
+  "seed": {
+    "desk_tickets": 1000,
+    "desk_replies": 3000
+  },
+  "seedValues": {
+    "desk_tickets": {
+      "status": "open",
+      "priority": "normal",
+      "requester_email": "customer@example.com",
+      "attachment_media_id": null
+    },
+    "desk_replies": {
+      "author_role": "agent"
+    }
+  },
+  "rate": 150,
+  "thresholds": {
+    "p95_ms": 200,
+    "error_rate": 0.01
+  },
+  "traffic": [
+    {
+      "id": "queue-first-page",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/v1/content/desk_tickets?filters[status]=open&limit=200",
+      "needs": null,
+      "desc": "the first page of the inbox's status query"
+    },
+    {
+      "id": "queue-deep-page",
+      "weight": 14,
+      "method": "GET",
+      "path": "/api/v1/content/desk_tickets?filters[status]=open&limit=200&offset=600",
+      "needs": null,
+      "desc": "a later page of the same query, which the inbox reads until a page comes back short"
+    },
+    {
+      "id": "reply-count-first-page",
+      "weight": 4,
+      "method": "GET",
+      "path": "/api/v1/content/desk_replies?limit=200",
+      "needs": null,
+      "desc": "the first page of the unfiltered reply read behind each row's reply count"
+    },
+    {
+      "id": "reply-count-deep-page",
+      "weight": 49,
+      "method": "GET",
+      "path": "/api/v1/content/desk_replies?limit=200&offset=1600",
+      "needs": null,
+      "desc": "a middle page of that read, which walks every reply on the desk at each inbox view"
+    },
+    {
+      "id": "ticket-by-slug",
+      "weight": 18,
+      "method": "GET",
+      "path": "/api/v1/content/desk_tickets?filters[slug]={slug:desk_tickets}&limit=25",
+      "needs": null,
+      "desc": "a ticket page resolves its slug, and so does each reply or status action before it writes"
+    },
+    {
+      "id": "thread",
+      "weight": 11,
+      "method": "GET",
+      "path": "/api/v1/content/desk_replies?filters[ticket_id]={id:desk_tickets}&limit=200",
+      "needs": null,
+      "desc": "the thread under a ticket, filtered on the foreign key"
+    }
+  ],
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix. The weights follow an agent handling one ticket: one inbox view, three loads of the ticket page (on opening it, after a reply, after a status change) and two actions that each re-read the ticket. At these volumes one inbox view is five ticket pages and fifteen reply pages, which is why reply paging is half the mix. Every ticket is seeded open, because seedValues fixes one value per type. The inbox reads every ticket whichever status it holds, so the rows read per view are the same as on a desk split three ways, and only the number of queries carrying them differs: the pending and closed queries are therefore left out rather than driven against an empty status. The writes are left out as well. A reply is a create the driver could express, but the status change is a PUT it cannot, and driving one without the other would grow the threads under the sampled tickets for the length of the run."
+}

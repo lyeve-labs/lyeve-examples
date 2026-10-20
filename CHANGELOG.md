@@ -4,6 +4,38 @@ All notable changes to this project are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-10-20
+
+### Added
+
+- Benchmark manifests for booking, helpdesk, subscription-gating and
+  analytics-dashboard, so the benchmark profiles cover 17 examples.
+
+### Changed
+
+- Every app declares `@lyeve-labs/ui-kit` ^0.38.4 instead of ^0.32.1, which a
+  caret range on 0.x never left. `make check-kit`, part of `pnpm check` and
+  `make verify`, fails when two apps declare different kit ranges. The
+  workspace file no longer exempts old kit versions from the release-age
+  policy, since nothing resolves them.
+- A benchmark traffic entry that depends on a plugin says whether that plugin
+  needs a paid license (`paid: true` or `false`), and `perf/export-profiles.mjs`
+  refuses an entry that does not. The forum's thread read names the schema
+  plugin, which owns the comments preset. The profile format moves to 0.5.0.
+- The README and `platform/scripts/lib.sh` describe the development license
+  without listing its features. Nothing read the list, and it had fallen
+  behind the engine.
+
+### Fixed
+
+- headless-node signs in again when the engine refuses its cached token. After
+  `make fresh` it reused a token for an account that no longer existed, so
+  `make setup` failed with 401 "session invalidated".
+- The community-forum benchmark manifest names the comments preset and seeds
+  replies under the topics, and `perf/export-profiles.mjs` carries both into the
+  profile. The exported forum profile left the preset's type out, so every
+  thread read of the benchmark answered 404.
+
 ## [0.2.0] - 2026-10-11
 
 ### Added

@@ -62,6 +62,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=shop_products",
       "needs": "search",
+      "paid": true,
       "desc": "product search"
     }
   ],

@@ -44,6 +44,7 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=docs_pages",
       "needs": "search",
+      "paid": true,
       "desc": "documentation search"
     }
   ],

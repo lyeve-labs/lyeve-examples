@@ -28,6 +28,7 @@
       "method": "GET",
       "path": "/api/v1/localization/resolve?entry_id={id:i18n_pages}&locale=fr",
       "needs": "localization",
+      "paid": false,
       "desc": "the translation for a locale"
     },
     {

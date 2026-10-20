@@ -4,8 +4,21 @@
   "prefix": "forum_",
   "tagline": "A forum: topics read constantly, and the thread under each one.",
   "realWorld": "Topics are content, and so are the replies under them, in the comments type the schema plugin's preset creates. A topic page costs one topic read plus one filtered read of its thread. This profile drives both.",
+  "presets": [
+    "comments"
+  ],
   "seed": {
-    "forum_topics": 1200
+    "forum_topics": 1200,
+    "comments": 2400
+  },
+  "seedValues": {
+    "comments": {
+      "target_schema": "forum_topics",
+      "target_id": "{id:forum_topics}",
+      "status": "approved",
+      "author_email": "reader@example.com",
+      "parent": null
+    }
   },
   "rate": 200,
   "thresholds": {
@@ -34,7 +47,8 @@
       "weight": 22,
       "method": "GET",
       "path": "/api/v1/content/comments?filters[target_schema]=forum_topics&filters[target_id]={id:forum_topics}&filters[status]=approved&limit=25",
-      "needs": "comments",
+      "needs": "schema",
+      "paid": false,
       "desc": "the thread under a topic"
     },
     {
@@ -43,8 +57,9 @@
       "method": "GET",
       "path": "/api/admin/search?q={term}&schema=forum_topics",
       "needs": "search",
+      "paid": true,
       "desc": "topic search"
     }
   ],
-  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix."
+  "_note": "Load-test manifest for this example. The content types are NOT listed here: perf/export-profiles.mjs reads them from the running engine so they cannot drift from the app. This file declares only what the app itself does not: benchmark-scale seed volumes, the arrival rate, the thresholds, and the weighted request mix. presets names the schema plugin presets the app applies, and their types come from the engine like the app's own. seedValues fixes a field for every seeded row of a type: a literal, null to leave the field unset, or {id:<type>} for a seeded row of that type, which is how each reply points at a real topic."
 }

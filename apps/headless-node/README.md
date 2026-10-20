@@ -112,6 +112,12 @@ anyway, twice, once on each router, because that is what it is demonstrating. Ru
 it half a dozen times in a row and it will answer 429. That is the engine
 protecting the credential, not a fault in the example.
 
+A cached token is checked against `GET /api/admin/auth/me` before a step trusts
+it, which costs no login. A token can still be weeks from expiry and dead: one
+issued before the database was replaced names an account that no longer
+exists, and the engine answers every call with 401 "session invalidated". A step
+that sees that 401 logs in again.
+
 The scripts are TypeScript run straight through Node's type stripping, so there
 is no build step and no bundler. `pnpm check` runs `tsc --noEmit` over them.
 
