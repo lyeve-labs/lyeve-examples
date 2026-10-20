@@ -1,0 +1,39 @@
+{
+  "name": "marketplace",
+  "layer": "app",
+  "at": "20261020T135224Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-38-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "fb3cebb3a4a4",
+    "engine_binary_built": "2026-10-20T13:37:33Z",
+    "source_checkout_commit": "27d8c49",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 602,
+  "rate_achieved": 20.043726547471298,
+  "p50_ms": 14.830529,
+  "p95_ms": 22.610041,
+  "p99_ms": 23.856529,
+  "max_ms": 24.92502,
+  "ok_rate": 1,
+  "checks_passed": 601,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_root": {
+      "p95_ms": 23.492442,
+      "med_ms": 19.435039
+    },
+    "page_link": {
+      "p95_ms": 14.86520585,
+      "med_ms": 11.836017
+    }
+  }
+}

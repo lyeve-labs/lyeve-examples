@@ -1,0 +1,43 @@
+{
+  "name": "helpdesk",
+  "layer": "app",
+  "at": "20261020T134916Z",
+  "provenance": "measured",
+  "host": {
+    "cores": 18,
+    "memory_gb": 31,
+    "kernel": "7.0.0-38-generic",
+    "docker": "Docker version 29.9.0",
+    "k6_image": "grafana/k6:latest",
+    "engine_binary": "lyeve",
+    "engine_binary_sha256": "fb3cebb3a4a4",
+    "engine_binary_built": "2026-10-20T13:37:33Z",
+    "source_checkout_commit": "27d8c49",
+    "note": "a development machine, not a dedicated reference host; comparable only with other runs recorded here. source_checkout_commit is a hint; engine_binary_sha256 identifies what ran."
+  },
+  "requests": 599,
+  "rate_achieved": 19.86967027096145,
+  "p50_ms": 13.357260499999999,
+  "p95_ms": 175.3161449999999,
+  "p99_ms": 542.18463387,
+  "max_ms": 677.781647,
+  "ok_rate": 1,
+  "checks_passed": 598,
+  "checks_failed": 0,
+  "http_req_failed": 0,
+  "thresholds_breached": [],
+  "per_series": {
+    "page_new": {
+      "p95_ms": 2.6391266499999997,
+      "med_ms": 1.5343185
+    },
+    "page_link": {
+      "p95_ms": 210.70274600000025,
+      "med_ms": 13.914054
+    },
+    "page_root": {
+      "p95_ms": 181.88254510000024,
+      "med_ms": 14.254733
+    }
+  }
+}
