@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "check": "node platform/scripts/check-kit-range.mjs && pnpm -r --if-present check",
-    "build": "pnpm -r --if-present build"
+    "build": "pnpm -r --if-present build",
+    "preinstall": "node -e \"if(!/^pnpm\\//.test(process.env.npm_config_user_agent||'')){console.error('Use pnpm: this repository installs with pnpm only.');process.exit(1)}\""
   },
   "engines": {
-    "node": ">=24"
+    "node": ">=26"
   },
   "packageManager": "pnpm@11.25.0",
   "dependencies": {

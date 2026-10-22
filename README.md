@@ -33,7 +33,8 @@ paid examples also need a development license: set `LYEVE_LICENSE_KEY` and
 lacks does not stop the stack: its plugin starts without it, and only that
 example's paid routes refuse.
 `make up` checks for Docker, Go and curl, for the engine checkout and for the
-license, and says which is missing.
+license, and says which is missing. Install with pnpm only: an install through any
+other package manager stops before it writes anything.
 
 ## The examples
 
