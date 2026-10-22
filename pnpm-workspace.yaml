@@ -4,6 +4,10 @@ packages:
 allowBuilds:
   esbuild: false
 minimumReleaseAgeStrict: true
+
+# pnpm only warns when the running Node misses engines.node, so this makes
+# an install on an older Node fail instead.
+engineStrict: true
 overrides:
   # GHSA-pxg6-pf52-xh8x: SvelteKit 2 asks for cookie 0.6, and the fix is in 0.7.0.
   cookie: ^0.7.2
