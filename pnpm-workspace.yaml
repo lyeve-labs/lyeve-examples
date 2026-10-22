@@ -2,4 +2,8 @@ packages:
   - packages/*
   - apps/*
 allowBuilds:
-  esbuild: true
+  esbuild: false
+minimumReleaseAgeStrict: true
+overrides:
+  # GHSA-pxg6-pf52-xh8x: SvelteKit 2 asks for cookie 0.6, and the fix is in 0.7.0.
+  cookie: ^0.7.2
