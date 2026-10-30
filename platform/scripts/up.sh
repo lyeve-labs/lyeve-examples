@@ -83,10 +83,9 @@ done < <(cd "$BUILD_DIR" && go list -deps -f '{{if eq .Name "license"}}{{.Import
 # A binary built elsewhere, for instance from a worktree carrying a fix under
 # test. It must have been linked with the same license public key, or the premium
 # plugins load as no-op stubs and say nothing about it.
+# It is copied into place only once the running engine has stopped, below.
 if [ -n "${LYEVE_ENGINE_BIN:-}" ]; then
   [ -x "$LYEVE_ENGINE_BIN" ] || die "LYEVE_ENGINE_BIN is not an executable: $LYEVE_ENGINE_BIN"
-  cp "$LYEVE_ENGINE_BIN" "$STACK/bin/lyeve"
-  ok "using the prebuilt engine at $LYEVE_ENGINE_BIN"
 else
   say "building the engine and its plugins (a cold build takes a few minutes)"
   ( cd "$BUILD_DIR" && go build -ldflags "$LDFLAGS" -o "$STACK/bin/lyeve" "$BUILD_PKG" ) \
@@ -113,15 +112,26 @@ cat "$STACK/license.env" >> "$STACK/stack.env"
 # It matters that this succeeds. A port left held makes the replacement log
 # "address already in use" and then keep running with no listener at all, so
 # the failure presents as an engine that booted and serves nothing.
+#
+# It waits for each process to exit, because the binary cannot be replaced
+# while a process still runs it: the copy fails with "Text file busy".
 stop_our_engine() {
-  local stopped=0 target pid exe
+  local stopped=0 target pid exe pids="" alive
   for target in "$(readlink -f "$STACK/bin/lyeve" 2>/dev/null)"; do
     [ -n "$target" ] || continue
     for pid in $(ls /proc 2>/dev/null | grep -E '^[0-9]+$'); do
       exe="$(readlink -f "/proc/$pid/exe" 2>/dev/null)" || continue
       [ "$exe" = "$target" ] || continue
-      kill "$pid" 2>/dev/null && stopped=$((stopped + 1))
+      kill "$pid" 2>/dev/null && stopped=$((stopped + 1)) && pids="$pids $pid"
     done
+  done
+  for _ in $(seq 1 30); do
+    alive=0
+    for pid in $pids; do
+      readlink "/proc/$pid/exe" >/dev/null 2>&1 && alive=1
+    done
+    [ "$alive" = 0 ] && break
+    sleep 1
   done
   [ "$stopped" -gt 0 ] && say "stopped $stopped engine process(es) from an earlier boot"
   return 0
@@ -138,12 +148,20 @@ for port in "$ADMIN_PORT" "$API_PORT"; do
   ss -ltn 2>/dev/null | grep -q ":$port " && die "port $port is still held; stop whatever owns it and retry"
 done
 
+# A failed copy leaves the previous binary in place, and booting that would
+# measure an engine other than the one asked for.
+if [ -n "${LYEVE_ENGINE_BIN:-}" ]; then
+  cp "$LYEVE_ENGINE_BIN" "$STACK/bin/lyeve" \
+    || die "could not copy $LYEVE_ENGINE_BIN into $STACK/bin/lyeve, so the engine was not started"
+  ok "using the prebuilt engine at $LYEVE_ENGINE_BIN"
+fi
+
 # This script launches the engine and returns, and that is not a detail. A
 # launcher that stays alive to hold the engine open is what kills it: wrap a boot
 # in a long sleep so a background task keeps running, and the engine shares that
 # task's fate and is terminated the moment the task is reaped. setsid puts the engine in its own process group. Returning promptly
 # removes the parent whose teardown would take it along.
-say "starting the engine"
+say "starting the engine, sha256 $(sha256sum "$STACK/bin/lyeve" | cut -d' ' -f1)"
 (
   set -a; . "$STACK/stack.env"; set +a
   cd "$ENGINE_SRC" || exit 1
