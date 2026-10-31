@@ -593,7 +593,8 @@ export async function quotaRequestCount(): Promise<Sourced<number>> {
 export interface DailyRollup {
 	days: number;
 	total_dau: number;
-	total_api_calls: number;
+	/** Null, because the plugin counts no API calls and stores none for any day. */
+	total_api_calls: number | null;
 	total_storage: number;
 	total_new_users: number;
 }
@@ -605,13 +606,10 @@ export async function dailyRollup(): Promise<Sourced<DailyRollup | null>> {
 	return {
 		value: body,
 		provenance: {
-			state: (body?.days ?? 0) > 0 ? 'collecting' : 'needs-trigger',
+			state: (body?.days ?? 0) > 0 ? 'collecting' : 'idle',
 			route,
-			// sys_tenant_analytics_daily is only written by the aggregation
-			// endpoints or by the cron plugin calling AggregateAllTenants. The
-			// analytics plugin schedules nothing itself.
 			detail:
-				'sums sys_tenant_analytics_daily, which is only written by POST /api/admin/analytics/aggregate or a cron job calling it; the plugin schedules no aggregation of its own'
+				'sums sys_tenant_analytics_daily, which the plugin fills on its own: every 15 minutes it rolls up the previous UTC day for any tenant still missing that row, and POST /api/admin/analytics/aggregate runs a day by hand'
 		}
 	};
 }

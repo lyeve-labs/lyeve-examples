@@ -73,14 +73,15 @@ content.
 
 These are worth reading as a list, because none of them is a bug in this app.
 
-**`/api/admin/analytics/daily` and `/summary` return zeros because nothing
-aggregates.** `sys_tenant_analytics_daily` is written only by
-`POST /api/admin/analytics/aggregate` (one tenant, one day) or
-`/aggregate-all`. The plugin's own package comment says aggregation is
-"scheduled via the cron plugin". The plugin schedules nothing itself and no cron
-job ships pointed at it. A deployment fills this by scheduling a daily POST.
-Note that the same figures are already available live and exact from the usage
-plugin, so the aggregation buys history rather than accuracy.
+**`/api/admin/analytics/daily` and `/summary` are empty until the first day
+is rolled up, and the API call total is always null.** The plugin fills
+`sys_tenant_analytics_daily` on its own: every 15 minutes one engine replica
+rolls up the previous UTC day for any tenant still missing that row.
+`POST /api/admin/analytics/aggregate` (one tenant, one day) and `/aggregate-all`
+run a day by hand. The plugin counts no API calls, so `total_api_calls` answers
+null and the tile reads "not collected" rather than a zero that looks like an
+idle install. Note that the same figures are already available live and exact
+from the usage plugin, so the rollup buys history rather than accuracy.
 
 **`/api/admin/analytics/dashboard` returns four fields and populates one.** The
 store scans a single column into `api_calls_24h`. `total_content`, `total_media`

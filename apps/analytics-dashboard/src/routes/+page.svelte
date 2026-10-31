@@ -140,8 +140,10 @@
 					<StatTile label="Total DAU" value={compact(data.rollup.total_dau)} inert={data.rollup.days === 0} />
 					<StatTile
 						label="API calls"
-						value={compact(data.rollup.total_api_calls)}
-						inert={data.rollup.days === 0}
+						value={data.rollup.total_api_calls === null
+							? 'not collected'
+							: compact(data.rollup.total_api_calls)}
+						inert={data.rollup.days === 0 || data.rollup.total_api_calls === null}
 					/>
 					<StatTile
 						label="New users"
@@ -152,12 +154,10 @@
 				{#if data.rollup.days === 0}
 					<p class="mt-4 text-sm text-slate-600">
 						Zero days recorded, so every figure beside it is arithmetic over an empty table rather
-						than a measurement. Filling this needs a scheduled job posting to
-						<code class="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs"
-							>/api/admin/analytics/aggregate-all</code
-						>
-						once a day. Note that the same numbers are already available live and exact from the usage
-						plugin, which is what the
+						than a measurement. The plugin fills it on its own: every 15 minutes it rolls up the
+						previous UTC day for any tenant still missing that row, so the first day lands shortly
+						after the first midnight the engine runs through. Note that the same numbers are already
+						available live and exact from the usage plugin, which is what the
 						<a class="underline" href="/quota">quota page</a> reads.
 					</p>
 				{/if}
