@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "setup": "node --experimental-strip-types --env-file-if-exists=.env setup/provision.ts"
+    "setup": "node --experimental-strip-types --env-file-if-exists=.env setup/provision.ts",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@lucide/svelte": "^0.577.0",
@@ -21,7 +22,8 @@
     "svelte-check": "^4.7.3",
     "tailwindcss": "^4.3.2",
     "typescript": "^5.9.3",
-    "vite": "^6.4.5"
+    "vite": "^6.4.5",
+    "vitest": "^4.1.12"
   },
   "dependencies": {
     "@lyeve-labs/client": "^0.3.3",
