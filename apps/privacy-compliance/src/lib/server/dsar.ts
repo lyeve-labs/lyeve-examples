@@ -141,6 +141,10 @@ export interface ExportBundle {
 export interface EraseOutcome {
 	identifier: string;
 	total_rows: number;
+	/** Absent on an engine from before the 207 answer. */
+	complete?: boolean;
+	/** The parts that failed or did not run, present only on a 207. */
+	failed?: string[];
 	errors: string[] | null;
 	holds?: { id: string; reason?: string }[];
 }
@@ -166,24 +170,32 @@ export async function runExport(identifier: string): Promise<ExportBundle> {
 export type EraseResult =
 	| { state: 'erased'; rows: number; outcome: EraseOutcome }
 	| { state: 'held'; holds: { id: string; reason?: string }[]; outcome: EraseOutcome }
-	| { state: 'partial'; rows: number; outcome: EraseOutcome }
+	| { state: 'partial'; rows: number; failed: string[]; outcome: EraseOutcome }
 	| { state: 'unavailable'; message: string }
 	| { state: 'refused'; message: string };
 
 /**
  * Runs an Art. 17 erasure for one identifier.
  *
- * Four answers, and only the first is a completed erasure:
+ * Five answers, and only the first is a completed erasure:
  *
+ *  - 200 with `complete: true`: every part was erased.
  *  - 200 with holds: an active legal hold stopped it and nothing was erased.
  *    The row count reads zero either way, which is why the holds array is the
  *    thing to check and not the count.
- *  - 200 with errors: some erasers failed. Rows have already gone, the run is
- *    incomplete, and the subject has to be told.
- *  - 503: the hold checker could not answer, so the engine refused rather than
- *    risk destroying held evidence. Safe to retry.
+ *  - 207 with `complete: false`: the run is incomplete. `failed` names the
+ *    parts that failed or did not run, and the account is among them: the
+ *    engine signs the subject out and locks the account first, and erases it
+ *    only once every other part has gone. Some rows have gone already.
+ *    Repeating the request runs every part again and finishes the erasure.
+ *  - 503: the engine could not check legal holds, sign the subject out or
+ *    read their addresses, so it refused before erasing anything. Safe to
+ *    retry.
  *  - 400 or 422: the identifier never should have left this process. The
  *    guards below catch every case this app can produce.
+ *
+ * An engine from before the 207 answer sends no `complete` and answers an
+ * incomplete run with 200 and errors, so there the errors decide.
  */
 export async function runErase(identifier: string): Promise<EraseResult> {
 	let outcome: EraseOutcome;
@@ -197,7 +209,7 @@ export async function runErase(identifier: string): Promise<EraseResult> {
 			return {
 				state: 'unavailable',
 				message:
-					'The engine could not determine legal-hold status, so no erasure was attempted. Safe to retry.'
+					'The engine could not check legal holds, sign the subject out or read their addresses, so no erasure was attempted. Safe to retry.'
 			};
 		}
 		if (err instanceof LyeveError) {
@@ -209,8 +221,8 @@ export async function runErase(identifier: string): Promise<EraseResult> {
 	if (outcome.holds && outcome.holds.length > 0) {
 		return { state: 'held', holds: outcome.holds, outcome };
 	}
-	if (outcome.errors && outcome.errors.length > 0) {
-		return { state: 'partial', rows: outcome.total_rows, outcome };
+	if (!(outcome.complete ?? !outcome.errors?.length)) {
+		return { state: 'partial', rows: outcome.total_rows, failed: outcome.failed ?? [], outcome };
 	}
 	return { state: 'erased', rows: outcome.total_rows, outcome };
 }

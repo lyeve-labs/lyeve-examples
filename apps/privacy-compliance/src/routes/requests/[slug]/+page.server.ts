@@ -222,14 +222,16 @@ export const actions: Actions = {
 					? `stopped by ${result.holds.length} legal hold(s): ${result.holds
 							.map((h) => h.id)
 							.join(', ')}`
-					: 'message' in result
-						? result.message
-						: ''
+					: result.state === 'partial'
+						? (result.outcome.errors ?? []).join(' / ')
+						: 'message' in result
+							? result.message
+							: ''
 		});
 
 		// A held or unavailable run is not a completed request. Only a finished
-		// erasure closes it, and a partial one stays open because the subject
-		// has to be told what did not go.
+		// erasure closes it. A partial one stays open, because the account is
+		// still there and the erasure has to be run again to finish.
 		//
 		// Closing it also blanks the subject on the register entry. The engine
 		// erasing its own tables does nothing about the row this app wrote, and
@@ -252,7 +254,9 @@ export const actions: Actions = {
 					: result.state === 'held'
 						? `Nothing was erased. ${result.holds.length} active legal hold(s) cover this subject.`
 						: result.state === 'partial'
-							? `Incomplete. ${result.rows} row(s) went, and at least one eraser failed.`
+							? result.failed.length > 0
+								? `Incomplete. ${result.rows} row(s) went, but ${result.failed.join(', ')} did not. The account is signed out and locked, not erased. Run the erasure again to finish it.`
+								: `Incomplete. ${result.rows} row(s) went. The engine said: ${(result.outcome.errors ?? []).join(' / ')}.`
 							: result.message,
 			rows: 'rows' in result ? result.rows : 0,
 			holds: result.state === 'held' ? result.holds : []
