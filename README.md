@@ -24,7 +24,7 @@ Measuring is a choice rather than a sweep:
     make bench PROFILE=courses  # a full benchmark workload, seeded and driven
 
 `make up` takes a few minutes the first time because it compiles the engine and
-its 51 plugins. After that it is a cache hit.
+its 52 plugins. After that it is a cache hit.
 
 Requirements: Docker, Go 1.27, Node 26, pnpm 11 (the versions `mise.toml` pins),
 and a checkout of `lyeve-core` beside this repo (or set `LYEVE_CORE_SRC`). The
