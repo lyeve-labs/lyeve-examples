@@ -27,7 +27,7 @@ Not shown:
 ## Read this first: the engine has no booking primitives
 
 There is no booking, availability, reservation, inventory or hold concept
-anywhere in LyEve. Not in the engine, and not in any of the 51 plugins. Nothing
+anywhere in LyEve. Not in the engine, and not in any of the 52 plugins. Nothing
 below this line is the product doing scheduling for you.
 
 **The engine stores the data. The app models the domain. The engine offers no
