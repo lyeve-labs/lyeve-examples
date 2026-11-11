@@ -94,7 +94,7 @@
 			</label>
 			<label>
 				<span class="block text-slate-600">Sample</span>
-				<select name="mode" class="mt-1 rounded-md border border-slate-300 px-3 py-2">
+				<select name="mode" class="mt-1 rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900">
 					{#each data.modes as mode (mode)}
 						<option value={mode}>{mode}</option>
 					{/each}

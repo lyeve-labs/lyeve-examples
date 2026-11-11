@@ -36,7 +36,7 @@
 	/>
 	<select
 		name="category"
-		class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm"
+		class="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-slate-900"
 	>
 		<option value="">Every category</option>
 		{#each data.categories as category (category.slug)}

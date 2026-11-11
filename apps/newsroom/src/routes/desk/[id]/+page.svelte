@@ -94,7 +94,7 @@
 						id="title"
 						name="title"
 						value={story.title}
-						class="mt-1 w-full rounded border border-slate-300 px-3 py-2"
+						class="mt-1 w-full rounded border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 					/>
 				</div>
 				<div class="grid gap-4 sm:grid-cols-2">
@@ -104,7 +104,7 @@
 							id="slug"
 							name="slug"
 							value={story.slug}
-							class="mt-1 w-full rounded border border-slate-300 px-3 py-2"
+							class="mt-1 w-full rounded border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 						/>
 					</div>
 					<div>
@@ -113,7 +113,7 @@
 							id="dateline"
 							name="dateline"
 							value={story.dateline}
-							class="mt-1 w-full rounded border border-slate-300 px-3 py-2"
+							class="mt-1 w-full rounded border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 						/>
 					</div>
 				</div>
@@ -123,7 +123,7 @@
 						<select
 							id="desk"
 							name="desk"
-							class="mt-1 w-full rounded border border-slate-300 bg-white px-3 py-2"
+							class="mt-1 w-full rounded border border-slate-300 bg-white px-3 py-2 outline-none focus:border-slate-900"
 						>
 							<option value="">Unassigned</option>
 							{#each data.desks as option (option.id)}
@@ -136,7 +136,7 @@
 						<select
 							id="reporter"
 							name="reporter"
-							class="mt-1 w-full rounded border border-slate-300 bg-white px-3 py-2"
+							class="mt-1 w-full rounded border border-slate-300 bg-white px-3 py-2 outline-none focus:border-slate-900"
 						>
 							<option value="">Staff reporter</option>
 							{#each data.reporters as option (option.id)}
@@ -153,7 +153,7 @@
 						id="standfirst"
 						name="standfirst"
 						rows="2"
-						class="mt-1 w-full rounded border border-slate-300 px-3 py-2">{story.standfirst}</textarea
+						class="mt-1 w-full rounded border border-slate-300 px-3 py-2 outline-none focus:border-slate-900">{story.standfirst}</textarea
 					>
 				</div>
 				<div>
@@ -162,7 +162,7 @@
 						id="body"
 						name="body"
 						rows="14"
-						class="mt-1 w-full rounded border border-slate-300 px-3 py-2 font-mono text-sm"
+						class="mt-1 w-full rounded border border-slate-300 px-3 py-2 font-mono text-sm outline-none focus:border-slate-900"
 						>{story.body}</textarea
 					>
 				</div>
@@ -174,7 +174,7 @@
 							id="change_note"
 							name="change_note"
 							placeholder="what changed, and why"
-							class="mt-1 w-full rounded border border-slate-300 px-3 py-2"
+							class="mt-1 w-full rounded border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 						/>
 					</div>
 					<button class="rounded bg-slate-900 px-4 py-2 font-medium text-white hover:bg-slate-700">
@@ -228,7 +228,7 @@
 							type="number"
 							min="1"
 							value={data.diffRange.from}
-							class="mt-1 w-20 rounded border border-slate-300 px-2 py-1"
+							class="mt-1 w-20 rounded border border-slate-300 px-2 py-1 outline-none focus:border-slate-900"
 						/>
 					</div>
 					<div>
@@ -239,7 +239,7 @@
 							type="number"
 							min="1"
 							value={data.diffRange.to}
-							class="mt-1 w-20 rounded border border-slate-300 px-2 py-1"
+							class="mt-1 w-20 rounded border border-slate-300 px-2 py-1 outline-none focus:border-slate-900"
 						/>
 					</div>
 					<button class="rounded border border-slate-300 px-3 py-1 hover:border-slate-500">
@@ -305,7 +305,7 @@
 				<input
 					name="publish_at"
 					type="datetime-local"
-					class="rounded border border-slate-300 px-2 py-1 text-sm"
+					class="rounded border border-slate-300 px-2 py-1 text-sm outline-none focus:border-slate-900"
 				/>
 				<button class="rounded border border-slate-300 px-3 py-1.5 text-sm hover:border-slate-500">
 					Set
@@ -376,7 +376,7 @@
 							<input
 								name="comment"
 								placeholder="note for the log"
-								class="w-full rounded border border-slate-300 px-2 py-1 text-sm"
+								class="w-full rounded border border-slate-300 px-2 py-1 text-sm outline-none focus:border-slate-900"
 							/>
 							<div class="flex flex-wrap gap-2">
 								{#each data.transitions as action (action)}
@@ -398,7 +398,7 @@
 							name="body"
 							rows="2"
 							placeholder="comment at this stage"
-							class="w-full rounded border border-slate-300 px-2 py-1 text-sm"
+							class="w-full rounded border border-slate-300 px-2 py-1 text-sm outline-none focus:border-slate-900"
 						></textarea>
 						<button class="rounded border border-slate-300 px-2.5 py-1 text-xs hover:border-slate-500">
 							File comment
