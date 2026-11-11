@@ -88,7 +88,7 @@
 					name="base_term"
 					required
 					placeholder="deadlock"
-					class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+					class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 				/>
 			</label>
 			<label class="block text-sm">
@@ -97,7 +97,7 @@
 					name="synonyms"
 					required
 					placeholder="lock, blocking, contention"
-					class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+					class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 				/>
 			</label>
 			<label class="block text-sm">
@@ -105,7 +105,7 @@
 				<input
 					name="name"
 					placeholder="Defaults to the base term"
-					class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+					class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 				/>
 			</label>
 			<button class="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700">
@@ -164,7 +164,7 @@
 					<input
 						name="schema_name"
 						value={data.ranking.schemaName}
-						class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+						class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 					/>
 					<span class="mt-1 block text-xs text-slate-500">
 						The key is (tenant, schema). The route defaults to the literal string
@@ -181,7 +181,7 @@
 							type="text"
 							inputmode="decimal"
 							value={data.ranking.titleWeight}
-							class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+							class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 						/>
 					</label>
 					<label class="block text-sm">
@@ -191,7 +191,7 @@
 							type="text"
 							inputmode="decimal"
 							value={data.ranking.bodyWeight}
-							class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+							class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 						/>
 					</label>
 					<label class="block text-sm">
@@ -201,7 +201,7 @@
 							type="text"
 							inputmode="decimal"
 							value={data.ranking.tagWeight}
-							class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2"
+							class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 						/>
 					</label>
 				</div>
@@ -218,7 +218,7 @@
 					<textarea
 						name="rules"
 						rows="4"
-						class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 font-mono text-xs"
+						class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 font-mono text-xs outline-none focus:border-slate-900"
 						placeholder="keyword checkpoint 2&#10;status published 0.5">{data.ranking.rulesText}</textarea>
 					<span class="mt-1 block text-xs text-slate-500">
 						The engine stores the field name and attaches no meaning to it. This app answers
@@ -430,7 +430,7 @@
 			<input
 				name="probe"
 				value={data.probe}
-				class="flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm"
+				class="flex-1 rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-900"
 			/>
 			<button class="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700">
 				Run both

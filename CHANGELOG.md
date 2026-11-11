@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Changed
 
 - Every example declares `@lyeve-labs/ui-kit` ^0.45.0 instead of ^0.42.2. The examples load only the kit's stylesheet and its compiled components for class scanning. Between those releases the stylesheet did not change and no export was removed or renamed.
+- Every example declares `@lyeve-labs/ui-kit` ^0.60.1 instead of ^0.45.0, and a focused text field shows focus by its border alone. The fields in the newsroom desk, the privacy request page, the search console and the webhook forms drew an outline on focus and now darken their border like the rest.
 
 ## [0.3.4] - 2026-10-25
 

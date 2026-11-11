@@ -247,7 +247,7 @@
 		<section class="rounded-lg border border-slate-200 bg-white p-5">
 			<h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Assign</h2>
 			<form method="POST" action="?/assign" class="mt-3 space-y-3">
-				<select name="officer_id" class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
+				<select name="officer_id" class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-900">
 					{#each data.officers as officer (officer.id)}
 						<option value={officer.id} selected={officer.id === req.handlerId}>
 							{officer.name}
@@ -265,7 +265,7 @@
 		<section class="rounded-lg border border-slate-200 bg-white p-5">
 			<h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Move</h2>
 			<form method="POST" action="?/state" class="mt-3 space-y-3">
-				<select name="state" class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm">
+				<select name="state" class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-900">
 					{#each REQUEST_STATES as state (state)}
 						<option value={state} selected={state === req.state}>{STATE_LABELS[state]}</option>
 					{/each}
@@ -273,7 +273,7 @@
 				<input
 					name="resolution_note"
 					placeholder="Note (optional)"
-					class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+					class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-900"
 				/>
 				<button
 					class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm font-medium hover:bg-slate-50"

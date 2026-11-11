@@ -208,7 +208,7 @@
 					<input
 						name="max_attempts"
 						value={data.retry.max_attempts}
-						class="mt-1 w-24 rounded-md border border-slate-300 px-3 py-2"
+						class="mt-1 w-24 rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 					/>
 				</label>
 				<label>
@@ -216,7 +216,7 @@
 					<input
 						name="base_delay_ms"
 						value={data.retry.base_delay_ms}
-						class="mt-1 w-32 rounded-md border border-slate-300 px-3 py-2"
+						class="mt-1 w-32 rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 					/>
 				</label>
 				<label>
@@ -224,12 +224,12 @@
 					<input
 						name="max_delay_ms"
 						value={data.retry.max_delay_ms}
-						class="mt-1 w-32 rounded-md border border-slate-300 px-3 py-2"
+						class="mt-1 w-32 rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
 					/>
 				</label>
 				<label>
 					<span class="block text-slate-600">Strategy</span>
-					<select name="strategy" class="mt-1 rounded-md border border-slate-300 px-3 py-2">
+					<select name="strategy" class="mt-1 rounded-md border border-slate-300 px-3 py-2 outline-none focus:border-slate-900">
 						{#each ['exponential', 'fixed', 'linear'] as strategy (strategy)}
 							<option value={strategy} selected={data.retry.strategy === strategy}>
 								{strategy}

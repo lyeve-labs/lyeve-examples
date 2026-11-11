@@ -4,6 +4,8 @@ packages:
 allowBuilds:
   esbuild: false
 minimumReleaseAgeStrict: true
+minimumReleaseAgeExclude:
+  - '@lyeve-labs/ui-kit@0.60.1'
 
 # pnpm only warns when the running Node misses engines.node, so this makes
 # an install on an older Node fail instead.
