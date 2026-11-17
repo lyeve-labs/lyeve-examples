@@ -1,5 +1,5 @@
-import { WATCHED } from '$lib/server/lyeve';
-import { watchAll, type BoardEvent, type UpstreamHandle } from '$lib/server/stream';
+import { WATCHED } from '#lib/server/lyeve.ts';
+import { watchAll, type BoardEvent, type UpstreamHandle } from '#lib/server/stream.ts';
 import type { RequestHandler } from './$types';
 
 /** Long enough to be cheap, short enough that a dropped event is a blink. */

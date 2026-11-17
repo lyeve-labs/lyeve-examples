@@ -160,7 +160,7 @@ be quietly misleading in a different way each time.
 ## Charts
 
 Every chart is inline SVG whose coordinates come from `src/lib/charts.ts`. No
-chart library is loaded, and none can be: the CSP in `svelte.config.js` allows
+chart library is loaded, and none can be: the CSP in `vite.config.ts` allows
 scripts from `self` only, so a CDN `<script>` is blocked with no visible error.
 Hover and focus are Svelte 5 runes compiled into the app bundle, which is served
 from `self` and therefore allowed.

@@ -1,7 +1,7 @@
 import { fail } from '@sveltejs/kit';
-import { isOrderStatus, nextStatus } from '$lib/contract';
-import { findOrderBySlug, listOrders, placeOrder, setOrderStatus } from '$lib/server/orders';
-import { describe } from '$lib/server/webhooks';
+import { isOrderStatus, nextStatus } from '#lib/contract.ts';
+import { findOrderBySlug, listOrders, placeOrder, setOrderStatus } from '#lib/server/orders.ts';
+import { describe } from '#lib/server/webhooks.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /** One shape for both actions, so the page reads `form?.error` directly. */

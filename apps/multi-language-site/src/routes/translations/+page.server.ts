@@ -1,10 +1,10 @@
 import { fail } from '@sveltejs/kit';
-import { LOCALES } from '$lib/locales';
-import { loadPages, loadSections } from '$lib/server/pages';
-import { bulkExport, engineLocales, updateTranslation } from '$lib/server/translations';
-import type { TranslationStatus } from '$lib/server/translations';
-import { byEntry, statusByLocale } from '$lib/server/localize';
-import { describeFailure } from '$lib/server/errors';
+import { LOCALES } from '#lib/locales.ts';
+import { loadPages, loadSections } from '#lib/server/pages.ts';
+import { bulkExport, engineLocales, updateTranslation } from '#lib/server/translations.ts';
+import type { TranslationStatus } from '#lib/server/translations.ts';
+import { byEntry, statusByLocale } from '#lib/server/localize.ts';
+import { describeFailure } from '#lib/server/errors.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const STATUSES: TranslationStatus[] = ['draft', 'translated', 'outdated'];

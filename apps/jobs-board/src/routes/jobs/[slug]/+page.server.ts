@@ -5,10 +5,10 @@ import {
 	getContentBySlug,
 	related,
 	uploadMedia
-} from '$lib/lyeve';
-import { lyeve, APPLICATIONS, LISTINGS } from '$lib/server/lyeve';
-import type { CompanyData, ListingData } from '$lib/server/listings';
-import { employmentLabel, formatSalary, paragraphs, slugify } from '$lib/jobs';
+} from '#lib/lyeve/index.ts';
+import { lyeve, APPLICATIONS, LISTINGS } from '#lib/server/lyeve.ts';
+import type { CompanyData, ListingData } from '#lib/server/listings.ts';
+import { employmentLabel, formatSalary, paragraphs, slugify } from '#lib/jobs.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

@@ -1,8 +1,7 @@
-import { json } from '@sveltejs/kit';
-import { CHANNEL_HEADER, ORDERS, RECEIPTS, type Verdict, asChannel } from '$lib/contract';
-import { recordReceipt, type NewReceipt } from '$lib/server/receipts';
-import { acceptedSecrets } from '$lib/server/secrets';
-import { verifyDelivery } from '$lib/server/signature';
+import { CHANNEL_HEADER, ORDERS, RECEIPTS, type Verdict, asChannel } from '#lib/contract.ts';
+import { recordReceipt, type NewReceipt } from '#lib/server/receipts.ts';
+import { acceptedSecrets } from '#lib/server/secrets.ts';
+import { verifyDelivery } from '#lib/server/signature.ts';
 import type { RequestHandler } from './$types';
 
 /**
@@ -47,7 +46,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			httpStatus: status,
 			detail: check.detail
 		});
-		return json({ error: check.verdict, detail: check.detail }, { status });
+		return Response.json({ error: check.verdict, detail: check.detail }, { status });
 	}
 
 	let payload: DeliveryPayload;
@@ -62,7 +61,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			httpStatus: 400,
 			detail: 'Signature verified and the body was not JSON.'
 		});
-		return json({ error: 'invalid-json' }, { status: 400 });
+		return Response.json({ error: 'invalid-json' }, { status: 400 });
 	}
 
 	const event = payload.event || eventHeader || 'unknown';
@@ -74,7 +73,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	// schema filter stops that at the engine. This stops it here too, because
 	// one of the two is configuration and the other is code.
 	if (schema === RECEIPTS) {
-		return json({ status: 'ignored', reason: 'a receipt is not an event this app acts on' });
+		return Response.json({ status: 'ignored', reason: 'a receipt is not an event this app acts on' });
 	}
 
 	try {
@@ -91,10 +90,10 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Accepting a delivery this app failed to record loses it, so the
 		// sender is asked for it again. The engine treats any non-2xx as a
 		// failure and schedules a retry, which is what is wanted here.
-		return json({ error: 'could not record the delivery' }, { status: 503 });
+		return Response.json({ error: 'could not record the delivery' }, { status: 503 });
 	}
 
-	return json({ status: 'recorded', event, schema, signature: check.mode });
+	return Response.json({ status: 'recorded', event, schema, signature: check.mode });
 };
 
 interface DeliveryPayload {

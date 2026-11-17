@@ -1,7 +1,7 @@
 import { error, fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { isTicketStatus } from '$lib/desk';
-import { addReply, loadThread, loadTicket, setTicketStatus } from '$lib/server/tickets';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { isTicketStatus } from '#lib/desk.ts';
+import { addReply, loadThread, loadTicket, setTicketStatus } from '#lib/server/tickets.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

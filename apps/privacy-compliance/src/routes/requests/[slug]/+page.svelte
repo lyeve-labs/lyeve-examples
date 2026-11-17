@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { REQUEST_STATES, STATE_LABELS, TYPE_LABELS } from '$lib/desk';
+	import { REQUEST_STATES, STATE_LABELS, TYPE_LABELS } from '#lib/desk.ts';
 
 	let { data, form } = $props();
 

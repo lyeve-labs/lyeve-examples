@@ -1,7 +1,7 @@
-import { loadRecentActions, loadRequests } from '$lib/server/requests';
-import { loadDsarCounts } from '$lib/server/audit';
-import { whoami } from '$lib/server/operator';
-import { REQUEST_STATES, REQUEST_TYPES, daysBetween, isOpen } from '$lib/desk';
+import { loadRecentActions, loadRequests } from '#lib/server/requests.ts';
+import { loadDsarCounts } from '#lib/server/audit.ts';
+import { whoami } from '#lib/server/operator.ts';
+import { REQUEST_STATES, REQUEST_TYPES, daysBetween, isOpen } from '#lib/desk.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

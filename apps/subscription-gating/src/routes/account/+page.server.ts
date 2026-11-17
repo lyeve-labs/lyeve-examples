@@ -1,9 +1,9 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { dev } from '$app/environment';
-import { findReaderByEmail, listReaders } from '$lib/server/members';
-import { describeQuota, readEntitlements } from '$lib/server/entitlements';
-import { SESSION_COOKIE, signReaderId } from '$lib/server/session';
-import type { Reader } from '$lib/server/tiers';
+import { dev } from '$app/env';
+import { findReaderByEmail, listReaders } from '#lib/server/members.ts';
+import { describeQuota, readEntitlements } from '#lib/server/entitlements.ts';
+import { SESSION_COOKIE, signReaderId } from '#lib/server/session.ts';
+import type { Reader } from '#lib/server/tiers.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ parent }) => {

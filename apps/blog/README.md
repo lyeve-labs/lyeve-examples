@@ -83,4 +83,4 @@ browser asks this app, and this app asks the engine.
 
 Nothing outside `src/lib/server/` and the `.server.ts` files ever touches the
 engine. That is not a style preference: the credential lives in this process,
-and SvelteKit refuses to bundle a `$lib/server` import into the browser.
+and SvelteKit refuses to bundle a `#lib/server` import into the browser.

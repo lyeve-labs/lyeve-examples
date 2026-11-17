@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { DocNode } from '$lib/tree';
+	import type { DocNode } from '#lib/tree.ts';
 
 	let {
 		nodes,

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ACTION_LABEL, MODERATION_ACTIONS, formatWhen } from '$lib/forum';
+	import { ACTION_LABEL, MODERATION_ACTIONS, formatWhen } from '#lib/forum.ts';
 
 	let { data, form } = $props();
 

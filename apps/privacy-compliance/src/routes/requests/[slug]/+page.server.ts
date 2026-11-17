@@ -1,5 +1,5 @@
 import { error, fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
+import { LyeveError } from '#lib/lyeve/index.ts';
 import {
 	assignHandler,
 	fileAction,
@@ -9,16 +9,16 @@ import {
 	redactRequestSubject,
 	requestIdentifier,
 	setRequestState
-} from '$lib/server/requests';
+} from '#lib/server/requests.ts';
 import {
 	bundleSections,
 	classifyIdentifier,
 	runErase,
 	runExport,
 	subjectDigest
-} from '$lib/server/dsar';
-import { guardErase } from '$lib/server/operator';
-import { isRequestState } from '$lib/desk';
+} from '#lib/server/dsar.ts';
+import { guardErase } from '#lib/server/operator.ts';
+import { isRequestState } from '#lib/desk.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /** How much of a bundle the page renders. A large subject would otherwise fill it. */

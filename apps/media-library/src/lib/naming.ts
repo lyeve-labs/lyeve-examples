@@ -1,7 +1,7 @@
 /**
  * The names this app uses, and the rules behind them.
  *
- * Kept clear of `$lib/server` and of SvelteKit's environment modules so that
+ * Kept clear of `#lib/server` and of SvelteKit's environment modules so that
  * `setup/provision.ts` can import the same definitions with a relative path.
  * The alternative is restating the slug prefixes in the seed script, which is
  * exactly how a seeded slug and a routed slug drift apart.

@@ -1,4 +1,4 @@
-import { loadCatalog, totalMinutes } from '$lib/server/outline';
+import { loadCatalog, totalMinutes } from '#lib/server/outline.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

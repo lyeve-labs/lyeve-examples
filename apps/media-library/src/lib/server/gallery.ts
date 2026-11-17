@@ -7,8 +7,8 @@
  * the bytes, the dimensions, the variants and the scan status. Neither knows
  * about the other beyond that one id.
  */
-import { getContentBySlug, listContent, relationId } from '$lib/lyeve';
-import { ALBUMS, PHOTOS, albumSegment, albumSlug, photoSegment, photoSlug } from '$lib/naming';
+import { getContentBySlug, listContent, relationId } from '#lib/lyeve/index.ts';
+import { ALBUMS, PHOTOS, albumSegment, albumSlug, photoSegment, photoSlug } from '#lib/naming.ts';
 import { lyeve } from './lyeve';
 
 export interface AlbumData {

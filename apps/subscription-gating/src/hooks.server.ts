@@ -1,5 +1,5 @@
-import type { Handle } from '@sveltejs/kit';
-import { SESSION_COOKIE, readSignedReaderId } from '$lib/server/session';
+import type { Handle } from '@sveltejs/kit/hooks';
+import { SESSION_COOKIE, readSignedReaderId } from '#lib/server/session.ts';
 
 /**
  * Verifies the reader cookie once per request and puts the id on locals.

@@ -1,10 +1,10 @@
 import { fail } from '@sveltejs/kit';
-import { MISMATCHED_SECRET, REGISTRATIONS, type Channel } from '$lib/contract';
-import { INBOUND_SECRET } from '$lib/server/lyeve';
-import { ensureIncoming, findIncoming } from '$lib/server/inbound';
-import { countReceipts } from '$lib/server/receipts';
-import { activeSecret, isEnvironmentKey, ringState, rotateTo } from '$lib/server/secrets';
-import { newSecret } from '$lib/server/digest';
+import { MISMATCHED_SECRET, REGISTRATIONS, type Channel } from '#lib/contract.ts';
+import { INBOUND_SECRET } from '#lib/server/lyeve.ts';
+import { ensureIncoming, findIncoming } from '#lib/server/inbound.ts';
+import { countReceipts } from '#lib/server/receipts.ts';
+import { activeSecret, isEnvironmentKey, ringState, rotateTo } from '#lib/server/secrets.ts';
+import { newSecret } from '#lib/server/digest.ts';
 import {
 	buildInput,
 	deleteWebhook,
@@ -21,7 +21,7 @@ import {
 	updateWebhook,
 	webhookHealth,
 	type Webhook
-} from '$lib/server/webhooks';
+} from '#lib/server/webhooks.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

@@ -1,4 +1,4 @@
-import { loadBoard } from '$lib/server/board';
+import { loadBoard } from '#lib/server/board.ts';
 import type { PageServerLoad } from './$types';
 
 /**

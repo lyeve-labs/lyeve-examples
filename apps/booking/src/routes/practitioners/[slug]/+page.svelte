@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { initials } from '$lib/schedule';
+	import { initials } from '#lib/schedule.ts';
 
 	let { data } = $props();
 	const person = $derived(data.practitioner);

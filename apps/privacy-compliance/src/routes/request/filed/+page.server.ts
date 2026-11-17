@@ -1,4 +1,4 @@
-import { RESPONSE_DAYS } from '$lib/desk';
+import { RESPONSE_DAYS } from '#lib/desk.ts';
 import type { PageServerLoad } from './$types';
 
 /**

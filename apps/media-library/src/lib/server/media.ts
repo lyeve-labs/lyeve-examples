@@ -6,8 +6,8 @@
  * response shapes the plugin really returns, which are not the shapes the rest
  * of the engine returns.
  */
-import { LyeveError } from '$lib/lyeve';
-import { PRESETS, presetSkipped, type PresetName } from '$lib/naming';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { PRESETS, presetSkipped, type PresetName } from '#lib/naming.ts';
 import { lyeve } from './lyeve';
 
 export { PRESETS, type PresetName };

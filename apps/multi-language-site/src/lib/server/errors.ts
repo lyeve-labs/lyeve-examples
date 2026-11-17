@@ -1,4 +1,4 @@
-import { LyeveError } from '$lib/lyeve';
+import { LyeveError } from '#lib/lyeve/index.ts';
 
 /**
  * Turns an engine failure into something a form can display.

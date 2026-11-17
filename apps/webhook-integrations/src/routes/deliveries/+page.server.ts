@@ -1,5 +1,5 @@
 import { fail } from '@sveltejs/kit';
-import { REGISTRATIONS } from '$lib/contract';
+import { REGISTRATIONS } from '#lib/contract.ts';
 import {
 	deliveryStats,
 	describe,
@@ -16,7 +16,7 @@ import {
 	type Attempt,
 	type DeliveryStats,
 	type RetryConfig
-} from '$lib/server/webhooks';
+} from '#lib/server/webhooks.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 interface DeliveryForm {

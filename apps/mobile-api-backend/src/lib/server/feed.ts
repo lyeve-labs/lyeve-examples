@@ -1,4 +1,4 @@
-import type { ContentEntry, LyeveClient } from '$lib/lyeve';
+import type { ContentEntry, LyeveClient } from '#lib/lyeve/index.ts';
 
 /**
  * The cursor-paged content route, which the shared client does not wrap.

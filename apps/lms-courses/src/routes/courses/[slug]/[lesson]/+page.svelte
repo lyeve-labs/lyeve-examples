@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatMinutes } from '$lib/format';
+	import { formatMinutes } from '#lib/format.ts';
 
 	let { data } = $props();
 

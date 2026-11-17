@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { mediaBytes } from '$lib/lyeve';
-import { lyeve } from '$lib/server/lyeve';
+import { mediaBytes } from '#lib/lyeve/index.ts';
+import { lyeve } from '#lib/server/lyeve.ts';
 import type { RequestHandler } from './$types';
 
 /**

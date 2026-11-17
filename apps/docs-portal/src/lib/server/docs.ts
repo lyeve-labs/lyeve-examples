@@ -1,7 +1,7 @@
-import { listContent, relationId, search, type ContentEntry } from '$lib/lyeve';
+import { listContent, relationId, search, type ContentEntry } from '#lib/lyeve/index.ts';
 import { lyeve, PAGES, SPACES } from './lyeve';
-import type { DocPage } from '$lib/tree';
-import { excerpt } from '$lib/prose';
+import type { DocPage } from '#lib/tree.ts';
+import { excerpt } from '#lib/prose.ts';
 
 /** The engine clamps a list request into 25..200, so this is the widest page. */
 const ENGINE_MAX_LIMIT = 200;

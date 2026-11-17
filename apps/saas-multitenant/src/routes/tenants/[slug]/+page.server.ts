@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { API_URL, lyeve } from '$lib/server/lyeve';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { API_URL, lyeve } from '#lib/server/lyeve.ts';
 import {
 	getQuota,
 	getTenantBySlug,
@@ -9,8 +9,8 @@ import {
 	probeWithApiKey,
 	revokeApiKey,
 	tenantUsage
-} from '$lib/server/platform';
-import { getProfile } from '$lib/server/profiles';
+} from '#lib/server/platform.ts';
+import { getProfile } from '#lib/server/profiles.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

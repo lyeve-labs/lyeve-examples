@@ -1,8 +1,8 @@
 /**
  * The orders this app owns. Writing one is what makes the engine deliver.
  */
-import { createContent, listContent, type ContentEntry } from '$lib/lyeve';
-import { ORDERS, isOrderStatus, type OrderStatus } from '$lib/contract';
+import { createContent, listContent, type ContentEntry } from '#lib/lyeve/index.ts';
+import { ORDERS, isOrderStatus, type OrderStatus } from '#lib/contract.ts';
 import { lyeve } from './lyeve';
 
 interface OrderFields {

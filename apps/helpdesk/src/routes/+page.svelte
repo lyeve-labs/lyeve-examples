@@ -5,7 +5,7 @@
 		STATUS_LABEL,
 		STATUS_STYLE,
 		formatWhen
-	} from '$lib/desk';
+	} from '#lib/desk.ts';
 
 	let { data } = $props();
 

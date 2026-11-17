@@ -9,9 +9,9 @@
  * no vote route and no anonymous submit route, so the state machine, the vote
  * upsert and the rule that a visitor's reply starts pending all live here.
  */
-import { LyeveError, createContent, listContent, type ContentEntry } from '$lib/lyeve';
+import { LyeveError, createContent, listContent, type ContentEntry } from '#lib/lyeve/index.ts';
 import { lyeve } from './lyeve';
-import type { ModerationAction } from '$lib/forum';
+import type { ModerationAction } from '#lib/forum.ts';
 
 /**
  * The type every reply names as its target.

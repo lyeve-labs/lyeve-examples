@@ -1,7 +1,7 @@
-import { currentLocale, fallbackChain } from '$lib/locales';
-import { loadPages, loadSections, type SitePage } from '$lib/server/pages';
-import { bulkExport } from '$lib/server/translations';
-import { byEntry, localize, statusByLocale } from '$lib/server/localize';
+import { currentLocale, fallbackChain } from '#lib/locales.ts';
+import { loadPages, loadSections, type SitePage } from '#lib/server/pages.ts';
+import { bulkExport } from '#lib/server/translations.ts';
+import { byEntry, localize, statusByLocale } from '#lib/server/localize.ts';
 import type { PageServerLoad } from './$types';
 
 /**

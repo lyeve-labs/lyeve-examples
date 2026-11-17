@@ -1,5 +1,5 @@
-import { listAlbums, listPhotos } from '$lib/server/gallery';
-import { listMediaPage } from '$lib/server/media';
+import { listAlbums, listPhotos } from '#lib/server/gallery.ts';
+import { listMediaPage } from '#lib/server/media.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import { COMPANY, NAV, pagePath } from '$lib/site';
+	import { COMPANY, NAV, pagePath } from '#lib/site.ts';
 
 	let { data, children } = $props();
 

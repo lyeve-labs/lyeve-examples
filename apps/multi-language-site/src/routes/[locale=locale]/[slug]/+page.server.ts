@@ -1,8 +1,8 @@
 import { error } from '@sveltejs/kit';
-import { currentLocale } from '$lib/locales';
-import { findPage, loadSections } from '$lib/server/pages';
-import { bulkExport, resolve } from '$lib/server/translations';
-import { byEntry, localize, statusByLocale } from '$lib/server/localize';
+import { currentLocale } from '#lib/locales.ts';
+import { findPage, loadSections } from '#lib/server/pages.ts';
+import { bulkExport, resolve } from '#lib/server/translations.ts';
+import { byEntry, localize, statusByLocale } from '#lib/server/localize.ts';
 import type { PageServerLoad } from './$types';
 
 /**

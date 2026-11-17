@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Panel from '$lib/components/Panel.svelte';
-	import ColumnChart from '$lib/components/ColumnChart.svelte';
-	import StateMark from '$lib/components/StateMark.svelte';
-	import { padHours } from '$lib/charts';
+	import Panel from '#lib/components/Panel.svelte';
+	import ColumnChart from '#lib/components/ColumnChart.svelte';
+	import StateMark from '#lib/components/StateMark.svelte';
+	import { padHours } from '#lib/charts.ts';
 
 	let { data, form } = $props();
 

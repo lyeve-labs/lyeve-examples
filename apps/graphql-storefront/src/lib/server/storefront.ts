@@ -3,7 +3,7 @@ import {
 	CollectionIndex, CollectionPage, ProductPage,
 	type ProductRow, type ReviewRow
 } from './queries';
-import type { CollectionCard, ProductCard, ProductDetail, Review } from '$lib/types';
+import type { CollectionCard, ProductCard, ProductDetail, Review } from '#lib/types.ts';
 
 /**
  * The reads behind each page, one GraphQL document apiece.

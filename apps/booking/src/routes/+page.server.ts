@@ -1,5 +1,5 @@
-import { isBookable, listPractitioners, listSlots, upcoming } from '$lib/server/booking';
-import { dayLabel, timeLabel } from '$lib/schedule';
+import { isBookable, listPractitioners, listSlots, upcoming } from '#lib/server/booking.ts';
+import { dayLabel, timeLabel } from '#lib/schedule.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import { getAlbum, listAlbumPhotos } from '$lib/server/gallery';
-import { PRESETS, albumFolder } from '$lib/naming';
-import { listMediaPage, searchMedia } from '$lib/server/media';
+import { getAlbum, listAlbumPhotos } from '#lib/server/gallery.ts';
+import { PRESETS, albumFolder } from '#lib/naming.ts';
+import { listMediaPage, searchMedia } from '#lib/server/media.ts';
 import type { PageServerLoad } from './$types';
 
 const LARGE = PRESETS[2];

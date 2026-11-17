@@ -1,4 +1,4 @@
-import { LyeveError, type LyeveClient } from '$lib/lyeve';
+import { LyeveError, type LyeveClient } from '#lib/lyeve/index.ts';
 
 /**
  * The two meters, which are separate systems with separate limits, both in

@@ -1,6 +1,6 @@
-import { countByTopic, readForumComments } from '$lib/server/comments';
-import { loadTopics, sortForBoard } from '$lib/server/topics';
-import { CATEGORIES } from '$lib/forum';
+import { countByTopic, readForumComments } from '#lib/server/comments.ts';
+import { loadTopics, sortForBoard } from '#lib/server/topics.ts';
+import { CATEGORIES } from '#lib/forum.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

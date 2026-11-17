@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { loadOutline, readingOrder } from '$lib/server/outline';
+import { loadOutline, readingOrder } from '#lib/server/outline.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

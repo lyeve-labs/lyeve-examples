@@ -1,13 +1,13 @@
 import { error, fail, redirect } from '@sveltejs/kit';
-import { createContent } from '$lib/lyeve';
-import { APPOINTMENTS, lyeve } from '$lib/server/lyeve';
+import { createContent } from '#lib/lyeve/index.ts';
+import { APPOINTMENTS, lyeve } from '#lib/server/lyeve.ts';
 import {
 	getPractitioner,
 	getSlotBySlug,
 	isBookable,
 	writeSlotState
-} from '$lib/server/booking';
-import { dayLabel, endTimeLabel, timeLabel } from '$lib/schedule';
+} from '#lib/server/booking.ts';
+import { dayLabel, endTimeLabel, timeLabel } from '#lib/schedule.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const EMAIL = /^[^@\s]+@[^@\s.]+\.[^@\s]+$/;

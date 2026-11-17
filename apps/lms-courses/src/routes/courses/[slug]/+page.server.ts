@@ -1,7 +1,7 @@
 import { error, fail } from '@sveltejs/kit';
-import { createContent, getContentBySlug, listContent, LyeveError } from '$lib/lyeve';
-import { lyeve, COURSES, ENROLLMENTS } from '$lib/server/lyeve';
-import { enrollmentCount, loadOutline, totalMinutes } from '$lib/server/outline';
+import { createContent, getContentBySlug, listContent, LyeveError } from '#lib/lyeve/index.ts';
+import { lyeve, COURSES, ENROLLMENTS } from '#lib/server/lyeve.ts';
+import { enrollmentCount, loadOutline, totalMinutes } from '#lib/server/outline.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

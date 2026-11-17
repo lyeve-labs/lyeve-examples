@@ -10,9 +10,9 @@
  * /api/v1/analytics, /api/v1/quotas/status, /api/v1/health and /api/v1/ready,
  * plus the unauthenticated probes.
  */
-import { LyeveError } from '$lib/lyeve';
+import { LyeveError } from '#lib/lyeve/index.ts';
 import { lyeve, PUBLIC_PROBE_BASE } from './lyeve';
-import type { Provenance, SourceState } from '$lib/provenance';
+import type { Provenance, SourceState } from '#lib/provenance.ts';
 
 /** A panel's figures plus the reason they read the way they do. */
 export interface Sourced<T> {

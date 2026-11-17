@@ -1,6 +1,6 @@
 <script lang="ts">
 	import StateMark from './StateMark.svelte';
-	import { STATE_LOOK, type Provenance } from '$lib/provenance';
+	import { STATE_LOOK, type Provenance } from '#lib/provenance.ts';
 
 	interface Props {
 		title: string;

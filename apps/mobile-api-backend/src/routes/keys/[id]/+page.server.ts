@@ -1,10 +1,10 @@
 import { error, fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { lyeve, NOTICES } from '$lib/server/lyeve';
-import { findKey, keyAudit, setMonthlyLimit } from '$lib/server/keys';
-import { keyUsage } from '$lib/server/metering';
-import { grants, requiredScope } from '$lib/scopes';
-import { currentPeriod } from '$lib/format';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { lyeve, NOTICES } from '#lib/server/lyeve.ts';
+import { findKey, keyAudit, setMonthlyLimit } from '#lib/server/keys.ts';
+import { keyUsage } from '#lib/server/metering.ts';
+import { grants, requiredScope } from '#lib/scopes.ts';
+import { currentPeriod } from '#lib/format.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

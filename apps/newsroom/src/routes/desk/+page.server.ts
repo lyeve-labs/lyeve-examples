@@ -6,9 +6,9 @@ import {
 	readPublicStatuses,
 	bodyField,
 	type DeskEntry
-} from '$lib/server/stories';
-import { alignPublicStatus } from '$lib/server/lifecycle';
-import { listAssignments, type Assignment } from '$lib/server/review';
+} from '#lib/server/stories.ts';
+import { alignPublicStatus } from '#lib/server/lifecycle.ts';
+import { listAssignments, type Assignment } from '#lib/server/review.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const DESK_STATUSES = ['draft', 'published', 'archived'] as const;

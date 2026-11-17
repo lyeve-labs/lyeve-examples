@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bytes, count, limit, percent, periodLabel } from '$lib/format';
+	import { bytes, count, limit, percent, periodLabel } from '#lib/format.ts';
 
 	let { data, form } = $props();
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SEVERITIES, SEVERITY_LABEL, STATES, STATE_LABEL } from '$lib/board';
+	import { SEVERITIES, SEVERITY_LABEL, STATES, STATE_LABEL } from '#lib/board.ts';
 
 	let { data, form } = $props();
 </script>

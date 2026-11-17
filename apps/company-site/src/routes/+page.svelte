@@ -1,6 +1,6 @@
 <script lang="ts">
-	import PageMeta from '$lib/components/PageMeta.svelte';
-	import { COMPANY, paragraphs } from '$lib/site';
+	import PageMeta from '#lib/components/PageMeta.svelte';
+	import { COMPANY, paragraphs } from '#lib/site.ts';
 
 	let { data } = $props();
 	const home = $derived(data.home);

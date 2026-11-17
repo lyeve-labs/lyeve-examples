@@ -196,4 +196,4 @@ up to 500 and returns a real `total_count`. The public read route clamps to
 
 Nothing outside `src/lib/server/` and the `.server.ts` files touches the engine.
 The credential lives in this process, and SvelteKit refuses to bundle a
-`$lib/server` import into the browser.
+`#lib/server` import into the browser.

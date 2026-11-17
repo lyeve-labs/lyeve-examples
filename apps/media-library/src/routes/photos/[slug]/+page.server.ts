@@ -1,12 +1,12 @@
 import { error } from '@sveltejs/kit';
-import { getPhoto, listAlbums } from '$lib/server/gallery';
+import { getPhoto, listAlbums } from '#lib/server/gallery.ts';
 import {
 	getMediaRecord,
 	isUnverified,
 	scanExplanation,
 	variantStates,
 	type MediaRecord
-} from '$lib/server/media';
+} from '#lib/server/media.ts';
 import type { PageServerLoad } from './$types';
 
 /** sys_media has no updated_at column, so every record reports the Go zero time. */

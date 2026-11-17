@@ -5,8 +5,8 @@ import {
 	relationId,
 	related,
 	type ContentEntry
-} from '$lib/lyeve';
-import { formatWhen } from '$lib/format';
+} from '#lib/lyeve/index.ts';
+import { formatWhen } from '#lib/format.ts';
 import { lyeve, EVENTS, REGISTRATIONS } from './lyeve';
 
 /**

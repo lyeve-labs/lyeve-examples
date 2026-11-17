@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { findArticle, previewOf } from '$lib/server/articles';
-import { canRead, refusalFor } from '$lib/server/tiers';
+import { findArticle, previewOf } from '#lib/server/articles.ts';
+import { canRead, refusalFor } from '#lib/server/tiers.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params, parent }) => {

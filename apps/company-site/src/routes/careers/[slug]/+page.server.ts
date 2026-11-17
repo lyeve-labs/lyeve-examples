@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { opening } from '$lib/server/site';
+import { opening } from '#lib/server/site.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

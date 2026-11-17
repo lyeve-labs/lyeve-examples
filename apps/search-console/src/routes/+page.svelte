@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { segments } from '$lib/highlight';
+	import { segments } from '#lib/highlight.ts';
 
 	let { data } = $props();
 

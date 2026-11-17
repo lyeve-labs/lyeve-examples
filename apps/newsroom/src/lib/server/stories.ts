@@ -1,4 +1,4 @@
-import { listContent, getContent, getContentBySlug, related } from '$lib/lyeve';
+import { listContent, getContent, getContentBySlug, related } from '#lib/lyeve/index.ts';
 import { lyeve, STORIES } from './lyeve';
 
 /**

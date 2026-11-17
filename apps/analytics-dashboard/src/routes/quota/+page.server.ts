@@ -1,4 +1,4 @@
-import { quotaRequestCount, quotaStatus, quotas, tenantBreakdown, tenantUsage } from '$lib/server/telemetry';
+import { quotaRequestCount, quotaStatus, quotas, tenantBreakdown, tenantUsage } from '#lib/server/telemetry.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

@@ -18,7 +18,7 @@ import {
 	relationId,
 	related,
 	type ContentEntry
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { lyeve, ACTIONS, OFFICERS, REQUESTS } from './lyeve';
 import {
 	RESPONSE_DAYS,
@@ -27,7 +27,7 @@ import {
 	type ActionKind,
 	type RequestState,
 	type RequestType
-} from '$lib/desk';
+} from '#lib/desk.ts';
 
 /** The engine clamps a page to 25..200 rows, so 200 is the largest useful ask. */
 const PAGE = 200;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatPrice, formatRating } from '$lib/format';
+	import { formatPrice, formatRating } from '#lib/format.ts';
 
 	let { data } = $props();
 	const product = $derived(data.product);

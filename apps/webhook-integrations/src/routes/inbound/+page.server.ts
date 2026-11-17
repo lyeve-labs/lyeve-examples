@@ -1,9 +1,9 @@
 import { fail } from '@sveltejs/kit';
-import { INBOUND_FIELD_MAP, INBOUND_WEBHOOK_NAME, SHIPMENTS } from '$lib/contract';
-import { ensureIncoming, findIncoming, listShipments, postSample, type SampleMode } from '$lib/server/inbound';
-import { INBOUND_SECRET } from '$lib/server/lyeve';
-import { listOrders } from '$lib/server/orders';
-import { describe } from '$lib/server/webhooks';
+import { INBOUND_FIELD_MAP, INBOUND_WEBHOOK_NAME, SHIPMENTS } from '#lib/contract.ts';
+import { ensureIncoming, findIncoming, listShipments, postSample, type SampleMode } from '#lib/server/inbound.ts';
+import { INBOUND_SECRET } from '#lib/server/lyeve.ts';
+import { listOrders } from '#lib/server/orders.ts';
+import { describe } from '#lib/server/webhooks.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const MODES: SampleMode[] = ['valid', 'tampered', 'unsigned', 'stale', 'replayed'];

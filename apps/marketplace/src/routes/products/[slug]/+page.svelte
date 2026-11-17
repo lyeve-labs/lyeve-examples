@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatPrice, formatRating } from '$lib/format';
+	import { formatPrice, formatRating } from '#lib/format.ts';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

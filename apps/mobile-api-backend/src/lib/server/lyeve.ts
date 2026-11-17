@@ -1,5 +1,5 @@
-import { LyeveClient } from '$lib/lyeve';
-import { env } from '$env/dynamic/private';
+import { LyeveClient } from '#lib/lyeve/index.ts';
+import * as env from '$app/env/private';
 
 /**
  * The console's credential. It is an operator session, not the mobile app's

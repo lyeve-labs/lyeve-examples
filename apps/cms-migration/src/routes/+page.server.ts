@@ -1,10 +1,10 @@
-import { listContent, related, relationId, search } from '$lib/lyeve';
-import type { ContentEntry } from '$lib/lyeve';
-import { lyeve, AUTHORS, PAGES, POSTS } from '$lib/server/lyeve';
+import { listContent, related, relationId, search } from '#lib/lyeve/index.ts';
+import type { ContentEntry } from '#lib/lyeve/index.ts';
+import { lyeve, AUTHORS, PAGES, POSTS } from '#lib/server/lyeve.ts';
 import {
 	readRun, readCheckpoint, readStageText, parseDryRun, parseMigration
-} from '$lib/server/reports';
-import type { Checkpoint, MigrationSummary } from '$lib/server/reports';
+} from '#lib/server/reports.ts';
+import type { Checkpoint, MigrationSummary } from '#lib/server/reports.ts';
 import type { PageServerLoad } from './$types';
 
 interface PostRow {

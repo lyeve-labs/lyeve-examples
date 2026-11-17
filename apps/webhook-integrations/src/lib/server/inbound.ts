@@ -5,8 +5,8 @@
  * so the signature is the credential and no bearer token is involved, and it
  * writes the mapped payload straight into the content type's generated table.
  */
-import { listContent, type ContentEntry } from '$lib/lyeve';
-import { INBOUND_FIELD_MAP, INBOUND_WEBHOOK_NAME, SHIPMENTS } from '$lib/contract';
+import { listContent, type ContentEntry } from '#lib/lyeve/index.ts';
+import { INBOUND_FIELD_MAP, INBOUND_WEBHOOK_NAME, SHIPMENTS } from '#lib/contract.ts';
 import { newNonce } from './digest';
 import { API_URL, lyeve } from './lyeve';
 import { signRequest } from './signature';

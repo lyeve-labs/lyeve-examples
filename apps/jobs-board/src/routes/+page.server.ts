@@ -1,9 +1,9 @@
-import { listContent, search } from '$lib/lyeve';
-import { lyeve, LISTINGS } from '$lib/server/lyeve';
+import { listContent, search } from '#lib/lyeve/index.ts';
+import { lyeve, LISTINGS } from '#lib/server/lyeve.ts';
 import {
 	cardFromHit, cardFromRow, companyIndex, type JobCard, type ListingData
-} from '$lib/server/listings';
-import { isEmploymentType } from '$lib/jobs';
+} from '#lib/server/listings.ts';
+import { isEmploymentType } from '#lib/jobs.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {

@@ -1,6 +1,6 @@
-import { listContent, related } from '$lib/lyeve';
-import { lyeve, NOTICES } from '$lib/server/lyeve';
-import { listByCursor } from '$lib/server/feed';
+import { listContent, related } from '#lib/lyeve/index.ts';
+import { lyeve, NOTICES } from '#lib/server/lyeve.ts';
+import { listByCursor } from '#lib/server/feed.ts';
 import type { PageServerLoad } from './$types';
 
 interface Notice {

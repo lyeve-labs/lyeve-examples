@@ -8,7 +8,7 @@
  * total at all. Reindex answers `{indexed, skipped, errors, message}`. A helper
  * per route is cheaper than remembering which.
  */
-import { LyeveError } from '$lib/lyeve';
+import { LyeveError } from '#lib/lyeve/index.ts';
 import { lyeve } from './lyeve';
 
 /**

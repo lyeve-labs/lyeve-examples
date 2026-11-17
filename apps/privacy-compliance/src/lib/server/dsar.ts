@@ -10,7 +10,7 @@
  * answers 200 whether it matched one row or none, and the identifier is the
  * only thing that decides which rows go.
  */
-import { LyeveError } from '$lib/lyeve';
+import { LyeveError } from '#lib/lyeve/index.ts';
 import { lyeve } from './lyeve';
 
 /** The engine's ceiling on both DSAR identifiers: RFC 5321's longest address. */

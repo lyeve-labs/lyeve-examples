@@ -1,4 +1,4 @@
-import { loadAccessLog, loadRules, summarizePiiTypes } from '$lib/server/masking';
+import { loadAccessLog, loadRules, summarizePiiTypes } from '#lib/server/masking.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {

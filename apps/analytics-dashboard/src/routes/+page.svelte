@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Panel from '$lib/components/Panel.svelte';
-	import StatTile from '$lib/components/StatTile.svelte';
-	import ColumnChart from '$lib/components/ColumnChart.svelte';
-	import BarChart from '$lib/components/BarChart.svelte';
-	import { compact, millis, padHours, percent } from '$lib/charts';
+	import Panel from '#lib/components/Panel.svelte';
+	import StatTile from '#lib/components/StatTile.svelte';
+	import ColumnChart from '#lib/components/ColumnChart.svelte';
+	import BarChart from '#lib/components/BarChart.svelte';
+	import { compact, millis, padHours, percent } from '#lib/charts.ts';
 
 	let { data } = $props();
 

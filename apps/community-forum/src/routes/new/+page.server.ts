@@ -1,7 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { isCategory, type CategorySlug } from '$lib/forum';
-import { readableError } from '$lib/server/comments';
-import { createTopic } from '$lib/server/topics';
+import { isCategory, type CategorySlug } from '#lib/forum.ts';
+import { readableError } from '#lib/server/comments.ts';
+import { createTopic } from '#lib/server/topics.ts';
 import type { Actions } from './$types';
 
 export const actions: Actions = {

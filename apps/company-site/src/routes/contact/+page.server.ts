@@ -5,7 +5,7 @@ import {
 	formDefinition,
 	submitForm,
 	validate
-} from '$lib/server/forms';
+} from '#lib/server/forms.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

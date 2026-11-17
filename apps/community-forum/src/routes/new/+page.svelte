@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CATEGORIES } from '$lib/forum';
+	import { CATEGORIES } from '#lib/forum.ts';
 
 	let { form } = $props();
 </script>

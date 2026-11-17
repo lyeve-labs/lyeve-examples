@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { getStoryForPreview } from '$lib/server/stories';
+import { getStoryForPreview } from '#lib/server/stories.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

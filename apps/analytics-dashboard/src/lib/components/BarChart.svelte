@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { barChart, compact, SERIES_1, type Bar } from '$lib/charts';
+	import { barChart, compact, SERIES_1, type Bar } from '#lib/charts.ts';
 
 	interface Props {
 		bars: Bar[];

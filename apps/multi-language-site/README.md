@@ -120,7 +120,7 @@ transitions on `/translations`.
     src/lib/server/translations.ts      the plugin's routes, typed
     src/lib/server/localize.ts          the fallback decision and its source-record step
     src/lib/server/pages.ts             the untranslated half: slugs, order, sections
-    src/params/locale.ts                keeps /[locale] from swallowing /translations
+    src/params.ts                       keeps /[locale] from swallowing /translations
     src/routes/[locale]/                the localized index and one page
     src/routes/translations/            the status matrix and the per-record editor
     setup/provision.ts                  content types, source records, translations

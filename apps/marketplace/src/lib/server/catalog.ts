@@ -1,10 +1,10 @@
 import {
 	getContentBySlug, listContent, related, type ContentEntry
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { lyeve, CATEGORIES, PRODUCTS, REVIEWS, SELLERS } from './lyeve';
 import type {
 	CategoryLink, ProductCard, ProductReview, SellerCard, SellerSummary
-} from '$lib/types';
+} from '#lib/types.ts';
 
 // The engine clamps a list to 200 rows, and this catalog fits in one page.
 // That is the only reason the app can sort and total it: see the README for

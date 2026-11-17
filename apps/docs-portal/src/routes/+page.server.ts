@@ -1,4 +1,4 @@
-import { countPagesBySpace } from '$lib/server/docs';
+import { countPagesBySpace } from '#lib/server/docs.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ parent }) => {

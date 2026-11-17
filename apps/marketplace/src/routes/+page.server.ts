@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { loadCategories, loadProducts, loadSellers } from '$lib/server/catalog';
+import { loadCategories, loadProducts, loadSellers } from '#lib/server/catalog.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ProductGrid from '$lib/components/ProductGrid.svelte';
-	import { formatPrice, formatRating } from '$lib/format';
+	import ProductGrid from '#lib/components/ProductGrid.svelte';
+	import { formatPrice, formatRating } from '#lib/format.ts';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

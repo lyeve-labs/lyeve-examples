@@ -1,4 +1,4 @@
-import { getContentBySlug, listContent, relationId, type ContentEntry } from '$lib/lyeve';
+import { getContentBySlug, listContent, relationId, type ContentEntry } from '#lib/lyeve/index.ts';
 import { lyeve, COURSES, MODULES, LESSONS, ENROLLMENTS } from './lyeve';
 
 /**

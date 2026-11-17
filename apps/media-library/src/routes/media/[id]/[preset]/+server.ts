@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { PRESETS, getMediaThumbnails, variantBytesReachable } from '$lib/server/media';
+import { PRESETS, getMediaThumbnails, variantBytesReachable } from '#lib/server/media.ts';
 import type { RequestHandler } from './$types';
 
 /**
