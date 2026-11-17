@@ -1,7 +1,7 @@
 import { fail } from '@sveltejs/kit';
-import { isModerationAction } from '$lib/forum';
-import { moderate, moderationQueue, readableError } from '$lib/server/comments';
-import { loadTopics } from '$lib/server/topics';
+import { isModerationAction } from '#lib/forum.ts';
+import { moderate, moderationQueue, readableError } from '#lib/server/comments.ts';
+import { loadTopics } from '#lib/server/topics.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /** One shape for every outcome, so the page reads `form?.done` without narrowing. */

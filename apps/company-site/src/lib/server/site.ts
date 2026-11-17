@@ -4,7 +4,7 @@ import {
 	related,
 	relationId,
 	type ContentEntry
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { lyeve, PAGES, TEAM, OPENINGS } from './lyeve';
 
 export interface PageFields {

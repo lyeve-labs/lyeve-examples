@@ -1,4 +1,4 @@
-import { LyeveError, type LyeveClient } from '$lib/lyeve';
+import { LyeveError, type LyeveClient } from '#lib/lyeve/index.ts';
 
 /**
  * The API key lifecycle, as the apikey plugin actually exposes it.

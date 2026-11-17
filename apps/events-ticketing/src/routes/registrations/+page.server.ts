@@ -1,4 +1,4 @@
-import { listRegistrations } from '$lib/server/events';
+import { listRegistrations } from '#lib/server/events.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

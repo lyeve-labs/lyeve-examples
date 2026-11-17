@@ -1,4 +1,4 @@
-import { findReaderById } from '$lib/server/members';
+import { findReaderById } from '#lib/server/members.ts';
 import type { LayoutServerLoad } from './$types';
 
 /**

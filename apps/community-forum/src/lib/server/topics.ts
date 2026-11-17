@@ -5,8 +5,8 @@
  * below it is a plugin comment, which is why this file is short and
  * comments.ts is not.
  */
-import { createContent, getContentBySlug, listContent, type ContentEntry } from '$lib/lyeve';
-import { isCategory, topicSlug, type CategorySlug } from '$lib/forum';
+import { createContent, getContentBySlug, listContent, type ContentEntry } from '#lib/lyeve/index.ts';
+import { isCategory, topicSlug, type CategorySlug } from '#lib/forum.ts';
 import { lyeve, TOPICS } from './lyeve';
 
 interface TopicFields {

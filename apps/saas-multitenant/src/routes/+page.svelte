@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { day, limit } from '$lib/format';
+	import { day, limit } from '#lib/format.ts';
 
 	let { data, form } = $props();
 </script>

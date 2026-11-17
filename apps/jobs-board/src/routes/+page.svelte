@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { EMPLOYMENT_TYPES } from '$lib/jobs';
+	import { EMPLOYMENT_TYPES } from '#lib/jobs.ts';
 
 	let { data } = $props();
 	const count = $derived(data.jobs.length);

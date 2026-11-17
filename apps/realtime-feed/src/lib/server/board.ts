@@ -10,7 +10,7 @@ import {
 	listContent,
 	relationId,
 	type ContentEntry
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { INCIDENTS, SERVICES, UPDATES, lyeve } from './lyeve';
 import {
 	isIncidentState,
@@ -21,7 +21,7 @@ import {
 	type IncidentUpdate,
 	type Service,
 	type Severity
-} from '$lib/board';
+} from '#lib/board.ts';
 
 /** The engine clamps a page to 25..200 rows, so 200 is the largest useful ask. */
 const PAGE = 200;

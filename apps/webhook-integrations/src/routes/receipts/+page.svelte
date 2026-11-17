@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ago, clock } from '$lib/format';
+	import { ago, clock } from '#lib/format.ts';
 
 	let { data } = $props();
 </script>

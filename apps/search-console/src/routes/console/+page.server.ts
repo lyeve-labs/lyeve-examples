@@ -1,7 +1,7 @@
 import { fail } from '@sveltejs/kit';
-import { ARTICLES } from '$lib/server/lyeve';
-import { reportedTally } from '$lib/server/clicks';
-import { KNOWN_BOOST_FIELDS, unmatchableRules } from '$lib/server/rank';
+import { ARTICLES } from '#lib/server/lyeve.ts';
+import { reportedTally } from '#lib/server/clicks.ts';
+import { KNOWN_BOOST_FIELDS, unmatchableRules } from '#lib/server/rank.ts';
 import {
 	analytics,
 	createSynonym,
@@ -17,7 +17,7 @@ import {
 	searchByBody,
 	type BoostRule,
 	type ReindexResult
-} from '$lib/server/search';
+} from '#lib/server/search.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 // SvelteKit rejects an unrecognized export from a page server module, so the

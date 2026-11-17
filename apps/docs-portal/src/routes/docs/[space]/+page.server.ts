@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
-import { findSpace, outline, readSpacePages } from '$lib/server/docs';
-import { buildTree } from '$lib/tree';
-import { excerpt } from '$lib/prose';
+import { findSpace, outline, readSpacePages } from '#lib/server/docs.ts';
+import { buildTree } from '#lib/tree.ts';
+import { excerpt } from '#lib/prose.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

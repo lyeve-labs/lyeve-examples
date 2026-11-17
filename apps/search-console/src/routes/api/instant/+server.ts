@@ -1,6 +1,5 @@
-import { json } from '@sveltejs/kit';
-import { ARTICLES } from '$lib/server/lyeve';
-import { instant, safely, search } from '$lib/server/search';
+import { ARTICLES } from '#lib/server/lyeve.ts';
+import { instant, safely, search } from '#lib/server/search.ts';
 import type { RequestHandler } from './$types';
 
 /**
@@ -17,7 +16,7 @@ import type { RequestHandler } from './$types';
  */
 export const GET: RequestHandler = async ({ url }) => {
 	const q = (url.searchParams.get('q') ?? '').trim();
-	if (!q) return json({ query: '', results: [], tookMs: 0, roundTripMs: 0, fullTotal: 0 });
+	if (!q) return Response.json({ query: '', results: [], tookMs: 0, roundTripMs: 0, fullTotal: 0 });
 
 	const started = performance.now();
 	const suggestions = await instant(q, ARTICLES, 8);
@@ -27,7 +26,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	// suggestions the reader is waiting for.
 	const full = await safely(search({ q, schema: ARTICLES, limit: 1 }));
 
-	return json({
+	return Response.json({
 		query: suggestions.query,
 		// The engine's own measurement of the query, which only this route
 		// reports. A full search returns no timing at all.

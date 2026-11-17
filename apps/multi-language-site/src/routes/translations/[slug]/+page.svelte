@@ -1,5 +1,5 @@
 <script lang="ts">
-	import StatusBadge from '$lib/components/StatusBadge.svelte';
+	import StatusBadge from '#lib/components/StatusBadge.svelte';
 
 	let { data, form } = $props();
 </script>

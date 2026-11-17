@@ -1,4 +1,4 @@
-import { DSAR_ACTIONS, DSAR_RESOURCE_TYPE, isMasked, loadAudit } from '$lib/server/audit';
+import { DSAR_ACTIONS, DSAR_RESOURCE_TYPE, isMasked, loadAudit } from '#lib/server/audit.ts';
 import type { PageServerLoad } from './$types';
 
 const PAGE = 50;

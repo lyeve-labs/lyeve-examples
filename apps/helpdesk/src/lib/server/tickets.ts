@@ -11,7 +11,7 @@ import {
 	listContent,
 	relationId,
 	type ContentEntry
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { lyeve, REPLIES, TICKETS } from './lyeve';
 import {
 	PRIORITY_RANK,
@@ -21,7 +21,7 @@ import {
 	type ReplyRole,
 	type TicketPriority,
 	type TicketStatus
-} from '$lib/desk';
+} from '#lib/desk.ts';
 
 /** The engine clamps a page to 25..200 rows, so 200 is the largest useful ask. */
 const PAGE = 200;

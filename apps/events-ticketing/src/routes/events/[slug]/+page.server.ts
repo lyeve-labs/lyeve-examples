@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
-import { loadEvent, register, registrationsForEvent } from '$lib/server/events';
-import { placesLabel } from '$lib/format';
+import { loadEvent, register, registrationsForEvent } from '#lib/server/events.ts';
+import { placesLabel } from '#lib/format.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

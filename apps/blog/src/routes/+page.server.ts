@@ -1,5 +1,5 @@
-import { listContent, related } from '$lib/lyeve';
-import { lyeve, POSTS } from '$lib/server/lyeve';
+import { listContent, related } from '#lib/lyeve/index.ts';
+import { lyeve, POSTS } from '#lib/server/lyeve.ts';
 import type { PageServerLoad } from './$types';
 
 interface Post {

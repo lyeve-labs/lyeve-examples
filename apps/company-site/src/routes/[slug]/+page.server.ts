@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { page } from '$lib/server/site';
+import { page } from '#lib/server/site.ts';
 import type { PageServerLoad } from './$types';
 
 /**

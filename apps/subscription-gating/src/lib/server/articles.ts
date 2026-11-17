@@ -1,4 +1,4 @@
-import { listContent, getContentBySlug, type ContentEntry } from '$lib/lyeve';
+import { listContent, getContentBySlug, type ContentEntry } from '#lib/lyeve/index.ts';
 import { lyeve, ARTICLES } from './lyeve';
 import { isTier, type Tier } from './tiers';
 

@@ -1,8 +1,8 @@
 import {
 	listContent, related, relationId, type ContentEntry, type SearchHit
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { lyeve, COMPANIES } from './lyeve';
-import { employmentLabel, formatSalary, toNumber } from '$lib/jobs';
+import { employmentLabel, formatSalary, toNumber } from '#lib/jobs.ts';
 
 /**
  * Declared as type aliases rather than interfaces on purpose: only an alias

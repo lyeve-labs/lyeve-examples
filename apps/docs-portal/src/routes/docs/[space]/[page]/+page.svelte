@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageTree from '$lib/components/PageTree.svelte';
+	import PageTree from '#lib/components/PageTree.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();

@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { getPhoto } from '$lib/server/gallery';
-import { PRESETS, getMediaRecord, getMediaThumbnails, variantStates } from '$lib/server/media';
+import { getPhoto } from '#lib/server/gallery.ts';
+import { PRESETS, getMediaRecord, getMediaThumbnails, variantStates } from '#lib/server/media.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {

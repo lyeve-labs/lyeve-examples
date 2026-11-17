@@ -5,8 +5,8 @@ import {
 	providerCount,
 	requestSummary,
 	requestTrend
-} from '$lib/server/telemetry';
-import { listNotes } from '$lib/server/notes';
+} from '#lib/server/telemetry.ts';
+import { listNotes } from '#lib/server/notes.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

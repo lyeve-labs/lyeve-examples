@@ -1,5 +1,5 @@
-import { loadRequests } from '$lib/server/requests';
-import { REQUEST_STATES, daysBetween } from '$lib/desk';
+import { loadRequests } from '#lib/server/requests.ts';
+import { REQUEST_STATES, daysBetween } from '#lib/desk.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

@@ -1,12 +1,12 @@
 import { error, fail } from '@sveltejs/kit';
-import { LyeveError, listContent } from '$lib/lyeve';
-import { lyeve, DESKS, REPORTERS } from '$lib/server/lyeve';
+import { LyeveError, listContent } from '#lib/lyeve/index.ts';
+import { lyeve, DESKS, REPORTERS } from '#lib/server/lyeve.ts';
 import {
 	bodyField,
 	expectedPublicStatus,
 	getDeskStory,
 	getStoryForPreview
-} from '$lib/server/stories';
+} from '#lib/server/stories.ts';
 import {
 	archiveStory,
 	clearEmbargo,
@@ -16,13 +16,13 @@ import {
 	setEmbargo,
 	unpublishStory,
 	type StoryDraft
-} from '$lib/server/lifecycle';
+} from '#lib/server/lifecycle.ts';
 import {
 	countEngineRevisions,
 	diffRevisions,
 	listAudit,
 	listRevisions
-} from '$lib/server/revisions';
+} from '#lib/server/revisions.ts';
 import {
 	addComment,
 	getAssignment,
@@ -37,8 +37,8 @@ import {
 	type SlaStatus,
 	type StageAction,
 	type StageLog
-} from '$lib/server/review';
-import { currentUser, listUsers, userLabel } from '$lib/server/users';
+} from '#lib/server/review.ts';
+import { currentUser, listUsers, userLabel } from '#lib/server/users.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const TRANSITIONS: StageAction[] = ['approve', 'reject', 'request_changes'];

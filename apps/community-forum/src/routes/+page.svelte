@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { formatWhen } from '$lib/forum';
+	import { formatWhen } from '#lib/forum.ts';
 
 	let { data } = $props();
 </script>

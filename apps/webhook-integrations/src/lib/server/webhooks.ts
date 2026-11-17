@@ -7,8 +7,8 @@
  * log is a bare array with no count at all, and delivery search has its own
  * `{total, items}`. A helper per route is cheaper than remembering which.
  */
-import { LyeveError } from '$lib/lyeve';
-import type { Registration } from '$lib/contract';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import type { Registration } from '#lib/contract.ts';
 import { RECEIVER_URL_OVERRIDE, lyeve } from './lyeve';
 
 export interface Webhook {

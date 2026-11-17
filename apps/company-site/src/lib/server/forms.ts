@@ -1,4 +1,4 @@
-import { LyeveError, createContent, getContentBySlug } from '$lib/lyeve';
+import { LyeveError, createContent, getContentBySlug } from '#lib/lyeve/index.ts';
 import { lyeve } from './lyeve';
 
 /**

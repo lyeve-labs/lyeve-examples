@@ -1,10 +1,10 @@
 import { fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { lyeve, PUBLIC_API_URL, TENANT } from '$lib/server/lyeve';
-import { deleteKey, listKeys, mintKey, revokeKey } from '$lib/server/keys';
-import { keyUsage } from '$lib/server/metering';
-import { SCOPE_CHOICES } from '$lib/scopes';
-import { currentPeriod } from '$lib/format';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { lyeve, PUBLIC_API_URL, TENANT } from '#lib/server/lyeve.ts';
+import { deleteKey, listKeys, mintKey, revokeKey } from '#lib/server/keys.ts';
+import { keyUsage } from '#lib/server/metering.ts';
+import { SCOPE_CHOICES } from '#lib/scopes.ts';
+import { currentPeriod } from '#lib/format.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const KNOWN_SCOPES = new Set(SCOPE_CHOICES.map((c) => c.scope));

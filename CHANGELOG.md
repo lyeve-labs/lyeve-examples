@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Every example declares `@lyeve-labs/ui-kit` ^0.45.0 instead of ^0.42.2. The examples load only the kit's stylesheet and its compiled components for class scanning. Between those releases the stylesheet did not change and no export was removed or renamed.
 - Every example declares `@lyeve-labs/ui-kit` ^0.60.1 instead of ^0.45.0, and a focused text field shows focus by its border alone. The fields in the newsroom desk, the privacy request page, the search console and the webhook forms drew an outline on focus and now darken their border like the rest.
 - Every example declares `@lyeve-labs/ui-kit` ^0.61.0 instead of ^0.60.1. No example draws the kit's navigation rail or application shell, so the redrawn rail changes nothing on any page.
+- Every SvelteKit example runs on SvelteKit 3.2.0, Vite 8 and TypeScript 6, because SvelteKit 2 carries a security advisory. Each app's SvelteKit config moved from `svelte.config.js` into `vite.config.ts`, its imports read `#lib/` with file extensions, and a new `src/env.ts` declares the environment variables it reads. The cookie override SvelteKit 2 needed is gone.
 
 ## [0.3.4] - 2026-10-25
 

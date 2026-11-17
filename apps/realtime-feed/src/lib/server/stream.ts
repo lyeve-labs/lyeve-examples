@@ -5,8 +5,8 @@
  * other engine route, so the browser cannot open it. This module opens it from
  * the server, decodes it, and hands back events already in the board's shape.
  */
-import { relationId } from '$lib/lyeve';
-import { isIncidentState, isSeverity, type Incident, type IncidentUpdate } from '$lib/board';
+import { relationId } from '#lib/lyeve/index.ts';
+import { isIncidentState, isSeverity, type Incident, type IncidentUpdate } from '#lib/board.ts';
 import { INCIDENTS, UPDATES, lyeve } from './lyeve';
 
 export type EventAction = 'create' | 'update' | 'delete';

@@ -1,4 +1,4 @@
-import { loadCollectionIndex } from '$lib/server/storefront';
+import { loadCollectionIndex } from '#lib/server/storefront.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

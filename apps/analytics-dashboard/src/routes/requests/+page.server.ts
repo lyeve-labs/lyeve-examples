@@ -7,7 +7,7 @@ import {
 	requestSummary,
 	requestTrend,
 	tenantBreakdown
-} from '$lib/server/telemetry';
+} from '#lib/server/telemetry.ts';
 import type { PageServerLoad } from './$types';
 
 /** The presets the range control offers, resolved to the from and to the route takes. */

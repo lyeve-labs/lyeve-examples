@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE, fallbackChain } from '$lib/locales';
+import { DEFAULT_LOCALE, fallbackChain } from '#lib/locales.ts';
 import type { Translation, TranslationStatus } from './translations';
 
 /**

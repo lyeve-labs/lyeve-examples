@@ -5,7 +5,7 @@
  * explanation to a moment, so the spike at 14:00 stops being a mystery the next
  * person has to re-investigate.
  */
-import { createContent, listContent, LyeveError, type ContentEntry } from '$lib/lyeve';
+import { createContent, listContent, LyeveError, type ContentEntry } from '#lib/lyeve/index.ts';
 import { lyeve, NOTES } from './lyeve';
 
 /** The kinds an operator picks from. The engine stores the field as free text. */

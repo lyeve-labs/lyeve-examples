@@ -6,7 +6,7 @@
 		STATUS_STYLE,
 		TICKET_STATUSES,
 		formatWhen
-	} from '$lib/desk';
+	} from '#lib/desk.ts';
 
 	let { data, form } = $props();
 	const ticket = $derived(data.ticket);

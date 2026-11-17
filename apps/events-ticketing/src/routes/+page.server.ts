@@ -1,5 +1,5 @@
-import { listUpcomingEvents } from '$lib/server/events';
-import { placesLabel } from '$lib/format';
+import { listUpcomingEvents } from '#lib/server/events.ts';
+import { placesLabel } from '#lib/format.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

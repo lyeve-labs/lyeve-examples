@@ -1,5 +1,5 @@
-import { listArticles } from '$lib/server/articles';
-import { canRead } from '$lib/server/tiers';
+import { listArticles } from '#lib/server/articles.ts';
+import { canRead } from '#lib/server/tiers.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ parent }) => {

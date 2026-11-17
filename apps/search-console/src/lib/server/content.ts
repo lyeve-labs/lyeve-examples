@@ -6,7 +6,7 @@
  * public route, so the ordinary content router is still doing most of the work
  * behind these pages.
  */
-import { listContent, getContentBySlug, relationId } from '$lib/lyeve';
+import { listContent, getContentBySlug, relationId } from '#lib/lyeve/index.ts';
 import { ARTICLES, CATEGORIES, lyeve } from './lyeve';
 
 export interface CategoryRow {

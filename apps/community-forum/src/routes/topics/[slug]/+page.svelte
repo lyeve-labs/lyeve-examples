@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CATEGORY_LABEL, formatWhen, indentFor, paragraphs } from '$lib/forum';
+	import { CATEGORY_LABEL, formatWhen, indentFor, paragraphs } from '#lib/forum.ts';
 
 	let { data, form } = $props();
 	const topic = $derived(data.topic);

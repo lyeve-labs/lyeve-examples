@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PRIORITY_LABEL, TICKET_PRIORITIES } from '$lib/desk';
+	import { PRIORITY_LABEL, TICKET_PRIORITIES } from '#lib/desk.ts';
 
 	let { form } = $props();
 </script>

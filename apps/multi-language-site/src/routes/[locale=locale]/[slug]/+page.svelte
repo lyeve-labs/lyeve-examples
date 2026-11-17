@@ -1,7 +1,7 @@
 <script lang="ts">
-	import StatusBadge from '$lib/components/StatusBadge.svelte';
-	import { LOCALES, localeLabel, localeTag } from '$lib/locales';
-	import { chrome } from '$lib/site';
+	import StatusBadge from '#lib/components/StatusBadge.svelte';
+	import { LOCALES, localeLabel, localeTag } from '#lib/locales.ts';
+	import { chrome } from '#lib/site.ts';
 
 	let { data } = $props();
 

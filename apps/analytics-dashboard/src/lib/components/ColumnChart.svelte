@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { columnChart, compact, SERIES_1, type Column } from '$lib/charts';
+	import { columnChart, compact, SERIES_1, type Column } from '#lib/charts.ts';
 
 	interface Props {
 		columns: Column[];

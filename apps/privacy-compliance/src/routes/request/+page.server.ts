@@ -1,8 +1,8 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { createRequest } from '$lib/server/requests';
-import { classifyIdentifier } from '$lib/server/dsar';
-import { isRequestType, RESPONSE_DAYS } from '$lib/desk';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { createRequest } from '#lib/server/requests.ts';
+import { classifyIdentifier } from '#lib/server/dsar.ts';
+import { isRequestType, RESPONSE_DAYS } from '#lib/desk.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

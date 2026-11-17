@@ -1,4 +1,4 @@
-import { pagesInSection } from '$lib/server/site';
+import { pagesInSection } from '#lib/server/site.ts';
 import type { LayoutServerLoad } from './$types';
 
 /**

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { clock, money } from '$lib/format';
+	import { clock, money } from '#lib/format.ts';
 
 	let { data, form } = $props();
 </script>

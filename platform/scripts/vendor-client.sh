@@ -22,11 +22,11 @@ CHECK=false
 
 # Where the copy lives inside an app, and what its own code imports.
 #
-#   SvelteKit app   src/lib/lyeve/   imported as $lib/lyeve
+#   SvelteKit app   src/lib/lyeve/   imported as #lib/lyeve/index.ts
 #   plain node app  src/lyeve/       imported relatively
 #
-# setup/ scripts run under plain node in both cases, so they always use a
-# relative path: $lib is a SvelteKit alias and means nothing to node.
+# setup/ scripts run under plain node in both cases and always use a
+# relative path.
 drift=0
 copied=0
 

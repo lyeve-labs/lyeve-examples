@@ -1,7 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { isTicketPriority, type TicketPriority } from '$lib/desk';
-import { createTicket } from '$lib/server/tickets';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { isTicketPriority, type TicketPriority } from '#lib/desk.ts';
+import { createTicket } from '#lib/server/tickets.ts';
 import type { Actions } from './$types';
 
 // The engine stores requester_email in a text column, so the address is only

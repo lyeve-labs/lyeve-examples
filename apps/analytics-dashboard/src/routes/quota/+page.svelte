@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Panel from '$lib/components/Panel.svelte';
-	import StatTile from '$lib/components/StatTile.svelte';
-	import BarChart from '$lib/components/BarChart.svelte';
-	import Meter from '$lib/components/Meter.svelte';
-	import { bytes, compact } from '$lib/charts';
+	import Panel from '#lib/components/Panel.svelte';
+	import StatTile from '#lib/components/StatTile.svelte';
+	import BarChart from '#lib/components/BarChart.svelte';
+	import Meter from '#lib/components/Meter.svelte';
+	import { bytes, compact } from '#lib/charts.ts';
 
 	let { data } = $props();
 

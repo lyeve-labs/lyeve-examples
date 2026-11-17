@@ -1,9 +1,9 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { lyeve } from '$lib/server/lyeve';
-import { TENANT_PREFIX } from '$lib/schemas';
-import { ensureTenant, listQuotas, listTenants, upsertQuota } from '$lib/server/platform';
-import { ensureProfile, listPlans, listProfiles } from '$lib/server/profiles';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { lyeve } from '#lib/server/lyeve.ts';
+import { TENANT_PREFIX } from '#lib/schemas.ts';
+import { ensureTenant, listQuotas, listTenants, upsertQuota } from '#lib/server/platform.ts';
+import { ensureProfile, listPlans, listProfiles } from '#lib/server/profiles.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const GB = 1024 * 1024 * 1024;

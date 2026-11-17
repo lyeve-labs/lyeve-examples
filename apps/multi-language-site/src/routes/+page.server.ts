@@ -1,5 +1,5 @@
 import { redirect } from '@sveltejs/kit';
-import { DEFAULT_LOCALE } from '$lib/locales';
+import { DEFAULT_LOCALE } from '#lib/locales.ts';
 import type { PageServerLoad } from './$types';
 
 /**

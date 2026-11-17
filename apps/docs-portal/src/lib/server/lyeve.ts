@@ -1,5 +1,5 @@
-import { LyeveClient } from '$lib/lyeve';
-import { env } from '$env/dynamic/private';
+import { LyeveClient } from '#lib/lyeve/index.ts';
+import * as env from '$app/env/private';
 
 /**
  * The engine has no anonymous read, so the credential lives here and never

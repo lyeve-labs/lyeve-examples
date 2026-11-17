@@ -5,7 +5,7 @@ import {
 	related,
 	relationId,
 	type ContentEntry
-} from '$lib/lyeve';
+} from '#lib/lyeve/index.ts';
 import { lyeve, APPOINTMENTS, PRACTITIONERS, SLOTS } from './lyeve';
 
 /**

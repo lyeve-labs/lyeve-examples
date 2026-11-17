@@ -1,5 +1,5 @@
-import { pages, openings } from '$lib/server/site';
-import { pagePath } from '$lib/site';
+import { pages, openings } from '#lib/server/site.ts';
+import { pagePath } from '#lib/site.ts';
 import type { RequestHandler } from './$types';
 
 interface Entry {

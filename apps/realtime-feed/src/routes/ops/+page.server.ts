@@ -1,13 +1,13 @@
 import { fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { isIncidentState, isSeverity, type IncidentState } from '$lib/board';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { isIncidentState, isSeverity, type IncidentState } from '#lib/board.ts';
 import {
 	addUpdate,
 	findIncidentBySlug,
 	listServices,
 	loadBoard,
 	openIncident
-} from '$lib/server/board';
+} from '#lib/server/board.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

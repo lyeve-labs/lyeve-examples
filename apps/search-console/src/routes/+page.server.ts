@@ -1,8 +1,8 @@
-import { ARTICLES } from '$lib/server/lyeve';
-import { listCategories } from '$lib/server/content';
-import { expandQuery } from '$lib/server/expand';
-import { applyRanking, byAppliedScore, unmatchableRules } from '$lib/server/rank';
-import { recordLoggedSearch } from '$lib/server/clicks';
+import { ARTICLES } from '#lib/server/lyeve.ts';
+import { listCategories } from '#lib/server/content.ts';
+import { expandQuery } from '#lib/server/expand.ts';
+import { applyRanking, byAppliedScore, unmatchableRules } from '#lib/server/rank.ts';
+import { recordLoggedSearch } from '#lib/server/clicks.ts';
 import {
 	getRanking,
 	listSynonyms,
@@ -10,8 +10,8 @@ import {
 	safely,
 	search,
 	type SearchHit
-} from '$lib/server/search';
-import { sessionId } from '$lib/server/session';
+} from '#lib/server/search.ts';
+import { sessionId } from '#lib/server/session.ts';
 import type { PageServerLoad } from './$types';
 
 // Twenty, not ten, because the ranking config is applied to the page that came

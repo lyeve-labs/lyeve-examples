@@ -1,9 +1,9 @@
 import { fail } from '@sveltejs/kit';
-import { LyeveError, createContent } from '$lib/lyeve';
-import { listAlbums } from '$lib/server/gallery';
-import { PHOTOS, albumFolder, photoSlug } from '$lib/naming';
-import { lyeve } from '$lib/server/lyeve';
-import { PRESETS, getMediaThumbnails, uploadFiles, type MediaRecord } from '$lib/server/media';
+import { LyeveError, createContent } from '#lib/lyeve/index.ts';
+import { listAlbums } from '#lib/server/gallery.ts';
+import { PHOTOS, albumFolder, photoSlug } from '#lib/naming.ts';
+import { lyeve } from '#lib/server/lyeve.ts';
+import { PRESETS, getMediaThumbnails, uploadFiles, type MediaRecord } from '#lib/server/media.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

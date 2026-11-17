@@ -1,5 +1,5 @@
 import { error, fail } from '@sveltejs/kit';
-import { buildThreadTree, flattenThread } from '$lib/forum';
+import { buildThreadTree, flattenThread } from '#lib/forum.ts';
 import {
 	MAX_BODY,
 	pendingCount,
@@ -7,9 +7,9 @@ import {
 	readableError,
 	submitReply,
 	vote
-} from '$lib/server/comments';
-import { loadTopic } from '$lib/server/topics';
-import { visitorId } from '$lib/server/visitor';
+} from '#lib/server/comments.ts';
+import { loadTopic } from '#lib/server/topics.ts';
+import { visitorId } from '#lib/server/visitor.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 /**

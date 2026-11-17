@@ -1,4 +1,4 @@
-import { listSpaces } from '$lib/server/docs';
+import { listSpaces } from '#lib/server/docs.ts';
 import type { LayoutServerLoad } from './$types';
 
 // The header navigation is the space list, so it loads once here and every

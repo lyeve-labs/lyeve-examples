@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { invalidateAll } from '$app/navigation';
+	import { refreshAll } from '$app/navigation';
 	import {
 		SEVERITY_LABEL,
 		STATE_LABEL,
@@ -9,7 +9,7 @@
 		type Incident,
 		type IncidentUpdate,
 		type Severity
-	} from '$lib/board';
+	} from '#lib/board.ts';
 
 	let { data } = $props();
 
@@ -63,7 +63,7 @@
 		if (refetching) return;
 		refetching = true;
 		try {
-			await invalidateAll();
+			await refreshAll();
 			const fresh = new Map(data.incidents.map((i) => [i.id, i]));
 			for (const [id, row] of Object.entries(incidentOverlay)) {
 				const server = fresh.get(id);

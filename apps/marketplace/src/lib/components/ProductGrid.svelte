@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { formatPrice } from '$lib/format';
-	import type { ProductCard } from '$lib/types';
+	import { formatPrice } from '#lib/format.ts';
+	import type { ProductCard } from '#lib/types.ts';
 
 	let {
 		products,

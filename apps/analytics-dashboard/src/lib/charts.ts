@@ -1,7 +1,7 @@
 /**
  * Chart geometry, computed rather than delegated.
  *
- * The CSP in svelte.config.js allows scripts from self only, so no chart
+ * The CSP in vite.config.ts allows scripts from self only, so no chart
  * library can be pulled from a CDN. Every chart on this dashboard is inline SVG
  * whose coordinates come from these functions, which are pure and hold no
  * engine calls, so a component and a server load can both use them.

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bytes, count, limitLabel, when } from '$lib/format';
+	import { bytes, count, limitLabel, when } from '#lib/format.ts';
 
 	let { data } = $props();
 

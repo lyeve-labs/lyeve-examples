@@ -1,7 +1,7 @@
 import { error, redirect } from '@sveltejs/kit';
-import { recordReportedClick } from '$lib/server/clicks';
-import { logClick, safely } from '$lib/server/search';
-import { sessionId } from '$lib/server/session';
+import { recordReportedClick } from '#lib/server/clicks.ts';
+import { logClick, safely } from '#lib/server/search.ts';
+import { sessionId } from '#lib/server/session.ts';
 import type { RequestHandler } from './$types';
 
 /**

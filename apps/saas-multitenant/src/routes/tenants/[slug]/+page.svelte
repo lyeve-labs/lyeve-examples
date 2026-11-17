@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bytes, count, day, limit, percent } from '$lib/format';
+	import { bytes, count, day, limit, percent } from '#lib/format.ts';
 
 	let { data, form } = $props();
 

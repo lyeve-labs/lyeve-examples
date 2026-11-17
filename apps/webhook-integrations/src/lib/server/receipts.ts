@@ -11,8 +11,8 @@ import {
 	related,
 	relationId,
 	type ContentEntry
-} from '$lib/lyeve';
-import { RECEIPTS, type Channel, type Verdict } from '$lib/contract';
+} from '#lib/lyeve/index.ts';
+import { RECEIPTS, type Channel, type Verdict } from '#lib/contract.ts';
 import { lyeve } from './lyeve';
 
 interface ReceiptFields {

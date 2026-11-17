@@ -1,6 +1,6 @@
-import { exchange, type Exchange } from '$lib/server/graphql';
-import { CollectionIndex, CollectionPage, ProductPage } from '$lib/server/queries';
-import { loadLimits, loadSurface } from '$lib/server/surface';
+import { exchange, type Exchange } from '#lib/server/graphql.ts';
+import { CollectionIndex, CollectionPage, ProductPage } from '#lib/server/queries.ts';
+import { loadLimits, loadSurface } from '#lib/server/surface.ts';
 import type { PageServerLoad } from './$types';
 
 /**

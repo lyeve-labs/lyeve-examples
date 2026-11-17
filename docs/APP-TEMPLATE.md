@@ -7,12 +7,12 @@ the reference implementation, and it is known to build, provision and serve.
 
     apps/<name>/
       package.json          copy blog's, change name + dev port
-      svelte.config.js      copy verbatim
-      vite.config.ts        copy verbatim
+      vite.config.ts        copy verbatim  (SvelteKit's config lives here)
       tsconfig.json         copy verbatim
       .env.example          copy verbatim
       src/app.html          copy verbatim
       src/app.css           copy verbatim  (the @source line is load-bearing)
+      src/env.ts            every env var the app reads, or SvelteKit hides it
       src/lib/server/lyeve.ts   client singleton + this app's schema names
       src/routes/...          pages, server loads only
       setup/provision.ts    schemas + seed, idempotent

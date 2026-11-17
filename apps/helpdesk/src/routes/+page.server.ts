@@ -1,4 +1,4 @@
-import { loadInbox, loadReplyCounts, sortForQueue } from '$lib/server/tickets';
+import { loadInbox, loadReplyCounts, sortForQueue } from '#lib/server/tickets.ts';
 import type { PageServerLoad } from './$types';
 
 const VIEWS = ['active', 'open', 'pending', 'closed'] as const;

@@ -1,13 +1,13 @@
 import { error, fail } from '@sveltejs/kit';
-import { DEFAULT_LOCALE, LOCALES } from '$lib/locales';
-import { findEntryBySlug } from '$lib/server/pages';
+import { DEFAULT_LOCALE, LOCALES } from '#lib/locales.ts';
+import { findEntryBySlug } from '#lib/server/pages.ts';
 import {
 	deleteTranslation,
 	listTranslations,
 	saveTranslation,
 	type TranslationStatus
-} from '$lib/server/translations';
-import { describeFailure } from '$lib/server/errors';
+} from '#lib/server/translations.ts';
+import { describeFailure } from '#lib/server/errors.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const STATUSES: TranslationStatus[] = ['draft', 'translated', 'outdated'];

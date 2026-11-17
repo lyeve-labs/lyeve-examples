@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { percent } from '$lib/format';
+	import { percent } from '#lib/format.ts';
 
 	let { data, form } = $props();
 </script>

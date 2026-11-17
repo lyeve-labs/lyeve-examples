@@ -1,10 +1,10 @@
 import { fail } from '@sveltejs/kit';
-import { LyeveError } from '$lib/lyeve';
-import { lyeve } from '$lib/server/lyeve';
-import { TENANT_PREFIX } from '$lib/schemas';
-import { allTenantUsage, listQuotas, listTenants, snapshotUsage } from '$lib/server/platform';
-import { listProfiles } from '$lib/server/profiles';
-import { currentPeriod } from '$lib/format';
+import { LyeveError } from '#lib/lyeve/index.ts';
+import { lyeve } from '#lib/server/lyeve.ts';
+import { TENANT_PREFIX } from '#lib/schemas.ts';
+import { allTenantUsage, listQuotas, listTenants, snapshotUsage } from '#lib/server/platform.ts';
+import { listProfiles } from '#lib/server/profiles.ts';
+import { currentPeriod } from '#lib/format.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 const PERIOD = /^\d{4}-\d{2}$/;

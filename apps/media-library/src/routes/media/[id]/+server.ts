@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { mediaDownload } from '$lib/server/media';
+import { mediaDownload } from '#lib/server/media.ts';
 import type { RequestHandler } from './$types';
 
 /**

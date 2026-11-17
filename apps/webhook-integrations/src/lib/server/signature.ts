@@ -1,4 +1,4 @@
-import type { Verdict } from '$lib/contract';
+import type { Verdict } from '#lib/contract.ts';
 import { equalDigest, hmacHex, isAlgorithm, type Algorithm } from './digest';
 import { claim } from './replay';
 

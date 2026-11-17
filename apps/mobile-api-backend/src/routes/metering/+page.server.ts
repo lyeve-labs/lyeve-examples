@@ -1,7 +1,7 @@
-import { lyeve, TENANT } from '$lib/server/lyeve';
-import { listKeys } from '$lib/server/keys';
-import { getQuota, keyUsage, quotaStatus, tenantUsage } from '$lib/server/metering';
-import { currentPeriod } from '$lib/format';
+import { lyeve, TENANT } from '#lib/server/lyeve.ts';
+import { listKeys } from '#lib/server/keys.ts';
+import { getQuota, keyUsage, quotaStatus, tenantUsage } from '#lib/server/metering.ts';
+import { currentPeriod } from '#lib/format.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

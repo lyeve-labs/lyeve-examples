@@ -7,8 +7,8 @@
 		isLocalizedPath,
 		localeTag,
 		switchLocale
-	} from '$lib/locales';
-	import { SITE, chrome } from '$lib/site';
+	} from '#lib/locales.ts';
+	import { SITE, chrome } from '#lib/site.ts';
 
 	let { children } = $props();
 

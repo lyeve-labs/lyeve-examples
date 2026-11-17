@@ -1,6 +1,6 @@
 import { fail } from '@sveltejs/kit';
-import { listNotes, recordNote, NOTE_KINDS } from '$lib/server/notes';
-import { requestTrend } from '$lib/server/telemetry';
+import { listNotes, recordNote, NOTE_KINDS } from '#lib/server/notes.ts';
+import { requestTrend } from '#lib/server/telemetry.ts';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {

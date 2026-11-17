@@ -1,4 +1,4 @@
-import { openings } from '$lib/server/site';
+import { openings } from '#lib/server/site.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { STATE_LABELS, TYPE_LABELS } from '$lib/desk';
+	import { STATE_LABELS, TYPE_LABELS } from '#lib/desk.ts';
 
 	let { data } = $props();
 

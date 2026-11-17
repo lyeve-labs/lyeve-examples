@@ -1,7 +1,7 @@
-import { VERDICT_LABELS, isAccepted, type Verdict } from '$lib/contract';
-import { findOrderBySlug } from '$lib/server/orders';
-import { countReceipts, listReceipts } from '$lib/server/receipts';
-import { claimedCount } from '$lib/server/replay';
+import { VERDICT_LABELS, isAccepted, type Verdict } from '#lib/contract.ts';
+import { findOrderBySlug } from '#lib/server/orders.ts';
+import { countReceipts, listReceipts } from '#lib/server/receipts.ts';
+import { claimedCount } from '#lib/server/replay.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {

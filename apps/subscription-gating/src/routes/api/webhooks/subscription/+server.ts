@@ -1,8 +1,7 @@
-import { json } from '@sveltejs/kit';
-import { WEBHOOK_SECRET } from '$lib/server/lyeve';
-import { findReaderByEmail, setSubscription } from '$lib/server/members';
-import { verifySignature } from '$lib/server/signature';
-import { isTier, type MemberStatus, type Tier } from '$lib/server/tiers';
+import { WEBHOOK_SECRET } from '#lib/server/lyeve.ts';
+import { findReaderByEmail, setSubscription } from '#lib/server/members.ts';
+import { verifySignature } from '#lib/server/signature.ts';
+import { isTier, type MemberStatus, type Tier } from '#lib/server/tiers.ts';
 import type { RequestHandler } from './$types';
 
 /**
@@ -33,7 +32,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	// treating that as permission to skip the check is how a forged event gets
 	// in.
 	if (!WEBHOOK_SECRET) {
-		return json({ error: 'webhook secret not configured' }, { status: 500 });
+		return Response.json({ error: 'webhook secret not configured' }, { status: 500 });
 	}
 
 	const verdict = verifySignature(
@@ -42,19 +41,19 @@ export const POST: RequestHandler = async ({ request }) => {
 		WEBHOOK_SECRET
 	);
 	if (verdict !== 'ok') {
-		return json({ error: `signature ${verdict}` }, { status: 400 });
+		return Response.json({ error: `signature ${verdict}` }, { status: 400 });
 	}
 
 	let event: ProviderEvent;
 	try {
 		event = JSON.parse(raw) as ProviderEvent;
 	} catch {
-		return json({ error: 'invalid JSON body' }, { status: 400 });
+		return Response.json({ error: 'invalid JSON body' }, { status: 400 });
 	}
 
 	const change = interpret(event);
 	if (!change) {
-		return json({ status: 'ignored', reason: 'event type not handled', type: event.type ?? null });
+		return Response.json({ status: 'ignored', reason: 'event type not handled', type: event.type ?? null });
 	}
 
 	const email = event.data?.object?.customer_email ?? '';
@@ -62,12 +61,12 @@ export const POST: RequestHandler = async ({ request }) => {
 	if (!reader) {
 		// Not an error the provider can fix by sending it again, so it is
 		// acknowledged rather than retried into a loop.
-		return json({ status: 'ignored', reason: 'no member with that email' });
+		return Response.json({ status: 'ignored', reason: 'no member with that email' });
 	}
 
 	try {
 		const updated = await setSubscription(reader.id, change.tier, change.status);
-		return json({
+		return Response.json({
 			status: 'applied',
 			member: updated.email,
 			tier: updated.tier,
@@ -76,7 +75,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	} catch {
 		// A write that failed might succeed next time, so this one asks to be
 		// retried. The message stays generic: the sender is not the operator.
-		return json({ error: 'could not record the subscription' }, { status: 503 });
+		return Response.json({ error: 'could not record the subscription' }, { status: 503 });
 	}
 };
 

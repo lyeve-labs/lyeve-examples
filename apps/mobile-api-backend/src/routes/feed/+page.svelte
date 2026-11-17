@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { shortId, when } from '$lib/format';
+	import { shortId, when } from '#lib/format.ts';
 
 	let { data } = $props();
 

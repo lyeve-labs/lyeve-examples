@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { count, day, limitLabel } from '$lib/format';
+	import { count, day, limitLabel } from '#lib/format.ts';
 
 	let { data, form } = $props();
 

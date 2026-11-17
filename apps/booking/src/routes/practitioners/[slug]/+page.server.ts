@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
-import { getPractitionerBySlug, isBookable, listSlots, upcoming } from '$lib/server/booking';
-import { endTimeLabel, groupByDay, timeLabel } from '$lib/schedule';
+import { getPractitionerBySlug, isBookable, listSlots, upcoming } from '#lib/server/booking.ts';
+import { endTimeLabel, groupByDay, timeLabel } from '#lib/schedule.ts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
